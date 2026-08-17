@@ -1,0 +1,138 @@
+---
+import Base from "../layouts/Base.astro";
+
+const packages = [
+  {
+    name: "Tease",
+    price: "$750",
+    time: "Confirms your 1.5 hour boudoir photoshoot with me at my Auckland based studio, where we will create beautiful images for you to choose from.",
+    features: [
+      "Photo reveal session where you choose the photos you love",
+      "Six fully edited, high resolution images of your choice delivered via digital download",
+      "Plus six unedited images — a powerful reminder you're stunning without the polish",
+      "Additional edited images can be purchased for $80 per photo, no pressure to buy",
+      "Hair & makeup can be arranged for an additional $220 with enough notice",
+      "Ask me about wall art",
+    ],
+  },
+  {
+    name: "Temptation",
+    price: "$950",
+    time: "Confirms your 2.5 hour boudoir photoshoot with me at my Auckland based studio, where we will create beautiful images for you to choose from.",
+    features: [
+      "Photo reveal session where you choose the photos you love",
+      "Ten fully edited, high resolution images of your choice delivered via digital download",
+      "Plus ten unedited images — a reminder your beauty doesn't rely on edits",
+      "Additional edited images can be purchased for $80 per photo, no pressure to buy",
+      "Hair & makeup can be arranged for an additional $220 with enough notice",
+      "Ask me about wall art",
+    ],
+  },
+  {
+    name: "Total Knockout",
+    price: "$1,200",
+    time: "Confirms your unlimited time boudoir photoshoot with me at my Auckland based studio, where we will create beautiful images for you to choose from.",
+    features: [
+      "Photo reveal session where you choose the photos you love",
+      "Twenty fully edited, high resolution images of your choice delivered via digital download",
+      "Plus twenty unedited images — a beautiful reminder of how you looked before the edits began",
+      "Additional edited images can be purchased for $80 per photo, no pressure to buy",
+      "Hair & makeup can be arranged for an additional $220 with enough notice",
+      "Ask me about wall art",
+    ],
+  },
+];
+---
+
+<Base
+  title="Boudoir Photography Pricing | Auckland Sessions from $750"
+  description="Boudoir photography packages in Auckland from $750, including edited and unedited digital images with every session. No hidden costs."
+>
+  <section class="mx-auto max-w-3xl px-6 py-20 text-center">
+    <h1 class="text-4xl">Boudoir Pricing</h1>
+    <p class="mt-4 text-boudoir-muted">
+      This is more than a photoshoot -
+      <span class="text-boudoir-pink">this is a celebration of you.</span>
+    </p>
+    <p class="mt-8 text-boudoir-muted">
+      Boudoir shoots are about <span class="text-boudoir-pink">feeling Beautiful &amp; Empowered.</span>
+    </p>
+    <p class="mt-4 text-boudoir-muted">
+      In this crazy world it's so easy to forget how beautiful you are.
+      Boudoir photography is intimate images to remind you of everything you
+      should celebrate about yourself. Wear what you like, jeans and a
+      singlet, lingerie, or nothing at all, and create pictures that make
+      you smile and say &ldquo;hello beautiful&rdquo; every time you look
+      at them.
+    </p>
+  </section>
+
+  <section class="bg-boudoir-ink py-20 text-boudoir-white">
+    <div class="mx-auto max-w-6xl px-6">
+      <p class="text-center text-sm uppercase tracking-wide text-white/70">
+        You only buy what you love - no hidden costs
+      </p>
+
+      <div class="mt-12 grid gap-12 text-center md:grid-cols-3">
+        {packages.map((pkg) => (
+          <div>
+            <h2 class="text-xl uppercase tracking-wide">{pkg.name}</h2>
+            <p class="mt-2 text-4xl">{pkg.price}</p>
+            <p class="mt-4 text-sm text-white/70">{pkg.time}</p>
+            <ul class="mt-6 space-y-3 text-left text-sm text-white/85">
+              {pkg.features.map((f) => (
+                <li class="flex gap-2">
+                  <span class="text-boudoir-pink">&#10003;</span>
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+            <a
+              href="/contact-boudoir-photography-auckland"
+              class="mt-8 inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink"
+            >
+              Book now
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <blockquote class="italic text-boudoir-muted">
+        &ldquo;I have done several shoots of various styles now with Belinda
+        and she is AMAZING to work with. We recently did our first boudoir
+        shoot and I loved every moment of it! Belinda immediately put me at
+        ease so that I was relaxed and had fun. She gave great direction but
+        was also completely open to any ideas I had and tailored my shoot to
+        what I was looking for as my end result, my personal style and body
+        type, but also to what my idea of boudoir is. I cannot recommend
+        boudoir photography enough and am absolutely thrilled with my
+        photos.&rdquo;
+      </blockquote>
+      <p class="mt-4 text-sm font-semibold uppercase tracking-wide text-boudoir-pink">Carolyn</p>
+    </div>
+  </section>
+
+  <section class="bg-boudoir-ink py-20 text-boudoir-white">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <div class="grid gap-4 text-sm font-semibold uppercase tracking-wide md:grid-cols-3">
+        <p>You don't need to<br />change your weight</p>
+        <p>You don't need to<br />know how to pose</p>
+        <p>You are beautiful<br />exactly as you are</p>
+      </div>
+      <h2 class="mt-10 text-3xl">
+        Let's talk about <span class="text-boudoir-pink">your dream photos</span>
+      </h2>
+      <p class="mt-4 text-white/70">Book a chat today or&hellip; book the shoot, it's all up to you.</p>
+      <a
+        href="/contact-boudoir-photography-auckland"
+        class="mt-8 inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink"
+      >
+        Book your shoot today
+      </a>
+    </div>
+  </section>
+</Base>

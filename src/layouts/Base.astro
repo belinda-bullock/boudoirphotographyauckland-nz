@@ -1,0 +1,75 @@
+---
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+}
+
+const { title, description, image = "/images/auckland-boudoir-photography-natural-light.jpg" } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(image, Astro.site);
+---
+
+<!doctype html>
+<html lang="en-NZ">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:locale" content="en_NZ" />
+    <meta property="og:site_name" content="Boudoir Photography Auckland" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Boudoir Photography Auckland",
+      "image": ogImageURL.toString(),
+      "url": "https://www.boudoirphotographyauckland.co.nz",
+      "telephone": "+64274326504",
+      "priceRange": "$750-$1200",
+      "areaServed": {
+        "@type": "City",
+        "name": "Auckland"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hibiscus Coast, Auckland",
+        "addressCountry": "NZ"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Belinda Dunne"
+      },
+      "description": "A private boudoir photography experience for women who want to feel confident and beautiful, based on Auckland's Hibiscus Coast."
+    })} />
+  </head>
+  <body class="bg-boudoir-white text-boudoir-ink antialiased">
+    <Nav />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

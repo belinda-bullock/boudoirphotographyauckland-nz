@@ -1,0 +1,79 @@
+---
+import Base from "../layouts/Base.astro";
+
+const images = [
+  { src: "/images/gallery/seated-natural-light.jpg", alt: "Soft boudoir portrait of a woman seated in natural light" },
+  { src: "/images/gallery/lingerie-portrait.jpg", alt: "White lingerie boudoir photograph with relaxed lying pose" },
+  { src: "/images/gallery/glamour-studio.jpg", alt: "Glamour boudoir portrait with soft studio lighting" },
+  { src: "/images/gallery/denim-jacket.jpg", alt: "Confident boudoir portrait wearing a denim jacket" },
+  { src: "/images/gallery/curvy-soft-light.jpg", alt: "Beautiful curvy boudoir image in soft lighting" },
+  { src: "/images/gallery/white-lingerie-pose.jpg", alt: "Boudoir image of a woman in white lingerie" },
+  { src: "/images/gallery/silhouette-dramatic.jpg", alt: "Artistic boudoir silhouette with dramatic lighting" },
+  { src: "/images/gallery/moody.jpg", alt: "Moody boudoir image" },
+  { src: "/images/gallery/bodyscape.jpg", alt: "Bodyscape boudoir image" },
+  { src: "/images/gallery/studio-bw.jpg", alt: "Studio boudoir shot in black and white on a black background" },
+  { src: "/images/gallery/soft-colour-eye-contact.jpg", alt: "Soft colour boudoir portrait with relaxed eye contact" },
+  { src: "/images/gallery/legs-in-bed.jpg", alt: "Boudoir image of a woman's legs lying in bed" },
+  { src: "/images/gallery/photographer.jpg", alt: "Belinda Dunne, boudoir photographer" },
+];
+---
+
+<Base
+  title="Boudoir Photoshoot Gallery Auckland | Real Women, Real Confidence"
+  description="A gallery of real boudoir photography clients photographed on Auckland's Hibiscus Coast — natural, confident, and respectful images."
+>
+  <section class="bg-boudoir-ink py-20 text-boudoir-white">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <h1 class="text-4xl md:text-5xl">Boudoir Photoshoot Gallery Auckland</h1>
+      <p class="mt-5 text-white/80">Real Boudoir Clients</p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-6 py-16 text-center">
+    <p class="text-boudoir-muted">
+      This gallery features real women photographed in my Auckland studio on
+      the Hibiscus Coast, during lingerie, glamour, and intimate portrait
+      sessions. Every image is created to feel natural, confident, and
+      respectful.
+    </p>
+    <p class="mt-4 text-boudoir-muted">
+      If you are considering what a boudoir shoot could look like for you,
+      this gallery offers an honest representation of the style of boudoir
+      photography sessions you can expect during a shoot with me.
+    </p>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-6 pb-20">
+    <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      {images.map((img) => (
+        <div>
+          <img
+            src={img.src}
+            alt={img.alt}
+            loading="lazy"
+            class="h-full w-full object-cover"
+          />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-boudoir-cream py-16">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <h2 class="text-3xl">Considering a Boudoir Photoshoot</h2>
+      <p class="mt-4 text-boudoir-muted">
+        If you would like more detail about what a boudoir session involves,
+        including preparation, privacy, and what to expect, you can read the
+        full <a href="/faqs" class="text-boudoir-pink underline">boudoir photography FAQ</a>.
+        If you are ready to ask a question or start a conversation, you are
+        welcome to get in touch.
+      </p>
+      <a
+        href="/contact-boudoir-photography-auckland"
+        class="mt-8 inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink"
+      >
+        Contact me today
+      </a>
+    </div>
+  </section>
+</Base>

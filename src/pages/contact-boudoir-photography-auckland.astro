@@ -1,0 +1,68 @@
+---
+import Base from "../layouts/Base.astro";
+
+// TODO before go-live: replace FORM_ACTION with a real Formspree / Web3Forms
+// endpoint so enquiries actually arrive somewhere. Currently a placeholder.
+const FORM_ACTION = "https://formspree.io/f/REPLACE_ME";
+---
+
+<Base
+  title="Contact | Boudoir Photography Auckland"
+  description="Get in touch to book your Auckland boudoir photography session, or ask a question first. Call Belinda on 027 432 6504."
+>
+  <section class="bg-boudoir-ink py-20 text-boudoir-white">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <h1 class="text-4xl md:text-5xl">Contact me</h1>
+      <p class="mt-5 text-white/80">
+        Reach out with a message that's as bold or bashful as you like, just
+        make the first move.
+      </p>
+      <p class="mt-4">
+        <a href="tel:+64274326504" class="font-semibold text-boudoir-pink hover:underline">Call Belinda on 027 432 6504</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-2xl px-6 py-16">
+    <form action={FORM_ACTION} method="POST" class="space-y-5">
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label for="firstName" class="block text-sm font-semibold text-boudoir-ink">First name <span class="text-boudoir-pink">*</span></label>
+          <input required type="text" id="firstName" name="firstName" class="mt-2 w-full border border-boudoir-cream bg-boudoir-white px-4 py-3 text-sm focus:border-boudoir-pink focus:outline-none" />
+        </div>
+        <div>
+          <label for="lastName" class="block text-sm font-semibold text-boudoir-ink">Last name <span class="text-boudoir-pink">*</span></label>
+          <input required type="text" id="lastName" name="lastName" class="mt-2 w-full border border-boudoir-cream bg-boudoir-white px-4 py-3 text-sm focus:border-boudoir-pink focus:outline-none" />
+        </div>
+      </div>
+
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label for="phone" class="block text-sm font-semibold text-boudoir-ink">Phone number <span class="text-boudoir-pink">*</span></label>
+          <input required type="tel" id="phone" name="phone" class="mt-2 w-full border border-boudoir-cream bg-boudoir-white px-4 py-3 text-sm focus:border-boudoir-pink focus:outline-none" />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-semibold text-boudoir-ink">Email <span class="text-boudoir-pink">*</span></label>
+          <input required type="email" id="email" name="email" class="mt-2 w-full border border-boudoir-cream bg-boudoir-white px-4 py-3 text-sm focus:border-boudoir-pink focus:outline-none" />
+        </div>
+      </div>
+
+      <div>
+        <label for="heardFrom" class="block text-sm font-semibold text-boudoir-ink">How did you hear about me?</label>
+        <input type="text" id="heardFrom" name="heardFrom" class="mt-2 w-full border border-boudoir-cream bg-boudoir-white px-4 py-3 text-sm focus:border-boudoir-pink focus:outline-none" />
+      </div>
+
+      <div>
+        <label for="message" class="block text-sm font-semibold text-boudoir-ink">Message</label>
+        <textarea id="message" name="message" rows="5" class="mt-2 w-full border border-boudoir-cream bg-boudoir-white px-4 py-3 text-sm focus:border-boudoir-pink focus:outline-none"></textarea>
+      </div>
+
+      <button
+        type="submit"
+        class="w-full border-2 border-boudoir-pink px-8 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink sm:w-auto"
+      >
+        Send
+      </button>
+    </form>
+  </section>
+</Base>

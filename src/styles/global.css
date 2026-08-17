@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  /* Measured directly from the live site — see scratchpad/boudoir-live-site-content.md.
+     Red is the logo colour ONLY; it is never used as a UI accent on the live site.
+     Pink is the sole accent colour: buttons, links, and inline emphasis. */
+  --color-boudoir-red: #CB171E;
+  --color-boudoir-pink: #E67DE3;
+  --color-boudoir-ink: #000000;
+  --color-boudoir-white: #FFFFFF;
+  --color-boudoir-muted: #6B5F66;
+  --color-boudoir-cream: #FAF6F5;
+
+  /* Live site uses a plain system sans stack for everything, headings included —
+     no serif/display font. Don't reintroduce one. */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+}

@@ -1,17 +1,285 @@
 ---
+import Base from "../layouts/Base.astro";
 
+const steps = [
+  {
+    number: "STEP 1",
+    title: "REACH OUT.",
+    highlight: "Booking Your Auckland Boudoir Photography Session.",
+    rest: "Reach out with a message that's as bold or bashful as you like—just make the first move. Once we connect, I'll send you everything you need to know: pricing, booking details, session prep, and what to expect.",
+  },
+  {
+    number: "STEP 2",
+    title: "HERE TO CHEER YOU ON.",
+    highlight: "Your Guided Boudoir Photoshoot Experience.",
+    rest: "On shoot day, we kick things off with hugs and high vibes. You'll be pampered with hair and makeup, your favourite music playing in the background, and a space where you can completely let go. I'll pose you, guide you, and cheer you on the whole way.",
+  },
+  {
+    number: "STEP 3",
+    title: "Your jaw-dropping reveal.",
+    highlight: "Viewing Your Boudoir Photos.",
+    rest: "After the session, you'll get to see your images—yourself—like never before. Choose what you love, whether it's a luxe album, framed art, or something special just for you. These aren't just photos—they're proof of how powerful and beautiful you truly are.",
+  },
+];
+
+const packages = [
+  {
+    name: "Tease",
+    price: "$750",
+    blurb: "Just enough to leave you breathless. Perfect for first-timers or anyone wanting a taste of the boudoir experience without going all in.",
+    details: "1-hour shoot · 6 edited images + 6 unedited",
+  },
+  {
+    name: "Temptation",
+    price: "$950",
+    blurb: "Let yourself go a little deeper. This experience is all about celebrating your power, beauty, and sensuality.",
+    details: "2-hour shoot · 10 edited images + 10 unedited",
+  },
+  {
+    name: "Total Knockout",
+    price: "$1,200",
+    blurb: "All eyes on you. This is the package for anyone who refuses to leave behind a single favourite look.",
+    details: "3-hour shoot · 20 edited images + 20 unedited",
+  },
+];
+
+const gallerySection1 = [
+  { src: "/images/home/midriff-lingerie.jpg", alt: "Boudoir photo of a woman's midriff wearing sexy lingerie" },
+  { src: "/images/home/lace-lingerie.jpg", alt: "Boudoir photo of a woman wearing lace lingerie" },
+  { src: "/images/home/on-bed.jpg", alt: "Boudoir photo of a woman on a bed" },
+  { src: "/images/home/low-light-thong.jpg", alt: "Boudoir photo of a woman in low light wearing a thong" },
+];
+
+const gallerySection2 = [
+  { src: "/images/home/spotlight-stool.jpg", alt: "Boudoir photo of a woman in a one piece under a spotlight, leaning on a stool" },
+  { src: "/images/home/bed-facing-away.jpg", alt: "Boudoir photo of a woman on a bed facing away from the camera in a seductive pose" },
+  { src: "/images/home/gloves.jpg", alt: "Boudoir photo of a woman looking at the camera wearing gloves" },
+  { src: "/images/home/sheepskin-rug.jpg", alt: "Boudoir photo of a woman lying on a sheepskin rug in lingerie" },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base
+  title="Boudoir Photography Auckland | Elegant & Confidence-Boosting Sessions"
+  description="A private boudoir photography experience in Auckland for women who want to feel confident and beautiful. Book your session with Belinda Dunne on the Hibiscus Coast."
+>
+  <!-- Full-bleed title hero -->
+  <section class="relative">
+    <img
+      src="/images/home/hero.jpg"
+      alt="Auckland boudoir photography"
+      class="h-[630px] w-full object-cover opacity-50 sm:h-[420px]"
+      style="object-position: 75.5744% 73.6184%;"
+      width="1600"
+      height="1065"
+    />
+    <div class="absolute inset-0 flex items-center justify-center px-6">
+      <h1 class="text-center text-4xl text-boudoir-ink md:text-6xl">Boudoir Photography Auckland</h1>
+    </div>
+  </section>
+
+  <!-- Black CTA band -->
+  <section class="bg-boudoir-ink py-16 text-center text-boudoir-white">
+    <div class="mx-auto max-w-2xl px-6">
+      <p class="text-sm uppercase tracking-wide">
+        A private boudoir photography experience for women who want to feel confident and beautiful
+      </p>
+      <h2 class="mt-4 text-3xl md:text-4xl">
+        Welcome to a space that <span class="text-boudoir-pink">celebrates your body.</span>
+      </h2>
+      <p class="mt-6 text-white/80">
+        Where you'll be guided through a confidence boosting boudoir experience
+        from start to finish, so you feel relaxed, supported, and walk away
+        with images that make you say, <em>damn&hellip; is that really me?</em>
+      </p>
+      <a
+        href="/contact-boudoir-photography-auckland"
+        class="mt-8 inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink"
+      >
+        Book your Auckland boudoir session
+      </a>
+    </div>
+  </section>
+
+  <!-- Gallery strip 1 -->
+  <section class="grid grid-cols-2 sm:grid-cols-4">
+    {gallerySection1.map((img) => (
+      <img
+        src={img.src}
+        alt={img.alt}
+        loading="lazy"
+        class="aspect-[4/3] w-full object-cover"
+      />
+    ))}
+  </section>
+
+  <!-- Meet your photographer -->
+  <section class="mx-auto max-w-6xl px-6 py-20">
+    <div class="flex flex-col gap-8 sm:flex-row sm:items-start">
+      <img
+        src="/images/home/photographer-belinda.jpg"
+        alt="Belinda Dunne, Auckland boudoir photographer"
+        style="object-position: 46.8% 27.2%;"
+        class="aspect-square w-full max-w-[270px] shrink-0 object-cover"
+        width="270"
+        height="270"
+      />
+      <div>
+        <h2 class="text-2xl">Meet your photographer</h2>
+        <p class="mt-5 text-boudoir-muted">
+          Hi, I'm Belinda a female boudoir photographer based in Auckland. I
+          only take on one session a day so I'm never watching the clock. My
+          master's in photography focused specifically on posing and
+          lighting, the two things that make or break how a boudoir photo
+          turns out.
+        </p>
+        <a href="/about-belinda-dunne" class="mt-2 inline-block text-boudoir-pink underline">
+          More about Belinda
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section class="bg-boudoir-ink py-20 text-boudoir-white">
+    <div class="mx-auto max-w-6xl px-6 text-center">
+      <h2 class="text-3xl md:text-4xl">
+        <span class="text-boudoir-pink">Your Boudoir Experience,</span> Step by Step
+      </h2>
+      <p class="mx-auto mt-6 max-w-2xl text-white/80">
+        A personalised, confidence-boosting experience from the first message
+        to the moment you see your stunning images.
+      </p>
+    </div>
+
+    <div class="mx-auto mt-12 grid max-w-6xl grid-cols-1 sm:grid-cols-3">
+      <img
+        src="/images/home/bw-bed.jpg"
+        alt="Black and white boudoir photo of a woman on a bed"
+        class="h-[280px] w-full object-cover sm:h-[340px]"
+      />
+      <div class="flex flex-col items-center justify-center px-8 py-10 text-center">
+        <p class="text-boudoir-pink">
+          <span class="font-semibold uppercase tracking-wide">{steps[0].number}</span>
+          <br />
+          <span class="font-semibold uppercase tracking-wide">{steps[0].title}</span>
+        </p>
+        <p class="mt-4 text-sm">
+          <span class="text-boudoir-pink">{steps[0].highlight}</span>{" "}
+          <span class="text-white/85">{steps[0].rest}</span>
+        </p>
+      </div>
+      <img
+        src="/images/home/bw-portrait.jpg"
+        alt="Black and white boudoir portrait of a young woman"
+        class="h-[280px] w-full object-cover sm:h-[340px]"
+      />
+
+      <div class="flex flex-col items-center justify-center px-8 py-10 text-center">
+        <p class="text-boudoir-pink">
+          <span class="font-semibold uppercase tracking-wide">{steps[1].number}</span>
+          <br />
+          <span class="font-semibold uppercase tracking-wide">{steps[1].title}</span>
+        </p>
+        <p class="mt-4 text-sm">
+          <span class="text-boudoir-pink">{steps[1].highlight}</span>{" "}
+          <span class="text-white/85">{steps[1].rest}</span>
+        </p>
+      </div>
+      <img
+        src="/images/home/bw-tiled.jpg"
+        alt="Black and white boudoir photo of a young woman lying on a tiled surface"
+        class="h-[280px] w-full object-cover sm:h-[380px]"
+      />
+      <div class="flex flex-col items-center justify-center px-8 py-10 text-center">
+        <p class="text-boudoir-pink">
+          <span class="font-semibold uppercase tracking-wide">{steps[2].number}</span>
+          <br />
+          <span class="font-semibold">{steps[2].title}</span>
+        </p>
+        <p class="mt-4 text-sm">
+          <span class="text-boudoir-pink">{steps[2].highlight}</span>{" "}
+          <span class="text-white/85">{steps[2].rest}</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery strip 2 -->
+  <section class="grid grid-cols-2 sm:grid-cols-4">
+    {gallerySection2.map((img) => (
+      <img
+        src={img.src}
+        alt={img.alt}
+        loading="lazy"
+        class="aspect-[4/3] w-full object-cover"
+      />
+    ))}
+  </section>
+
+  <!-- Pricing teaser -->
+  <section class="bg-boudoir-ink py-20 text-boudoir-white">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="max-w-2xl text-center md:mx-auto">
+        <h2 class="text-3xl">Invest in yourself</h2>
+        <p class="mt-3 text-white/70">This is more than a photoshoot &mdash; this is a celebration of you.</p>
+      </div>
+
+      <div class="mt-14 grid gap-10 text-center md:grid-cols-3">
+        {packages.map((pkg) => (
+          <div>
+            <h3 class="text-lg uppercase tracking-wide">{pkg.name}</h3>
+            <p class="mt-2 text-3xl">{pkg.price}</p>
+            <p class="mt-3 text-sm text-white/60">{pkg.details}</p>
+            <p class="mt-4 text-sm text-white/80">{pkg.blurb}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-14 text-center">
+        <a
+          href="/pricing"
+          class="inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink"
+        >
+          View pricing
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="py-20">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <h2 class="text-3xl">You are bold. Beautiful. Unforgettable.</h2>
+      <blockquote class="mt-8 italic text-boudoir-muted">
+        &ldquo;For those of you who don't know Belinda, she is not just an
+        incredible and talented photographer &mdash; she is one of the
+        kindest people I know. What you can expect is to be guided in a very
+        relaxed environment to get images that are beyond what you thought
+        was possible. I cannot recommend her enough.&rdquo;
+      </blockquote>
+      <p class="mt-4 text-sm font-semibold uppercase tracking-wide text-boudoir-pink">Kendal</p>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section class="bg-boudoir-cream py-20 text-center">
+    <div class="mx-auto max-w-3xl px-6">
+      <h2 class="text-3xl">Ready to fall in love with yourself?</h2>
+      <p class="mt-4 text-boudoir-muted">
+        If you would like a free, no-obligation consultation, I'd love to hear
+        from you.
+      </p>
+      <a
+        href="/contact-boudoir-photography-auckland"
+        class="mt-8 inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink"
+      >
+        Contact me today
+      </a>
+      <p class="mt-6 text-sm text-boudoir-muted">
+        And while you're at it, feel free to join the ladies-only private
+        boudoir Facebook group, where you'll see other boudoir photos and
+        join a group of like-minded ladies.
+      </p>
+    </div>
+  </section>
+</Base>

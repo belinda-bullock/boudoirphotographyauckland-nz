@@ -1,0 +1,67 @@
+---
+const links = [
+  { href: "/", label: "Boudoir" },
+  { href: "/boudoir-photoshoot-gallery-auckland", label: "Boudoir Gallery" },
+  { href: "/maternity-photography", label: "Maternity Photography" },
+  { href: "/about-belinda-dunne", label: "About" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/contact-boudoir-photography-auckland", label: "Contact" },
+];
+const currentPath = Astro.url.pathname;
+---
+
+<header class="bg-boudoir-white">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+    <a href="/" class="flex items-center gap-2">
+      <img
+        src="/images/boudoir-logo.png"
+        alt="Boudoir Photography Auckland"
+        class="h-10 w-auto"
+        width="469"
+        height="164"
+      />
+    </a>
+
+    <nav class="hidden items-center gap-6 md:flex">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class:list={[
+            "text-sm text-boudoir-ink hover:text-boudoir-pink",
+            currentPath === link.href ? "underline underline-offset-4" : "",
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <button
+      id="menu-toggle"
+      class="text-2xl leading-none md:hidden"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      +
+    </button>
+  </div>
+
+  <nav id="mobile-menu" class="hidden flex-col gap-1 border-t border-boudoir-cream bg-boudoir-white px-6 py-4 md:hidden">
+    {links.map((link) => (
+      <a href={link.href} class="py-2 text-sm text-boudoir-ink hover:text-boudoir-pink">
+        {link.label}
+      </a>
+    ))}
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  toggle?.addEventListener("click", () => {
+    const isOpen = menu?.classList.toggle("hidden") === false;
+    toggle.setAttribute("aria-expanded", String(isOpen));
+    menu?.classList.toggle("flex", isOpen);
+  });
+</script>

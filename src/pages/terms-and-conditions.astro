@@ -1,0 +1,75 @@
+---
+import Base from "../layouts/Base.astro";
+
+const sections = [
+  {
+    title: "Holding Your Spot",
+    body: "To lock in your session, I ask for a non-refundable retainer. This secures your date and means I am comfortable turning away other bookings to keep that time, just for you.",
+  },
+  {
+    title: "Need to Cancel?",
+    body: "Life happens, I totally get that. But please understand that cancellations within 30 days of your session can't be refunded. That time's been set aside for you, and it's tricky to rebook at short notice.",
+  },
+  {
+    title: "Rescheduling",
+    body: "You're welcome to reschedule once at no extra cost if you give at least ten days' notice. I just ask that we find a new date within 60 days of your original booking. If you need to make changes after that, a new retainer will be needed to confirm your spot. If something unavoidable comes up on my end (like illness), I'll reschedule you at no charge, of course.",
+  },
+  {
+    title: "Running Late",
+    body: "If you're running behind, your shoot time may have to be shorter. If you're more than 30 minutes late, I'll need to treat it as a cancellation and retain your session fee. That's never ideal, so please do allow time for traffic.",
+  },
+  {
+    title: "No-Shows",
+    body: "If you miss your session without getting in touch, the fee is non-refundable and I'm unable to reschedule.",
+  },
+  {
+    title: "Not Loving It? Let Me Know",
+    body: "If something doesn't feel right during the shoot, please speak up. I want you to feel great, and I can often tweak things on the spot. If I don't know, I can't fix it. Because photography is an art form, refunds can't be given for changes of heart or style preferences after the session.",
+  },
+  {
+    title: "Drugs, Alcohol & Recording",
+    body: "I reserve the right to cancel the session if someone arrives under the influence of drugs or alcohol, for safety and professionalism. I also ask that no recording devices be used during your session, so we can keep the space focused and relaxed.",
+  },
+  {
+    title: "Payments",
+    body: "Full payment is required before your shoot goes ahead. No images will be delivered until everything is squared up. If a payment fails, I may need to cancel the session or pause delivery of your images until it's resolved.",
+  },
+  {
+    title: "Your Privacy",
+    body: "I take your privacy seriously. I won't share your session details or images with anyone unless you've agreed. For most clients I will delete my copies as soon as I have delivered them to you, so please back up your beautiful photos. If you misplace them I won't be able to re-send. See the Privacy Policy for more detail on how your information is handled.",
+  },
+  {
+    title: "Liability",
+    body: "In the very unlikely event something goes wrong, my liability is limited to the amount you've paid for the session. That said, I do everything I can to make sure you walk away with images you love and an experience you enjoyed.",
+  },
+];
+---
+
+<Base
+  title="Terms and Conditions | Boudoir Photography Auckland"
+  description="Terms and conditions for booking a boudoir photography session with Belinda Dunne in Auckland."
+>
+  <section class="bg-boudoir-ink py-20 text-boudoir-white">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <h1 class="text-4xl md:text-5xl">Terms and conditions</h1>
+      <p class="mt-5 text-white/80">Working together, what to know before your session</p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-6 py-16">
+    <p class="text-boudoir-muted">
+      This section helps us both stay on the same page. It's not here to get
+      all formal, but to make sure everything runs smoothly and you feel
+      looked after from the moment you book.
+    </p>
+
+    <div class="mt-10 space-y-8">
+      {sections.map((s) => (
+        <div>
+          <h2 class="text-xl text-boudoir-pink">{s.title}</h2>
+          <p class="mt-2 text-boudoir-muted">{s.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>

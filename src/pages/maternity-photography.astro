@@ -36,7 +36,8 @@ const maternityImages = [
     <img
       src="/images/maternity/hero.jpg"
       alt=""
-      class="h-[380px] w-full object-cover sm:h-[420px]"
+      style="object-position: 20% 30%;"
+      class="h-[380px] w-full object-cover opacity-50 sm:h-[420px]"
     />
     <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center">
       <h1 class="text-4xl text-boudoir-ink md:text-5xl">Maternity Photography</h1>
@@ -47,10 +48,10 @@ const maternityImages = [
   <!-- Intro: black band, centered text -->
   <section class="bg-boudoir-ink py-20 text-center text-boudoir-white">
     <div class="mx-auto max-w-2xl px-6">
-      <p class="text-white/90">
-        Welcome to a space that celebrates your pregnancy and the incredible
-        journey you are on.
-      </p>
+      <h2 class="text-3xl">
+        Welcome to a space that{" "}
+        <span class="text-boudoir-pink">celebrates your pregnancy and the incredible journey you are on.</span>
+      </h2>
       <p class="mt-4 text-white/90">
         Pregnancy is a magical time. Your body is doing something incredible
         and this is a moment worth capturing so you can remember it forever.
@@ -69,7 +70,7 @@ const maternityImages = [
   </section>
 
   <!-- Gallery grid -->
-  <section class="mx-auto max-w-6xl px-6 pb-20">
+  <section class="mx-auto max-w-6xl px-6 pt-16">
     <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
       {maternityImages.map((img) => (
         <img

@@ -6,29 +6,35 @@ import Base from "../layouts/Base.astro";
   title="About Belinda Dunne | Auckland Boudoir Photographer"
   description="Meet Belinda Dunne, an Auckland boudoir photographer with a master's in photography focused on posing and lighting, helping women see themselves in a new light."
 >
-  <section class="bg-boudoir-ink py-20 text-boudoir-white">
-    <div class="mx-auto max-w-3xl px-6 text-center">
-      <h1 class="text-4xl md:text-5xl">Meet your Auckland boudoir photographer</h1>
+  <!-- Hero: full-bleed photo with heading + CTA -->
+  <section class="relative">
+    <img
+      src="/images/about/hero.jpg"
+      alt=""
+      style="object-position: 45.082% 0%;"
+      class="h-[420px] w-full object-cover sm:h-[480px]"
+    />
+    <div class="absolute inset-0 flex flex-col items-center justify-center gap-8 px-6 text-center">
+      <h1 class="text-4xl text-boudoir-pink md:text-5xl">Meet your Auckland boudoir photographer</h1>
       <a
         href="/contact-boudoir-photography-auckland"
-        class="mt-8 inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink"
+        class="inline-block border-2 border-boudoir-pink bg-boudoir-white px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink"
       >
         Contact me today
       </a>
     </div>
   </section>
 
+  <!-- Intro: portrait + bio -->
   <section class="mx-auto max-w-6xl px-6 py-20">
     <div class="grid gap-10 md:grid-cols-2 md:items-center">
-      <div>
-        <img
-          src="/images/about/belinda-portrait.jpg"
-          alt="Belinda Dunne, Auckland boudoir photographer"
-          class="h-full w-full object-cover"
-          width="1600"
-          height="1600"
-        />
-      </div>
+      <img
+        src="/images/about/belinda-portrait.jpg"
+        alt="Belinda Dunne, Auckland boudoir photographer, looking out the window"
+        class="h-full w-full object-cover"
+        width="1600"
+        height="1600"
+      />
 
       <div>
         <p class="text-xl italic text-boudoir-pink">
@@ -36,54 +42,49 @@ import Base from "../layouts/Base.astro";
         </p>
 
         <p class="mt-6 text-boudoir-muted">
-          I'm a female boudoir photographer based in Auckland, and I only take
-          on one session a day so I'm never watching the clock. My master's
-          in photography focused specifically on posing and lighting, the
-          two things that make or break how a boudoir photo turns out.
-        </p>
-
-        <p class="mt-4 text-boudoir-muted">
           I've always been passionate about empowering women to feel
           beautiful and confident in their own skin. My journey started in
           the events industry, where I worked to improve the representation
-          of female athletes in the media. But I wanted to do more &mdash; I
-          wanted to help everyday women see themselves in a new light. That's
-          why I turned my much-loved hobby into a career and became a
+          of female athletes in the media. But I wanted to do more&mdash;I
+          wanted to help every-day women see themselves in a new light.
+        </p>
+
+        <p class="mt-4 text-boudoir-muted">
+          That's why I turned my much loved-hobby into a career and became a
           boudoir photographer.
-        </p>
-
-        <p class="mt-4 text-boudoir-muted">
-          I hear all the time: &ldquo;I never look good in photos.&rdquo; But
-          here's the truth &mdash; it's not you. It's bad lighting, bad
-          angles, and the ideas we've been fed about beauty for years. I've
-          spent years mastering how to light and pose every body type to
-          bring out what makes you magnetic. Every curve, every expression,
-          every little moment &mdash; we'll capture it all. This isn't just
-          photography. It's transformation.
-        </p>
-
-        <p class="mt-4 text-boudoir-muted">
-          When you see your final images, you won't just see beauty. You'll
-          see strength, sensuality, softness, fire &mdash; everything that
-          makes you you.
         </p>
       </div>
     </div>
   </section>
 
-  <section class="bg-boudoir-cream py-16">
-    <div class="mx-auto max-w-3xl px-6 text-center">
-      <h2 class="text-3xl">Ready to fall in love with yourself?</h2>
-      <p class="mt-4 text-boudoir-muted">
-        If you would like a free, no-obligation consultation, I'd love you to
-        get in touch.
+  <!-- Full-bleed photo with the rest of her story -->
+  <section class="relative">
+    <img
+      src="/images/home/tiled-floor-face-down.jpg"
+      alt=""
+      class="absolute inset-0 h-full w-full object-cover"
+    />
+    <div class="relative mx-auto max-w-2xl px-6 py-24 text-center text-boudoir-white">
+      <p>I hear all the time:</p>
+      <p class="mt-4">
+        &ldquo;I never look good in photos.&rdquo; But here's the truth: it's
+        not you.
+        <br />
+        It's bad lighting, bad angles, and the bullshit we've been fed about
+        beauty for years.
       </p>
-      <a
-        href="/contact-boudoir-photography-auckland"
-        class="mt-8 inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink"
-      >
-        Contact me today
-      </a>
+      <p class="mt-4">
+        I've spent years mastering how to light and pose every body type to
+        bring out what makes you magnetic. Every curve, every expression,
+        every little moment&mdash;we'll capture it all. This isn't just
+        photography. It's transformation.
+      </p>
+      <p class="mt-4">
+        When you see your final images, you won't just see beauty.
+        <br />
+        You'll see strength, sensuality, softness, fire&mdash;everything that
+        makes you you.
+      </p>
     </div>
   </section>
 </Base>

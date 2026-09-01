@@ -45,26 +45,28 @@ const maternityImages = [
     </div>
   </section>
 
-  <!-- Intro: plain centered text -->
-  <section class="mx-auto max-w-2xl px-6 py-20 text-center">
-    <p class="text-boudoir-muted">
-      Welcome to a space that celebrates your pregnancy and the incredible
-      journey you are on.
-    </p>
-    <p class="mt-4 text-boudoir-muted">
-      Pregnancy is a magical time. Your body is doing something incredible
-      and this is a moment worth capturing so you can remember it forever.
-      I'll guide you through the shoot so you feel comfortable and
-      confident. By the end, you'll have images that make you smile, laugh
-      and maybe even shed a happy tear. Your journey will be beautifully
-      documented.
-    </p>
-    <a
-      href="/contact-boudoir-photography-auckland"
-      class="mt-8 inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink"
-    >
-      Contact me today
-    </a>
+  <!-- Intro: black band, centered text -->
+  <section class="bg-boudoir-ink py-20 text-center text-boudoir-white">
+    <div class="mx-auto max-w-2xl px-6">
+      <p class="text-white/90">
+        Welcome to a space that celebrates your pregnancy and the incredible
+        journey you are on.
+      </p>
+      <p class="mt-4 text-white/90">
+        Pregnancy is a magical time. Your body is doing something incredible
+        and this is a moment worth capturing so you can remember it forever.
+        I'll guide you through the shoot so you feel comfortable and
+        confident. By the end, you'll have images that make you smile, laugh
+        and maybe even shed a happy tear. Your journey will be beautifully
+        documented.
+      </p>
+      <a
+        href="/contact-boudoir-photography-auckland"
+        class="mt-8 inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink"
+      >
+        Contact me today
+      </a>
+    </div>
   </section>
 
   <!-- Gallery grid -->
@@ -92,12 +94,15 @@ const maternityImages = [
     </div>
 
     <div class="mx-auto mt-12 grid max-w-6xl grid-cols-1 sm:grid-cols-3">
-      <img
-        src="/images/maternity/photos-1.jpg"
-        alt="Maternity photography session"
-        class="h-[280px] w-full object-cover sm:h-[340px]"
-      />
-      <div class="flex flex-col items-center justify-center px-8 py-10 text-center">
+      <div class="relative">
+        <img
+          src="/images/maternity/photos-1.jpg"
+          alt="Maternity photography session"
+          class="h-[280px] w-full object-cover sm:h-[340px]"
+        />
+        <div class="absolute inset-0 bg-black/50"></div>
+      </div>
+      <div class="flex flex-col items-center justify-center bg-[#201520] px-8 py-10 text-center">
         <p class="text-boudoir-pink">
           <span class="font-semibold">{steps[0].number}</span>
           <br />
@@ -105,13 +110,16 @@ const maternityImages = [
         </p>
         <p class="mt-4 text-sm text-white/85">{steps[0].body}</p>
       </div>
-      <img
-        src="/images/maternity/photos-2.jpg"
-        alt="Maternity photography session"
-        class="h-[280px] w-full object-cover sm:h-[340px]"
-      />
+      <div class="relative">
+        <img
+          src="/images/maternity/photos-2.jpg"
+          alt="Maternity photography session"
+          class="h-[280px] w-full object-cover sm:h-[340px]"
+        />
+        <div class="absolute inset-0 bg-black/50"></div>
+      </div>
 
-      <div class="flex flex-col items-center justify-center px-8 py-10 text-center">
+      <div class="flex flex-col items-center justify-center bg-[#201520] px-8 py-10 text-center">
         <p class="text-boudoir-pink">
           <span class="font-semibold">{steps[1].number}</span>
           <br />
@@ -119,12 +127,15 @@ const maternityImages = [
         </p>
         <p class="mt-4 text-sm text-white/85">{steps[1].body}</p>
       </div>
-      <img
-        src="/images/maternity/studio.jpg"
-        alt="Maternity shoot photographed in studio"
-        class="h-[280px] w-full object-cover sm:h-[380px]"
-      />
-      <div class="flex flex-col items-center justify-center px-8 py-10 text-center">
+      <div class="relative">
+        <img
+          src="/images/maternity/studio.jpg"
+          alt="Maternity shoot photographed in studio"
+          class="h-[280px] w-full object-cover sm:h-[380px]"
+        />
+        <div class="absolute inset-0 bg-black/50"></div>
+      </div>
+      <div class="flex flex-col items-center justify-center bg-[#201520] px-8 py-10 text-center">
         <p class="text-boudoir-pink">
           <span class="font-semibold">{steps[2].number}</span>
           <br />

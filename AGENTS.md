@@ -51,9 +51,14 @@ Organised under `public/images/{home,about,gallery,maternity}/`. Downloaded via 
 requested extension, so everything was converted to real JPEG and capped at 1600px). Do not pull
 from ~/Desktop/boudoir/ or ~/Desktop/Boudoir maybes/ — those are unrelated to this site.
 
+## Contact form
+Both contact forms (standalone contact page + homepage embedded section) post to Web3Forms,
+reusing the same access key already live on belindabullockphotography.co.nz (routes to
+belinda.r.bullock@gmail.com — same inbox as her other sites, confirmed intentional 2026-09-01).
+Each submission is labelled via hidden `subject`/`from_name` fields ("...from Boudoir Photography
+Auckland website") so she can tell which site an enquiry came from at a glance.
+
 ## TODO before / after go-live
-- Contact form (src/pages/contact-boudoir-photography-auckland.astro) posts to a Formspree
-  PLACEHOLDER (`https://formspree.io/f/REPLACE_ME`). Replace with a real endpoint before launch.
 - Terms & conditions and privacy policy are legal pages — have Belinda (or a lawyer) confirm
   wording before go-live, per the build guide's advice.
 - Go live: create GitHub repo → push → connect repo in Cloudflare Pages (build `npm run build`,

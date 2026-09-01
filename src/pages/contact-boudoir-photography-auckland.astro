@@ -1,9 +1,8 @@
 ---
 import Base from "../layouts/Base.astro";
 
-// TODO before go-live: replace FORM_ACTION with a real Formspree / Web3Forms
-// endpoint so enquiries actually arrive somewhere. Currently a placeholder.
-const FORM_ACTION = "https://formspree.io/f/REPLACE_ME";
+const FORM_ACTION = "https://api.web3forms.com/submit";
+const WEB3FORMS_KEY = "c6215774-c0dd-494f-81b9-52a69ad3b015";
 ---
 
 <Base
@@ -21,6 +20,10 @@ const FORM_ACTION = "https://formspree.io/f/REPLACE_ME";
         </p>
       </div>
       <form action={FORM_ACTION} method="POST" class="space-y-4">
+        <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
+        <input type="hidden" name="subject" value="New inquiry from Boudoir Photography Auckland website" />
+        <input type="hidden" name="from_name" value="Boudoir Photography Auckland Contact Form" />
+        <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
         <div>
           <p class="text-sm">Name</p>
           <div class="mt-1 grid grid-cols-2 gap-2">

@@ -13,7 +13,7 @@ const links = [
 ---
 
 <footer class="bg-boudoir-white text-boudoir-ink">
-  <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-8 px-6 py-14 md:flex-row md:items-start">
+  <div class="mx-auto grid max-w-7xl grid-cols-1 items-start gap-8 px-6 py-14 text-center md:grid-cols-3 md:text-left">
     <div class="flex flex-col items-center gap-4 md:items-start">
       <div class="flex gap-2">
         <a
@@ -40,9 +40,9 @@ const links = [
       </p>
     </div>
 
-    <img src="/images/boudoir-logo.png" alt="Boudoir Photography Auckland" class="h-14 w-auto" />
+    <img src="/images/boudoir-logo.png" alt="Boudoir Photography Auckland" class="mx-auto h-14 w-auto justify-self-center" />
 
-    <nav class="flex flex-col items-center gap-2 text-sm md:items-end">
+    <nav class="flex flex-col items-center gap-2 text-sm md:items-end md:justify-self-end">
       {links.map((link) => (
         <a href={link.href} class="text-boudoir-pink underline hover:opacity-80">
           {link.label}

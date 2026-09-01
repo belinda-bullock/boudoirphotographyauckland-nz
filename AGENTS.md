@@ -53,10 +53,11 @@ from ~/Desktop/boudoir/ or ~/Desktop/Boudoir maybes/ — those are unrelated to 
 
 ## Contact form
 Both contact forms (standalone contact page + homepage embedded section) post to Web3Forms,
-reusing the same access key already live on belindabullockphotography.co.nz (routes to
-belinda.r.bullock@gmail.com — same inbox as her other sites, confirmed intentional 2026-09-01).
-Each submission is labelled via hidden `subject`/`from_name` fields ("...from Boudoir Photography
-Auckland website") so she can tell which site an enquiry came from at a glance.
+using this site's own dedicated form ("Boudoir Photography Auckland Contact Form", access key
+ff781121-c927-40fe-89a9-f7798a2a0838), one of three separate forms under Belinda's single
+Web3Forms account (belinda.r.bullock@gmail.com) alongside BBP and Digital Twin Imaging — each
+site has its own form so submissions are kept apart in the dashboard, all routing to the same
+inbox. Set up 2026-09-02.
 
 ## TODO before / after go-live
 - Terms & conditions and privacy policy are legal pages — have Belinda (or a lawyer) confirm

@@ -330,7 +330,8 @@ const gallerySection2 = [
         </p>
       </div>
       <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
-        <input type="hidden" name="access_key" value="c6215774-c0dd-494f-81b9-52a69ad3b015" />
+        <input type="hidden" name="access_key" value="ff781121-c927-40fe-89a9-f7798a2a0838" />
+        <input type="hidden" name="redirect" value="https://www.boudoirphotographyauckland.co.nz/contact-thanks" />
         <input type="hidden" name="subject" value="New inquiry from Boudoir Photography Auckland website" />
         <input type="hidden" name="from_name" value="Boudoir Photography Auckland Contact Form" />
         <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
@@ -343,19 +344,23 @@ const gallerySection2 = [
         </div>
         <div>
           <p class="text-sm">Phone number (required)</p>
-          <input required type="tel" name="phone" class="mt-1 w-full bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink" />
+          <input required type="tel" name="phone" pattern="(.*[0-9]){7,}.*" title="Please enter a phone number with at least 7 digits" class="mt-1 w-full bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink" />
+        </div>
+        <div>
+          <p class="text-sm">What date would you like for your shoot?</p>
+          <input type="text" name="shoot_date" placeholder="e.g. a date, month, or 'flexible'" class="mt-1 w-full bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink" />
         </div>
         <div>
           <p class="text-sm">Email (required)</p>
           <input required type="email" name="email" class="mt-1 w-full bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink" />
         </div>
         <div>
-          <p class="text-sm">How did you hear about me?</p>
+          <p class="text-sm">How did you hear about us?</p>
           <textarea name="heardFrom" rows="2" class="mt-1 w-full bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink"></textarea>
         </div>
         <div>
-          <p class="text-sm">Message</p>
-          <textarea name="message" rows="3" class="mt-1 w-full bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink"></textarea>
+          <p class="text-sm">Tell us more about the kind of shoot you'd like</p>
+          <textarea name="message" rows="3" placeholder="The more you share, the better we can help create your dream shoot." class="mt-1 w-full bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink"></textarea>
         </div>
         <button type="submit" class="border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink">
           Send

@@ -19,8 +19,10 @@
 html {
   /* Scale all rem-based text AND spacing up together site-wide, keeping every
      existing proportion/ratio intact — Belinda found individual text/section
-     size felt too small overall once seen live. */
-  font-size: 115%;
+     size felt too small overall once seen live. 115% wasn't enough, going
+     further (confirmed via Safari, which was showing the true current site
+     throughout — Chrome had been serving a stale cached version). */
+  font-size: 135%;
 }
 
 body {

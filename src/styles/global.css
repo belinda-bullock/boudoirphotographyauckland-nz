@@ -19,10 +19,13 @@
 html {
   /* Scale all rem-based text AND spacing up together site-wide, keeping every
      existing proportion/ratio intact — Belinda found individual text/section
-     size felt too small overall once seen live. 115% wasn't enough, going
-     further (confirmed via Safari, which was showing the true current site
-     throughout — Chrome had been serving a stale cached version). */
-  font-size: 135%;
+     size felt too small overall once seen live.
+     Fixed pixel value, not a percentage: a percentage here is relative to
+     each browser's own configurable "default font size," which can differ
+     between Safari and Chrome on the same machine and produced a genuine,
+     persistent rendering difference between them. An absolute px value
+     means the same thing in every browser regardless of that setting. */
+  font-size: 21.6px;
 }
 
 body {

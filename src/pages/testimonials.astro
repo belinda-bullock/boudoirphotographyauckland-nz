@@ -1,0 +1,95 @@
+---
+import Base from "../layouts/Base.astro";
+
+// Real reviews only. Two were already on the site; the rest come from Belinda's
+// verified Google Business Profile (5.0 from 11 reviews). Do not write, pad or
+// paraphrase entries here — if a quote is not something a client actually
+// wrote, it does not belong on this page.
+//
+// `source` marks where it came from so the page can say so honestly.
+// `name` is whatever Belinda has agreed to show. Boudoir clients often do not
+// want to be identifiable, so a first name or an initial is fine; never add a
+// surname that Belinda has not explicitly approved.
+const testimonials = [
+  {
+    quote:
+      "For those of you who don't know Belinda, she is not just an incredible and talented photographer she is one of the kindest people I know. What you can expect is to be guided in a very relaxed environment to get images that are beyond what you thought was possible. I can not recommend her enough.",
+    name: "Kendal",
+    source: "site",
+  },
+  {
+    quote:
+      "I have done several shoots of various styles now with Belinda and she is AMAZING to work with. We recently did our first boudoir shoot and I loved every moment of it! Belinda immediately put me at ease so that I was relaxed and had fun. She gave great direction but was also completely open to any ideas I had and tailored my shoot to what I was looking for as my end result, my personal style and body type, but also to what my idea of boudoir is. I cannot recommend boudoir photography enough and am absolutely thrilled with my photos.",
+    name: "Carolyn",
+    source: "site",
+  },
+  {
+    quote:
+      "Belinda made the whole experience so easy and comfortable. I never once felt awkward or embarrassed, and the pictures turned out beautifully. Great confidence booster!",
+    name: "Ruby",
+    source: "google",
+  },
+];
+
+const googleReviewsUrl = "https://www.google.com/search?q=Boudoir+Photography+Auckland";
+---
+
+<Base
+  title="What Women Say | Boudoir Photography Auckland Reviews"
+  description="Real words from real clients about their boudoir photography session in Auckland with Belinda Dunne. Rated 5.0 out of 5 on Google."
+>
+  <section class="bg-boudoir-ink py-20 text-boudoir-white">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <h1 class="text-4xl md:text-5xl">What women say</h1>
+      <p class="mt-6 text-white/85">
+        Most women arrive nervous. Almost nobody leaves that way. These are
+        their words, not mine.
+      </p>
+      <p class="mt-8 text-boudoir-pink">
+        Rated 5.0 out of 5 from 11 reviews on Google
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-6 py-20">
+    <div class="space-y-14">
+      {testimonials.map((t) => (
+        <figure class="border-l-2 border-boudoir-pink pl-6">
+          <blockquote class="text-boudoir-muted">{t.quote}</blockquote>
+          <figcaption class="mt-4 text-sm text-boudoir-ink">
+            {t.name}
+            {t.source === "google" && (
+              <span class="text-boudoir-muted"> &middot; Google review</span>
+            )}
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+
+    <p class="mt-16 text-center text-sm text-boudoir-muted">
+      Every review here was written by a real client.
+      <a href={googleReviewsUrl} class="text-boudoir-pink underline">
+        Read them on Google
+      </a>
+      if you would rather see them somewhere I do not control.
+    </p>
+  </section>
+
+  <section class="bg-boudoir-cream py-20">
+    <div class="mx-auto max-w-2xl px-6 text-center">
+      <h2 class="text-3xl text-boudoir-ink">Not many women write these</h2>
+      <p class="mt-6 text-boudoir-muted">
+        Plenty of clients love their photos and still would rather not say so
+        in public, and that is completely fair. Your session is yours. Nothing
+        is ever shared without your permission, and I will never ask you for a
+        review you do not want to give.
+      </p>
+      <a
+        href="/contact-boudoir-photography-auckland"
+        class="mt-10 inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-white"
+      >
+        Ask me a question
+      </a>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,32 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<!-- Without this page Cloudflare Pages served the homepage, with a 200 status,
+     for every address that does not exist. Google treats that as a "soft 404":
+     it sees endless duplicate copies of the homepage at made-up addresses and
+     wastes its crawl budget on them. Astro builds this to dist/404.html, which
+     Cloudflare then serves with a real 404 status. -->
+<Base
+  title="Page not found | Boudoir Photography Auckland"
+  description="That page does not exist. Find your way back to the boudoir gallery, pricing, or get in touch."
+  noindex={true}
+>
+  <section class="mx-auto max-w-2xl px-6 py-28 text-center">
+    <p class="text-sm uppercase tracking-[0.2em] text-boudoir-muted">Page not found</p>
+    <h1 class="mt-6 text-4xl text-boudoir-ink sm:text-5xl">
+      That page is not here
+    </h1>
+    <p class="mt-6 text-boudoir-muted">
+      The link may be old, or there may be a typo in the address. Nothing is
+      broken, and everything is still where it should be.
+    </p>
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+      <a href="/" class="text-boudoir-pink underline">Home</a>
+      <a href="/boudoir-photoshoot-gallery-auckland" class="text-boudoir-pink underline">Gallery</a>
+      <a href="/pricing" class="text-boudoir-pink underline">Pricing</a>
+      <a href="/faqs" class="text-boudoir-pink underline">FAQs</a>
+      <a href="/contact-boudoir-photography-auckland" class="text-boudoir-pink underline">Contact</a>
+    </div>
+  </section>
+</Base>

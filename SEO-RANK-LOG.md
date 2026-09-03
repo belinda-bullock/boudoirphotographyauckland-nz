@@ -156,3 +156,17 @@ Also tidied the FAQ page: removed a size/age question that duplicated two existi
 answers ("Do you photograph plus sized women?" — "Hell yes." and "What age of women do you work
 with?"), and moved the reassurance questions to the top of the list where a nervous reader meets
 them first. 18 questions, FAQPage schema still valid.
+
+**Gift certificates (2026-09-03).** Belinda sells them and the site said nothing about it. She says
+sessions are commonly bought by friends for a friend's milestone birthday, and by men for their wives
+as a birthday or Valentine's gift. Added to the homepage "no wrong reason" section, the FAQs, and the
+pricing page.
+
+This is a **second audience the site was not written for**: the buyer is often not the woman being
+photographed. Search terms now worth tracking: `boudoir gift voucher Auckland`, `boudoir gift
+certificate NZ`, `Valentine's gift for wife Auckland`, `40th birthday gift for her Auckland`. Valentine's
+is seasonal, so check visibility for it in January rather than mid-year.
+
+Open question for Belinda: how a gift certificate is actually bought and whether the recipient books her
+own date. The copy currently routes people to the contact form, which is certainly true, but says nothing
+about how redemption works because that has not been confirmed.

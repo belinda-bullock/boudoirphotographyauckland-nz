@@ -62,3 +62,53 @@ once their site/ads are live and visible in search results.
 competitors on the two core phrases. URL structure preserved and technical SEO upgraded going into the
 switch, so the expectation is stable-to-improved visibility post-migration. This is the baseline future
 checks compare against.
+
+---
+
+## 2026-09-03 — Competitor teardown + on-site audit
+
+Not a rank check (baseline was yesterday). This is a look at what the competitors do that this site
+doesn't, prompted by Belinda asking how to improve SEO and make clients more comfortable booking.
+
+**Who actually ranks for "boudoir photography auckland":** photoshoot.co.nz, Studio Boudoir,
+boudoirphotographyauckland.co.nz, Gilmour Studios, Natalie Pasco, Studio X, Tania Te Ata.
+Also present: Boudoir Pix (Mark Robotham, Auckland/Hamilton/Rotorua), Casey van Liefde.
+
+**Auckland Magazine "5 Best Boudoir Photography Studios in Auckland [2026]" — we are listed 2nd**,
+behind Studio Boudoir. Their stated criteria: portfolio/style, comfort and professionalism, **privacy
+policies**, packages and inclusions. Each entry carries 2-3 testimonials with ratings. No public
+nomination process documented.
+
+**Studio Boudoir (the main rival, ranks above us) puts on its HOMEPAGE:**
+- "Your privacy is always respected. Your images are never shared without permission"
+- "Your session is completely confidential and utmost discretion assured" / "You are always in control"
+- Password-protected private galleries
+- "Gentle, step-by-step posing guidance (all verbal, no touching)"
+- A named 3-step process: Consultation -> Photoshoot -> Image Selection
+- "all pricing is upfront with no hidden surprises"
+- 4 named testimonials + a link to more
+- 20+ years experience, "internationally award winning", studio address shown
+
+**Our gaps against that, measured on this site:**
+| Thing | Studio Boudoir | This site |
+|---|---|---|
+| Privacy reassurance on homepage | Yes, prominent | Only inside the FAQ page |
+| "No touching" posing statement | Yes | Absent |
+| Named testimonials | 4 on homepage + more page | 2 total (Kendal on /, Carolyn on /pricing) |
+| Review / AggregateRating schema | — | **None** — no star eligibility in Google |
+| Studio address shown | Yes | Suburb only ("Hibiscus Coast") |
+| Upfront pricing | Promised | Actual prices shown ($750/$950/$1,200) — we are ahead here |
+
+**Technical findings:**
+- Google is still serving the OLD Squarespace title for our homepage, including the nested-quote
+  glitch: `Boudoir Photography Auckland "Auckland Boudoir Photographer | Elegant & Sexy Photography"`.
+  Expected one day after cutover, but worth forcing: Search Console -> URL Inspection -> Request Indexing.
+- Page weight: homepage images 2,140 KB, gallery images 2,111 KB. **Zero WebP/AVIF on the site** —
+  everything is JPEG, largest single file 291 KB. Slow on mobile, and speed is a ranking input.
+- Schema present: ProfessionalService, FAQPage. Missing: Review/AggregateRating, ImageObject.
+- Google Business Profile: still not confirmed to exist (carried over from the baseline entry,
+  still unactioned). This is the biggest untouched local-SEO lever.
+
+**Priority order recommended to Belinda:** (1) Request reindexing, (2) Google Business Profile,
+(3) surface privacy/confidentiality on the homepage and contact page, (4) collect and mark up real
+reviews, (5) compress images to WebP, (6) FAQs into the main menu.

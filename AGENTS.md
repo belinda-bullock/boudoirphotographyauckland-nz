@@ -65,11 +65,17 @@ https://www.boudoirphotographyauckland.co.nz. A push to `main` publishes to the 
 within a minute or two. Do not push without asking Belinda first, each time.
 Check the live site with curl before claiming anything about deployment state.
 
-Still outstanding:
-- Terms & conditions and privacy policy are legal pages — have Belinda (or a lawyer) confirm
-  wording, per the build guide's advice.
+Settled 2026-09-03, do not raise these again:
+- **Squarespace is cancelled.** Renewal turned off, subscription ended. Nothing further to do.
+- **Legal pages are done.** Terms and privacy were transferred directly from the Squarespace site,
+  where they had already been checked. Belinda is not paying to have copied wording re-reviewed.
+- **No Google Ads.** She has run them, did not find them effective, and does not want them.
+  There is a paused campaign in her account; leave it paused and don't suggest reviving it.
+
+Still open:
 - Confirm Cloudflare's AI Crawl Control isn't overriding robots.txt.
-- Squarespace: check with Belinda whether it has been cancelled yet. Cancel LAST, on her say-so only.
+- Google Business Profile has had no new photo in 310 days. She has permission-cleared photos
+  ready. Adding them is public-facing, so ask before doing it.
 
 ## Image formats — check before trusting a file extension
 Files pulled from the Squarespace CDN were served as WebP no matter what extension was requested.

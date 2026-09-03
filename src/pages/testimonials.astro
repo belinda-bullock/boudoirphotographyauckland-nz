@@ -116,8 +116,28 @@ const rest = testimonials.filter((t) => !t.feature);
 // Photos used to break up the text. These are already published elsewhere on
 // this site, so no new client permission is involved. Swap in a client's own
 // photos here only where she has agreed to them being on the website.
+// Every photo here was supplied by Belinda from clients who have agreed to
+// their images being used (confirmed 2026-09-03). Beyond that consent, the
+// ones chosen for THIS page are also ones where the woman cannot be
+// recognised, because this page carries names and a recognisable face beside
+// a named review would identify that woman as a boudoir client. Recognisable
+// photos go on the gallery instead, where no names appear.
+// Letitia's own photograph, shown with her own words. Her face is not in the
+// frame, so pairing them does not identify her.
+const featurePhoto = {
+  src: "/images/testimonials/blazer-seated-bw.jpg",
+  pos: "50% 45%",
+  alt: "Black and white boudoir photograph of a woman seated in an open blazer",
+};
+
+const photoStrip = [
+  { src: "/images/testimonials/window-light-kneeling.jpg", pos: "50% 50%", alt: "Boudoir photograph of a woman kneeling in window light" },
+  { src: "/images/testimonials/black-lingerie-garter-side.jpg", pos: "50% 45%", alt: "Boudoir photograph in black lingerie and a garter belt" },
+  { src: "/images/testimonials/low-key-standing-profile.jpg", pos: "55% 50%", alt: "Low key boudoir photograph of a woman standing in profile" },
+];
+
 const photoBreak = [
-  { src: "/images/gallery/studio-bw.jpg", pos: "50% 20%", alt: "Black and white studio boudoir portrait" },
+  { src: "/images/testimonials/back-arms-raised-bw.jpg", pos: "50% 40%", alt: "Black and white boudoir photograph from behind with arms raised" },
   { src: "/images/gallery/curvy-soft-light.jpg", pos: "50% 25%", alt: "Curvy boudoir portrait in soft natural light" },
   { src: "/images/gallery/silhouette-dramatic.jpg", pos: "50% 30%", alt: "Dramatic boudoir silhouette" },
 ];
@@ -161,17 +181,33 @@ const googleReviewsUrl = "https://www.google.com/search?q=Boudoir+Photography+Au
     </div>
   </section>
 
-  {/* First feature quote, set large */}
+  <!-- Photos up front, before any wall of text -->
+  <section class="grid grid-cols-3">
+    {photoStrip.map((img) => (
+      <img src={img.src} alt={img.alt} loading="lazy" class="aspect-[3/4] w-full object-cover" style={`object-position: ${img.pos}`} />
+    ))}
+  </section>
+
+  {/* First feature quote, beside the photograph of the woman who wrote it */}
   {features[0] && (
     <section class="bg-boudoir-cream py-20">
-      <div class="mx-auto max-w-3xl px-6 text-center">
-        <p class="font-semibold leading-none text-boudoir-pink" style="font-size:5rem">&ldquo;</p>
-        <blockquote class="-mt-6 space-y-5 text-2xl leading-relaxed text-boudoir-ink sm:text-3xl">
-          {features[0].quote.map((para) => <p>{para}</p>)}
-        </blockquote>
-        <p class="mt-8 text-sm uppercase tracking-[0.2em] text-boudoir-muted">
-          {features[0].name} &middot; Google review
-        </p>
+      <div class="mx-auto grid max-w-5xl items-center gap-12 px-6 md:grid-cols-2">
+        <img
+          src={featurePhoto.src}
+          alt={featurePhoto.alt}
+          loading="lazy"
+          class="aspect-[3/4] w-full object-cover"
+          style={`object-position: ${featurePhoto.pos}`}
+        />
+        <div>
+          <p class="font-semibold leading-none text-boudoir-pink" style="font-size:4rem">&ldquo;</p>
+          <blockquote class="-mt-4 space-y-5 text-2xl leading-relaxed text-boudoir-ink">
+            {features[0].quote.map((para) => <p>{para}</p>)}
+          </blockquote>
+          <p class="mt-8 text-sm uppercase tracking-[0.2em] text-boudoir-muted">
+            {features[0].name} &middot; Google review
+          </p>
+        </div>
       </div>
     </section>
   )}

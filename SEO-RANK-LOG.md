@@ -167,6 +167,11 @@ photographed. Search terms now worth tracking: `boudoir gift voucher Auckland`, 
 certificate NZ`, `Valentine's gift for wife Auckland`, `40th birthday gift for her Auckland`. Valentine's
 is seasonal, so check visibility for it in January rather than mid-year.
 
-Open question for Belinda: how a gift certificate is actually bought and whether the recipient books her
-own date. The copy currently routes people to the contact form, which is certainly true, but says nothing
-about how redemption works because that has not been confirmed.
+**Answered 2026-09-03, now written up on the pricing page and in the FAQs.** The process: buyer gets in
+touch, Belinda has a conversation with them about the recipient and which package suits her, then sends a
+**digital** voucher for the buyer to hand over. The voucher states the session length and image count but
+**not the price**, so the recipient never sees what was spent. The recipient then calls Belinda herself for
+a separate conversation about outfits, what she wants, and how the day runs, to settle nerves. **Three
+month expiry, deliberately**: Belinda's reasoning is that an open-ended voucher gets deferred forever,
+usually until the woman has lost weight. Written up on the site as a gentle push rather than a
+restriction, which also reinforces the body-acceptance message running through the rest of the site.

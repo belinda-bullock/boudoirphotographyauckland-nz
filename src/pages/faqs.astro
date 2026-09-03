@@ -32,7 +32,12 @@ const faqs = [
   },
   {
     q: "Can I buy a session as a gift?",
-    a: "Yes, I do gift certificates, and it is one of the most common ways sessions get booked. Friends buy them for a friend's milestone birthday, and plenty of men buy one for their wife as a birthday or Valentine's gift. Get in touch and tell me who it is for and roughly what you would like to spend, and I will sort the rest out with you.",
+    a: [
+      "Yes, I do gift certificates, and it is one of the most common ways sessions get booked. Friends buy them for a friend's milestone birthday, and plenty of men buy one for their wife as a birthday or Valentine's gift.",
+      "You get in touch first and we have a proper conversation about who she is and what kind of shoot would suit her. I then send you a digital voucher to pass on. It tells her that somebody who loves her has given her the gift of a boudoir shoot, and it sets out how long her session is and how many images she gets. It does not show the price, so she never sees what you spent.",
+      "When she is ready she gives me a call, and that conversation is just with her. We talk through the kind of photos she wants, what to bring, and exactly how the day will run, because knowing what happens is what settles the nerves.",
+      "She has three months to use it, and that is on purpose. Left open ended, a lot of women put it off, usually waiting until they have lost weight or until some better version of themselves turns up. She does not need to be any different to do this. Three months is a gentle push to actually take the time for herself.",
+    ],
   },
   {
     q: "Do you do bridal boudoir?",
@@ -88,7 +93,7 @@ const jsonLd = {
     name: f.q,
     acceptedAnswer: {
       "@type": "Answer",
-      text: f.a,
+      text: Array.isArray(f.a) ? f.a.join(" ") : f.a,
     },
   })),
 };
@@ -112,7 +117,9 @@ const jsonLd = {
             <span>{faq.q}</span>
             <span class="shrink-0 text-xl text-boudoir-pink transition-transform group-open:rotate-45">+</span>
           </summary>
-          <p class="mt-4 text-sm leading-relaxed text-boudoir-muted">{faq.a}</p>
+          <div class="mt-4 space-y-3 text-sm leading-relaxed text-boudoir-muted">
+            {(Array.isArray(faq.a) ? faq.a : [faq.a]).map((para) => <p>{para}</p>)}
+          </div>
         </details>
       ))}
     </div>

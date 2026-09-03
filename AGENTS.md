@@ -59,14 +59,25 @@ Web3Forms account (belinda.r.bullock@gmail.com) alongside BBP and Digital Twin I
 site has its own form so submissions are kept apart in the dashboard, all routing to the same
 inbox. Set up 2026-09-02.
 
-## TODO before / after go-live
+## Deployment — THE SITE IS LIVE (verified 2026-09-03)
+GitHub `belinda-bullock/boudoirphotographyauckland-nz` → Cloudflare Pages →
+https://www.boudoirphotographyauckland.co.nz. A push to `main` publishes to the real site
+within a minute or two. Do not push without asking Belinda first, each time.
+Check the live site with curl before claiming anything about deployment state.
+
+Still outstanding:
 - Terms & conditions and privacy policy are legal pages — have Belinda (or a lawyer) confirm
-  wording before go-live, per the build guide's advice.
-- Go live: create GitHub repo → push → connect repo in Cloudflare Pages (build `npm run build`,
-  output `dist`) → point boudoirphotographyauckland.co.nz DNS at Pages → confirm live → check
-  Cloudflare's AI Crawl Control isn't overriding robots.txt → cancel Squarespace LAST.
-  **All of these are explicit-confirmation steps — do not push to GitHub, touch DNS, or cancel
-  Squarespace without checking with Belinda first, each time.**
+  wording, per the build guide's advice.
+- Confirm Cloudflare's AI Crawl Control isn't overriding robots.txt.
+- Squarespace: check with Belinda whether it has been cancelled yet. Cancel LAST, on her say-so only.
+
+## Image formats — check before trusting a file extension
+Files pulled from the Squarespace CDN were served as WebP no matter what extension was requested.
+`public/images/boudoir-logo.png` was a WebP named `.png` and went live that way: Chrome sniffed the
+bytes and rendered it, Safari trusted the name (Cloudflare also sends `nosniff`) and showed nothing,
+so the logo was invisible in the nav and footer of every page for every Safari/iOS visitor.
+Fixed 2026-09-03 with `sips -s format png`. Verify with `file -b` after adding any image; never
+assume the extension is honest.
 
 ## Development
 

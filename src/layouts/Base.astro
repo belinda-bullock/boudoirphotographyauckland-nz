@@ -10,7 +10,7 @@ interface Props {
   noindex?: boolean;
 }
 
-const { title, description, image = "/images/auckland-boudoir-photography-natural-light.jpg", noindex = false } = Astro.props;
+const { title, description, image = "/images/about/belinda-portrait.jpg", noindex = false } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(image, Astro.site);

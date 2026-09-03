@@ -131,9 +131,10 @@ const featurePhoto = {
 };
 
 const photoStrip = [
-  { src: "/images/testimonials/back-arms-raised-bw.jpg", pos: "50% 40%", alt: "Black and white boudoir photograph from behind with arms raised" },
-  { src: "/images/testimonials/window-light-kneeling.jpg", pos: "50% 50%", alt: "Boudoir photograph of a woman kneeling in window light" },
+  { src: "/images/testimonials/curvy-black-lace-studio.jpg", pos: "50% 22%", alt: "Curvy boudoir portrait in black lace against a dark studio background" },
+  { src: "/images/testimonials/curvy-blue-shirt-window-light.jpg", pos: "50% 25%", alt: "Curvy boudoir portrait in an oversized blue shirt in natural window light" },
   { src: "/images/gallery/studio-bw.jpg", pos: "50% 12%", alt: "Black and white studio boudoir portrait" },
+  { src: "/images/testimonials/window-light-kneeling.jpg", pos: "50% 50%", alt: "Boudoir photograph of a woman kneeling in window light" },
 ];
 
 const photoBreak = [
@@ -182,7 +183,7 @@ const googleReviewsUrl = "https://www.google.com/search?q=Boudoir+Photography+Au
   </section>
 
   <!-- Photos up front, before any wall of text -->
-  <section class="grid grid-cols-3">
+  <section class="grid grid-cols-2 sm:grid-cols-4">
     {photoStrip.map((img) => (
       <img src={img.src} alt={img.alt} loading="lazy" class="aspect-[3/4] w-full object-cover" style={`object-position: ${img.pos}`} />
     ))}
@@ -233,7 +234,7 @@ const googleReviewsUrl = "https://www.google.com/search?q=Boudoir+Photography+Au
   </section>
 
   {/* A breath of photography between the blocks of text */}
-  <section class="grid grid-cols-3">
+  <section class="grid grid-cols-2 sm:grid-cols-4">
     {photoBreak.map((img) => (
       <img src={img.src} alt={img.alt} loading="lazy" class="aspect-[3/4] w-full object-cover" style={`object-position: ${img.pos}`} />
     ))}

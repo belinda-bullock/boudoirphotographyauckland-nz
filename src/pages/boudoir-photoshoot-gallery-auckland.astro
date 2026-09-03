@@ -1,19 +1,25 @@
 ---
 import Base from "../layouts/Base.astro";
 
+// `pos` is the CSS object-position for the cropped thumbnail in the grid.
+// The grid cells are 4:3 landscape. For a portrait photo the width already
+// fits, so only the second (vertical) value does anything — it is set to keep
+// the face in frame instead of slicing through it. For a landscape photo the
+// height already fits, so only the first (horizontal) value matters.
+// Measured off each photo individually on 2026-09-03, don't guess new ones.
 const images = [
-  { src: "/images/gallery/seated-natural-light.jpg", alt: "Soft boudoir portrait of a woman seated in natural light" },
-  { src: "/images/gallery/lingerie-portrait.jpg", alt: "White lingerie boudoir photograph with relaxed lying pose" },
-  { src: "/images/gallery/glamour-studio.jpg", alt: "Glamour boudoir portrait with soft studio lighting" },
-  { src: "/images/gallery/denim-jacket.jpg", alt: "Confident boudoir portrait wearing a denim jacket" },
-  { src: "/images/gallery/curvy-soft-light.jpg", alt: "Beautiful curvy boudoir image in soft lighting" },
-  { src: "/images/gallery/white-lingerie-pose.jpg", alt: "Boudoir image of a woman in white lingerie" },
-  { src: "/images/gallery/silhouette-dramatic.jpg", alt: "Artistic boudoir silhouette with dramatic lighting" },
-  { src: "/images/gallery/moody.jpg", alt: "Moody boudoir image" },
-  { src: "/images/gallery/bodyscape.jpg", alt: "Bodyscape boudoir image" },
-  { src: "/images/gallery/studio-bw.jpg", alt: "Studio boudoir shot in black and white on a black background" },
-  { src: "/images/gallery/soft-colour-eye-contact.jpg", alt: "Soft colour boudoir portrait with relaxed eye contact" },
-  { src: "/images/gallery/legs-in-bed.jpg", alt: "Boudoir image of a woman's legs lying in bed" },
+  { src: "/images/gallery/seated-natural-light.jpg", pos: "46% 50%", alt: "Soft boudoir portrait of a woman seated in natural light" },
+  { src: "/images/gallery/lingerie-portrait.jpg", pos: "52% 50%", alt: "White lingerie boudoir photograph with relaxed lying pose" },
+  { src: "/images/gallery/glamour-studio.jpg", pos: "50% 15%", alt: "Glamour boudoir portrait with soft studio lighting" },
+  { src: "/images/gallery/denim-jacket.jpg", pos: "50% 18%", alt: "Confident boudoir portrait wearing a denim jacket" },
+  { src: "/images/gallery/curvy-soft-light.jpg", pos: "50% 22%", alt: "Beautiful curvy boudoir image in soft lighting" },
+  { src: "/images/gallery/white-lingerie-pose.jpg", pos: "60% 50%", alt: "Boudoir image of a woman in white lingerie" },
+  { src: "/images/gallery/silhouette-dramatic.jpg", pos: "50% 28%", alt: "Artistic boudoir silhouette with dramatic lighting" },
+  { src: "/images/gallery/moody.jpg", pos: "50% 30%", alt: "Moody boudoir image" },
+  { src: "/images/gallery/bodyscape.jpg", pos: "50% 50%", alt: "Bodyscape boudoir image" },
+  { src: "/images/gallery/studio-bw.jpg", pos: "50% 12%", alt: "Studio boudoir shot in black and white on a black background" },
+  { src: "/images/gallery/soft-colour-eye-contact.jpg", pos: "62% 50%", alt: "Soft colour boudoir portrait with relaxed eye contact" },
+  { src: "/images/gallery/legs-in-bed.jpg", pos: "50% 50%", alt: "Boudoir image of a woman's legs lying in bed" },
 ];
 ---
 
@@ -52,17 +58,71 @@ const images = [
   </section>
 
   <section class="mx-auto max-w-6xl px-6 py-16">
-    <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
-      {images.map((img) => (
-        <img
-          src={img.src}
-          alt={img.alt}
-          loading="lazy"
-          class="aspect-[4/3] w-full object-cover"
-        />
+    <p class="mx-auto mb-8 flex max-w-md items-center justify-center gap-2 border border-boudoir-pink/40 bg-boudoir-cream px-4 py-3 text-center text-sm text-boudoir-muted">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-4 w-4 shrink-0 text-boudoir-pink" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" />
+        <path d="M20 20l-3.5-3.5M11 8v6M8 11h6" stroke-linecap="round" />
+      </svg>
+      Click any photo to see it full size
+    </p>
+
+    <div id="gallery-grid" class="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+      {images.map((img, i) => (
+        <button
+          type="button"
+          class="group block w-full cursor-zoom-in overflow-hidden bg-boudoir-cream"
+          data-index={i}
+          aria-label={`View full size: ${img.alt}`}
+        >
+          <img
+            src={img.src}
+            alt={img.alt}
+            loading="lazy"
+            class="aspect-[4/3] w-full object-cover transition duration-300 group-hover:scale-[1.03] group-hover:opacity-90"
+            style={`object-position: ${img.pos}`}
+          />
+        </button>
       ))}
     </div>
   </section>
+
+  <!-- Full size photo viewer -->
+  <div
+    id="lightbox"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/95 p-4 sm:p-8"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Full size photo"
+  >
+    <button
+      id="lb-close"
+      type="button"
+      class="absolute right-4 top-4 z-10 flex h-11 w-11 items-center justify-center text-3xl leading-none text-white/80 hover:text-boudoir-pink"
+      aria-label="Close"
+    >&times;</button>
+
+    <button
+      id="lb-prev"
+      type="button"
+      class="absolute left-2 z-10 flex h-14 w-14 items-center justify-center text-4xl leading-none text-white/70 hover:text-boudoir-pink sm:left-6"
+      aria-label="Previous photo"
+    >&#8249;</button>
+
+    <button
+      id="lb-next"
+      type="button"
+      class="absolute right-2 z-10 flex h-14 w-14 items-center justify-center text-4xl leading-none text-white/70 hover:text-boudoir-pink sm:right-6"
+      aria-label="Next photo"
+    >&#8250;</button>
+
+    <figure class="flex max-h-full flex-col items-center justify-center">
+      <img id="lb-img" src="" alt="" class="max-h-[78vh] max-w-full object-contain" />
+      <figcaption class="mt-4 px-10 text-center text-sm text-white/60">
+        <span id="lb-caption"></span>
+        <span id="lb-count" class="mt-1 block text-white/40"></span>
+      </figcaption>
+    </figure>
+  </div>
 
   <section class="bg-boudoir-ink py-16 text-boudoir-white">
     <div class="mx-auto max-w-3xl px-6 text-center">
@@ -83,3 +143,58 @@ const images = [
     </div>
   </section>
 </Base>
+
+<script>
+  const box = document.getElementById("lightbox");
+  const bigImg = document.getElementById("lb-img") as HTMLImageElement | null;
+  const caption = document.getElementById("lb-caption");
+  const count = document.getElementById("lb-count");
+  const grid = document.getElementById("gallery-grid");
+
+  if (box && bigImg && caption && count && grid) {
+    const thumbs = Array.from(grid.querySelectorAll<HTMLImageElement>("img"));
+    let current = 0;
+
+    const show = (i: number) => {
+      current = (i + thumbs.length) % thumbs.length;
+      const thumb = thumbs[current];
+      bigImg.src = thumb.src;
+      bigImg.alt = thumb.alt;
+      caption.textContent = thumb.alt;
+      count.textContent = `${current + 1} of ${thumbs.length}`;
+    };
+
+    const open = (i: number) => {
+      show(i);
+      box.classList.remove("hidden");
+      box.classList.add("flex");
+      document.body.style.overflow = "hidden";
+    };
+
+    const close = () => {
+      box.classList.add("hidden");
+      box.classList.remove("flex");
+      document.body.style.overflow = "";
+    };
+
+    grid.querySelectorAll<HTMLButtonElement>("button[data-index]").forEach((btn) => {
+      btn.addEventListener("click", () => open(Number(btn.dataset.index)));
+    });
+
+    document.getElementById("lb-close")?.addEventListener("click", close);
+    document.getElementById("lb-prev")?.addEventListener("click", () => show(current - 1));
+    document.getElementById("lb-next")?.addEventListener("click", () => show(current + 1));
+
+    // Clicking the dark area around the photo closes it, clicking the photo does not.
+    box.addEventListener("click", (e) => {
+      if (e.target === box) close();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (box.classList.contains("hidden")) return;
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowLeft") show(current - 1);
+      if (e.key === "ArrowRight") show(current + 1);
+    });
+  }
+</script>

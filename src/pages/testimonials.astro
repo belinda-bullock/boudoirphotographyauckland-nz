@@ -1,33 +1,109 @@
 ---
 import Base from "../layouts/Base.astro";
 
-// Real reviews only. Two were already on the site; the rest come from Belinda's
-// verified Google Business Profile (5.0 from 11 reviews). Do not write, pad or
-// paraphrase entries here — if a quote is not something a client actually
-// wrote, it does not belong on this page.
+// REAL REVIEWS ONLY. Never write, pad, tidy or paraphrase an entry here. If a
+// sentence is not something a client actually wrote, it does not belong on this
+// page. Quotes are reproduced word for word, including their own punctuation
+// and spelling.
 //
-// `source` marks where it came from so the page can say so honestly.
-// `name` is whatever Belinda has agreed to show. Boudoir clients often do not
-// want to be identifiable, so a first name or an initial is fine; never add a
-// surname that Belinda has not explicitly approved.
+// `quote` is an array of paragraphs so longer reviews keep their shape.
+// `name` shows FIRST NAMES ONLY, on purpose. These reviews are public on
+// Google under full names, but a boudoir photography website is a much more
+// exposing place to be named than a Google listing, and these women did not
+// choose that. Do not add surnames unless Belinda says so for a specific person.
+//
+// Source: Belinda's verified Google Business Profile, 5.0 from 11 reviews,
+// captured 2026-09-03. Kendal and Carolyn were already on the site.
 const testimonials = [
   {
-    quote:
-      "For those of you who don't know Belinda, she is not just an incredible and talented photographer she is one of the kindest people I know. What you can expect is to be guided in a very relaxed environment to get images that are beyond what you thought was possible. I can not recommend her enough.",
+    name: "Corinna",
+    source: "google",
+    quote: [
+      "I highly recommend doing a shoot with Belinda.",
+      "I reached out and ended up booking the “Total Knockout” shoot, just as a little treat for myself (and a bit for my partner).",
+      "Belinda is fantastic at communicating (after I sent my inquiry; I booked for 3 months later. And she kept in touch before, during, and after the shoot). She's super chill and patient; I brought a ton of outfits because I couldn't make up my mind, but then I also had a hard time choosing which photos I wanted edited afterwards. Her guidance during the shoot is spot on, and she really knows how to bring out your best side. Plus, it doesn't even feel like a shoot; it's more like having fun with your best friend. The setup is great too, with various backgrounds and different rooms, props, etc.",
+      "We ended up taking the same or similar pictures to all the pictures I sent her as inspiration and even more. Belinda had a great sense of what other poses would work for me based on my ideas. She's not just focused on taking the photo; she aims to capture your personality too.",
+      "I'll definitely make an effort to return for another shoot in a few years, just to keep a record over the years.",
+      "Thanks so much again Belinda, I'm stoked about the results",
+    ],
+  },
+  {
+    name: "Letitia",
+    source: "google",
+    quote: [
+      "Every woman should do this at some point in their life!",
+      "As a woman with low self-esteem this was the confidence boost I needed. From the moment I arrived Belinda talked me through the process, listened to me and my body language, she allowed me to relax and trust her. Thank you for giving me the time to take things at my own pace and comfort level. I had such a fun morning filled with laughs, one I will definitely be doing again.",
+    ],
+  },
+  {
+    name: "Eliana",
+    source: "google",
+    quote: [
+      "I did a boudoir photo shoot with Belinda, which was something I would have considered unthinkable until not too long ago, and I genuinely had so much fun! She made the whole experience fun and made me feel confident, she is a fantastic professional but also straightforward, hyronic and just really empowering. The final photos were simply amazing, but the experience alone was one of the best things I've ever done for myself. Probably every woman on the planet should do a photoshoot with Belinda once in their life :)",
+    ],
+  },
+  {
+    name: "Elena",
+    source: "google",
+    quote: [
+      "I had an absolutely amazing experience with Belinda, loved every minute of the shoot and had a lot of fun in the process! Belinda created a safe and relaxed atmosphere and I felt completely comfortable shooting both boudoir and nude pictures. She guided me and showed the poses which I had no previous experience with at all. She was also open to trying out my suggestions to see how they'd work out. Belinda was very accommodating to my needs and I can't recommend her enough, everyone should book a photoshoot with her! Thank you so much, Belinda!",
+    ],
+  },
+  {
     name: "Kendal",
     source: "site",
+    quote: [
+      "For those of you who don't know Belinda, she is not just an incredible and talented photographer she is one of the kindest people I know. What you can expect is to be guided in a very relaxed environment to get images that are beyond what you thought was possible. I can not recommend her enough.",
+    ],
   },
   {
-    quote:
-      "I have done several shoots of various styles now with Belinda and she is AMAZING to work with. We recently did our first boudoir shoot and I loved every moment of it! Belinda immediately put me at ease so that I was relaxed and had fun. She gave great direction but was also completely open to any ideas I had and tailored my shoot to what I was looking for as my end result, my personal style and body type, but also to what my idea of boudoir is. I cannot recommend boudoir photography enough and am absolutely thrilled with my photos.",
+    name: "Haylee",
+    source: "google",
+    quote: [
+      "Belinda absolutely puts you at ease, any tension soon melts away. I highly recommend the boudoir photo shoot session. The combination of both the white and black backdrops make for some striking pictures. You don't feel rushed and the whole process takes place naturally. Thank you for making me feel like a empowered and beautiful woman",
+    ],
+  },
+  {
     name: "Carolyn",
     source: "site",
+    quote: [
+      "I have done several shoots of various styles now with Belinda and she is AMAZING to work with. We recently did our first boudoir shoot and I loved every moment of it! Belinda immediately put me at ease so that I was relaxed and had fun. She gave great direction but was also completely open to any ideas I had and tailored my shoot to what I was looking for as my end result, my personal style and body type, but also to what my idea of boudoir is. I cannot recommend boudoir photography enough and am absolutely thrilled with my photos.",
+    ],
   },
   {
-    quote:
-      "Belinda made the whole experience so easy and comfortable. I never once felt awkward or embarrassed, and the pictures turned out beautifully. Great confidence booster!",
+    name: "Kelly",
+    source: "google",
+    quote: [
+      "I had such a wonderful experience working with Belinda. She is a joy to work with and her passion for photography really shines through in the quality of her work. I was very comfortable working with her - she was super good about making sure any concerns I had were addressed/resolved and it didn't hurt that her two little kittens wanted to be a part of the shoot too. :) I am so happy with how my shoot turned out and would highly recommend her!",
+    ],
+  },
+  {
+    name: "Eleanor",
+    source: "google",
+    quote: [
+      "I couldn’t recommend Belinda enough as a boudoir photographer, she is very kind and is able to put any nerves at ease. She is great at posing and directing you so that your images will be extremely flattering. I couldn’t be happier with my boudoir photoshoot experience with Belinda.",
+    ],
+  },
+  {
+    name: "Dominique",
+    source: "google",
+    quote: [
+      "Belinda is a fabulous photographer who not only takes amazing photos, but makes the entire experience fun and light hearted. From the moment I arrived she made me feel perfectly at ease, much like spending time with an old friend. I highly recommend a shoot like this. It's a wonderful experience.",
+    ],
+  },
+  {
+    name: "Charlotte",
+    source: "google",
+    quote: [
+      "Belinda is amazing at what she does. She has great ideas and vision for what she’s trying to create in a shot and has the skills to produce it. She makes you feel comfortable and confident, and will guide you through the poses to best suit your body and what type of photography you are after. Highly recommend her, you won’t be disappointed!!",
+    ],
+  },
+  {
     name: "Ruby",
     source: "google",
+    quote: [
+      "Belinda made the whole experience so easy and comfortable. I never once felt awkward or embarrassed, and the pictures turned out beautifully. Great confidence booster!",
+    ],
   },
 ];
 
@@ -51,12 +127,14 @@ const googleReviewsUrl = "https://www.google.com/search?q=Boudoir+Photography+Au
     </div>
   </section>
 
-  <section class="mx-auto max-w-3xl px-6 py-20">
-    <div class="space-y-14">
+  <section class="mx-auto max-w-6xl px-6 py-20">
+    <div class="gap-12 lg:columns-2">
       {testimonials.map((t) => (
-        <figure class="border-l-2 border-boudoir-pink pl-6">
-          <blockquote class="text-boudoir-muted">{t.quote}</blockquote>
-          <figcaption class="mt-4 text-sm text-boudoir-ink">
+        <figure class="mb-12 break-inside-avoid border-l-2 border-boudoir-pink pl-6">
+          <blockquote class="space-y-4 text-boudoir-muted">
+            {t.quote.map((para) => <p>{para}</p>)}
+          </blockquote>
+          <figcaption class="mt-5 text-sm text-boudoir-ink">
             {t.name}
             {t.source === "google" && (
               <span class="text-boudoir-muted"> &middot; Google review</span>
@@ -66,8 +144,8 @@ const googleReviewsUrl = "https://www.google.com/search?q=Boudoir+Photography+Au
       ))}
     </div>
 
-    <p class="mt-16 text-center text-sm text-boudoir-muted">
-      Every review here was written by a real client.
+    <p class="mt-6 text-center text-sm text-boudoir-muted">
+      Every review here was written by a real client, word for word.
       <a href={googleReviewsUrl} class="text-boudoir-pink underline">
         Read them on Google
       </a>

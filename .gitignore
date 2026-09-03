@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Waiting room for new photos. Not part of the site until moved into public/images.
+photos-to-add/*
+!photos-to-add/READ ME.txt

@@ -1,0 +1,22 @@
+DROP NEW PHOTOS IN HERE
+=======================
+
+Put any photos you want added to the website into this folder, then tell
+Claude they are here.
+
+Any filename is fine. Any size is fine. Straight out of Lightroom is fine.
+
+Claude will then:
+  - rename them properly
+  - set the crop so faces and the important part of each photo stay in frame
+  - shrink the file size so the site stays fast
+  - put them on whichever page you asked for
+
+Nothing in this folder appears on the website. It is a waiting room. Photos
+only go live once Claude moves them across and you say push.
+
+ONE THING TO CHECK FIRST
+------------------------
+If a photo shows a client's face, make sure she is happy for it to be on a
+public boudoir photography website. Photos where she cannot be identified
+are a much smaller ask than photos where she can.

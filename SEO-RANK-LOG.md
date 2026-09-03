@@ -112,3 +112,25 @@ nomination process documented.
 **Priority order recommended to Belinda:** (1) Request reindexing, (2) Google Business Profile,
 (3) surface privacy/confidentiality on the homepage and contact page, (4) collect and mark up real
 reviews, (5) compress images to WebP, (6) FAQs into the main menu.
+
+---
+
+## 2026-09-03 — Search Console + Business Profile, worked directly. Two earlier notes were WRONG.
+
+**Correction 1 — the Search Console property is a URL-prefix property**, `https://www.boudoirphotographyauckland.co.nz/`, NOT a domain (`sc-domain:`) property. Going to the sc-domain URL gives "you don't have access to this property", which looks alarming and isn't.
+
+**Correction 2 — the Google Business Profile EXISTS and is verified.** The baseline entry listed it as unconfirmed and it was recommended as the biggest untouched lever. It is neither untouched nor missing:
+- **5.0 stars from 11 Google reviews**, Belinda replies to them
+- 905 monthly views, 246 customer interactions
+- Google rates profile strength as "Looks good!"
+- It sits alongside Belinda Bullock Photography and DIGITAL TWIN IMAGING in the same manager account, all three verified
+
+**The actual problem found: no sitemap had ever been submitted.** "Submitted sitemaps: 0-0 of 0". This is very likely why only 5 of 16 pages were indexed. Inspecting the gallery page returned "URL is unknown to Google" with "No referring sitemaps detected" and "Referring page: none detected" — Google had never heard of it.
+
+Actions taken 2026-09-03:
+- Submitted `sitemap-index.xml`. Status showed "Couldn't fetch" straight after submission, which is Search Console's normal initial state. Verified independently that the file returns HTTP 200 as `application/xml`, is declared in robots.txt, and fetches fine under a Googlebot user agent. Re-check the status in a day.
+- Requested indexing for `/` (was already indexed, page changed) and `/boudoir-photoshoot-gallery-auckland/` (was not indexed at all). Both added to the priority crawl queue.
+
+**Correction 3 — drop the "add Review schema to get stars" recommendation.** Google does not show star ratings from a site's own AggregateRating for a local business; self-serving reviews are excluded from rich results. The stars Belinda already gets come from the Business Profile, which is working. Putting the 11 Google reviews on the website is still worth doing, but for persuasion, not for rich snippets. Do not promise stars from on-site markup.
+
+**Next, in order:** (1) confirm the sitemap fetches, (2) request indexing for the remaining pages once the sitemap is read, (3) put the real Google reviews on the site.

@@ -134,3 +134,25 @@ Actions taken 2026-09-03:
 **Correction 3 — drop the "add Review schema to get stars" recommendation.** Google does not show star ratings from a site's own AggregateRating for a local business; self-serving reviews are excluded from rich results. The stars Belinda already gets come from the Business Profile, which is working. Putting the 11 Google reviews on the website is still worth doing, but for persuasion, not for rich snippets. Do not promise stars from on-site markup.
 
 **Next, in order:** (1) confirm the sitemap fetches, (2) request indexing for the remaining pages once the sitemap is read, (3) put the real Google reviews on the site.
+
+---
+
+## 2026-09-03 — content added from Belinda's own knowledge (not a rank check)
+
+Belinda described why women actually book, none of which was on the site. Added as a
+"There is no wrong reason" section on the homepage and two new FAQs:
+milestone birthdays; **bridal boudoir** (she says it is one of her most common bookings);
+after a divorce; after a hard year including money worries and grief; **documenting a body
+before a mastectomy**; and **scars and burns**, which she has real experience photographing.
+
+**Search terms this opens up that the site previously said nothing about:**
+`bridal boudoir Auckland`, `mastectomy photography NZ`, `divorce boudoir`, `40th birthday
+boudoir`. Bridal boudoir in particular is high commercial intent and worth its own page later.
+Check whether competitors rank for it at the next fortnightly check.
+
+**Blocked:** Belinda has no bridal boudoir photos she has permission to publish. Text only for now.
+
+Also tidied the FAQ page: removed a size/age question that duplicated two existing, better-written
+answers ("Do you photograph plus sized women?" — "Hell yes." and "What age of women do you work
+with?"), and moved the reassurance questions to the top of the list where a nervous reader meets
+them first. 18 questions, FAQPage schema still valid.

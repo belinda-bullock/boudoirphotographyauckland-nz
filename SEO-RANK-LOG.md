@@ -175,3 +175,91 @@ a separate conversation about outfits, what she wants, and how the day runs, to 
 month expiry, deliberately**: Belinda's reasoning is that an open-ended voucher gets deferred forever,
 usually until the woman has lost weight. Written up on the site as a gentle push rather than a
 restriction, which also reinforces the body-acceptance message running through the rest of the site.
+
+---
+
+## 2026-09-17 — First fortnightly check after the 2026-09-02 cutover (web search proxy)
+
+| Phrase | Result | Real competitors ranking above | vs. 2026-09-02 baseline |
+|---|---|---|---|
+| boudoir photography auckland | Visible, ~position 4 | Boudoir Pix, Studio Boudoir (Bark.com also above — lead marketplace, not a competing photographer) | no change |
+| auckland boudoir photographer | Visible, ~position 2 among real competitors | Studio Boudoir only (Peony Blush Boudoir ranks above but is Instagram-only; Wikipedia's boudoir-photography article also above) | slight improvement (was ~3 among real competitors) |
+
+Real dashboard data (Cloudflare Web Analytics + Google Search Console): **not provided this run** —
+unattended scheduled run, Belinda was not present to open the dashboards. The trailing-3-month GSC figures
+recorded in the correction note at the top of this file (2026-09-02: 236 clicks, 5.88K impressions, 4% CTR,
+15.4 avg. position) remain the most recent real numbers on record for this site.
+
+**Australian competitor: still not visible.** Neither target phrase returned an Australian-owned boudoir
+business in the top results, and no paid/ad placement from one appeared either. Every name ranking above
+this site is the same New Zealand field as before. Nothing to act on yet — keep watching.
+
+**One new name in the results that wasn't in the 2026-09-03 competitor teardown:** Milk Intimates
+(milkintimates.co.nz, Sarah Nutt, Creative Director of Milk Photography Studio, Auckland), appearing for
+"auckland boudoir photographer". New Zealand, not the flagged Australian entrant, and it ranks below this
+site. Noted for the record so future checks can tell whether it climbs. Worth knowing that Milk Photography
+also shows up in the BBP log's headshot results — the same studio group now competes with Belinda on two
+separate fronts.
+
+**FLAG — the stale homepage title is still not fixed in Google, 15 days after cutover.** Google is *still*
+serving the old Squarespace title with the nested-quote glitch:
+`Boudoir Photography Auckland "Auckland Boudoir Photographer | Elegant & Sexy Photography"`.
+Verified the live site directly this run: the real title tag is now clean and correct —
+`Boudoir Photography Auckland | Elegant & Confidence-Boosting Sessions`. So the site is right and Google's
+index is stale. Reindexing for `/` was already requested on 2026-09-03, which makes this a two-week-old
+unfulfilled request rather than something that was never actioned. Next step when Belinda is available:
+re-check Search Console → URL Inspection on the homepage to see whether the crawl has happened and Google
+simply chose to keep the old title (which it sometimes does when it judges a title a better match), or
+whether the page genuinely hasn't been recrawled yet. If it has been recrawled and Google is overriding,
+that is a different problem and usually means the on-page H1 and title disagree.
+
+**Also still open from 2026-09-03, not verifiable without an authenticated session:**
+- Did `sitemap-index.xml` move off "Couldn't fetch"? (The file itself was independently verified as
+  serving HTTP 200 as `application/xml` under a Googlebot user agent, so this should have cleared.)
+- Did the indexed-page count move up from 5 of 16? The sitemap submission was expected to be the fix for
+  that, and enough time has now passed to see movement.
+- Putting the 11 real Google reviews on the site (for persuasion, not rich snippets) — not yet done.
+
+**Summary:** stable. Two weeks after the platform switch, this site holds the same position on the primary
+phrase and has edged up one place among real competitors on the secondary one. That is the outcome the
+baseline entry predicted (URLs preserved, technical SEO upgraded), and it means the migration itself has
+not cost visibility. The open work is all indexing follow-through, not ranking recovery.
+
+### Addendum — Search Console worked directly, same day (2026-09-17)
+
+Belinda connected her live Chrome session so this could be checked properly rather than left as open items.
+
+**Sitemap: resolved.** Status "Success", last read **16 Sep 2026**, 10 discovered pages. The "Couldn't
+fetch" state noted on 2026-09-03 was indeed just Search Console's normal initial state. Closed.
+
+**Indexing now 6 indexed / 19 not indexed** (was 5 / 11 on 2026-09-03). The not-indexed number rising is
+not a regression — it means Google has now read the sitemap and discovered more URLs, including legacy
+Squarespace ones. Breakdown of the 19: page with redirect 5, excluded by noindex 4, alternate page with
+canonical 2, discovered but not crawled 5, crawled but not indexed 3, 404s 0.
+
+**The real problem: 5 of the 10 real pages have never been crawled.** All 5 show "Discovered - currently
+not indexed" with Last crawled = N/A: `/faqs/`, `/maternity-photography/`, `/privacy-policy/`,
+`/terms-and-conditions/`, `/testimonials/`. Google knows they exist (via the sitemap) but has never
+fetched them. FAQs, maternity and testimonials are the three that carry commercial weight — maternity is
+an entire service line with no search presence at all.
+
+**The 4 "excluded by noindex" URLs are stale 2025 records, not a live problem.** They are
+`/cart`, `/maternity-photography`, `/terms-and-conditions`, `/faqs` — all non-trailing-slash Squarespace
+forms, last crawled Jun–Nov **2025**, when the old Squarespace site did carry noindex on them. Verified
+each against the live site this session: `/faqs/`, `/maternity-photography/` and `/terms-and-conditions/`
+all return HTTP 200 with **no robots meta tag** (indexable), and `/cart` correctly 404s as a dead
+Squarespace shop URL. Nothing on the live site is blocked. No action needed beyond the recrawl.
+
+**Action taken: requested indexing for all 5** uncrawled pages via URL Inspection. All confirmed
+"Indexing requested / added to a priority crawl queue".
+
+**Homepage stale-title question: answered, and it is not a fault.** The indexed-pages list shows `/` was
+last crawled **11 Sep 2026**, i.e. Google has already recrawled it since the 3 Sep reindex request. Live
+title tag confirmed correct (`Boudoir Photography Auckland | Elegant & Confidence-Boosting Sessions`) and
+the page H1 matches it, so the "Google overrides a title when H1 disagrees" theory is ruled out. The old
+Squarespace title still showing in search results is display lag, not a site or crawl problem. Expect it
+to clear on its own. **Downgrade this from a flag to a watch item** — recheck next run, do not change the
+site for it.
+
+**Next check should verify:** whether the 5 requested pages moved from "Discovered" into Indexed, and
+whether the homepage title has refreshed in live results.

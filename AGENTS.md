@@ -72,10 +72,15 @@ Settled 2026-09-03, do not raise these again:
 - **No Google Ads.** She has run them, did not find them effective, and does not want them.
   There is a paused campaign in her account; leave it paused and don't suggest reviving it.
 
+- **Cloudflare is not blocking any crawler.** Checked 2026-09-19 by fetching the homepage as
+  Googlebot, Bingbot, GPTBot, ClaudeBot, PerplexityBot and OAI-SearchBot: all returned 200 with
+  byte-identical content to a normal browser (26,074 bytes each). AI Crawl Control is not
+  overriding robots.txt. No dashboard access needed to confirm this, just the user-agent test.
+
 Still open:
-- Confirm Cloudflare's AI Crawl Control isn't overriding robots.txt.
-- Google Business Profile has had no new photo in 310 days. She has permission-cleared photos
-  ready. Adding them is public-facing, so ask before doing it.
+- Google Business Profile has had no new photo in 310 days. Nine cleared photos plus eight
+  ready-to-paste posts are prepared at `~/Desktop/Boudoir Google Business Profile/` (2026-09-19).
+  Belinda is posting them herself.
 
 ## Image formats — check before trusting a file extension
 Files pulled from the Squarespace CDN were served as WebP no matter what extension was requested.

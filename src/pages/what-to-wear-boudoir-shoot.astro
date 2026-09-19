@@ -1,0 +1,167 @@
+---
+import Base from "../layouts/Base.astro";
+
+// Wardrobe guide page. Written to answer the single most common question women
+// ask before booking, and to catch the "what do I wear to a boudoir shoot"
+// searches that currently land on competitors' sites.
+// The short version of this also lives as one answer on the FAQs page. That is
+// deliberate: the FAQ answer is the quick reassurance, this is the full guide.
+
+const sections = [
+  {
+    h: "Bring more than you think you need",
+    p: [
+      "Four to six outfits is a good number. I only photograph one woman a day, so nothing is rushed and we are not watching a clock. If you cannot decide between two sets, bring both. Deciding is easier here, with the lights on and a mirror in front of you, than it is at home the night before.",
+      "Bring the thing you are not sure about. It is almost always the one we end up loving.",
+    ],
+  },
+  {
+    h: "What photographs beautifully",
+    list: [
+      ["A bodysuit or a one piece", "These flatter nearly every body, and they give a long clean line through the middle."],
+      ["A set that fits properly", "Fit matters far more than price. A thirty dollar set that sits right will photograph better than an expensive one that digs in."],
+      ["Black, white, deep red, emerald", "Solid colours hold up best. Busy prints and neon pull the eye away from your face."],
+      ["Lace, mesh, anything with texture", "Texture catches light. It is what gives an image depth instead of a flat block of fabric."],
+      ["Stockings, a garter belt, fishnets", "Classic for a reason. They shape the leg and they give your hands something to do."],
+      ["An oversized white shirt", "Yours, or his. One of the most requested looks I shoot, and it suits everyone."],
+      ["A blazer, a denim jacket, a chunky knit", "Covered up can be the sexiest frame on the card. Not every photo has to be lingerie."],
+      ["A robe or a silk kimono", "Wonderful for movement, and lovely for the softer frames at the start while you settle in."],
+    ],
+  },
+  {
+    h: "What to leave at home",
+    list: [
+      ["Anything that does not fit right now", "Not the size you are working towards. The size you are today. This shoot is about the woman who walks in the door."],
+      ["Brand new shoes", "They pinch, and it shows in your face."],
+      ["Anything with a tight elastic waist worn on the day", "Socks, leggings, a tight bra. The marks take up to an hour to fade and we lose that hour."],
+      ["Busy patterns and logos", "They date the photos and they fight with your skin."],
+    ],
+  },
+  {
+    h: "The things that are not clothes",
+    p: [
+      "Heels. Even when they never appear in the frame, they change how you stand and they lengthen the whole leg.",
+      "Simple jewellery. A fine chain, small earrings, your own rings. A body chain if you have one.",
+      "Something that is his, if this is a gift. A shirt, a tie, a rugby jersey. It makes the photos personal in a way lingerie cannot.",
+      "Your own perfume and your own music. You relax faster when the room smells and sounds like you.",
+    ],
+  },
+  {
+    h: "If you want to shoot nude",
+    p: [
+      "Plenty of women do, and plenty decide on the day rather than before. There is no pressure either way, and nothing happens that you have not agreed to. You can change your mind at any point, including halfway through.",
+      "If you think you might, bring a robe for in between. And know that a nude frame is often less exposing than people expect. A lot of them are shape and light and shadow, not detail.",
+    ],
+  },
+  {
+    h: "Bridal boudoir",
+    p: [
+      "Bring white or ivory, and bring the veil. A veil moves, and moving fabric photographs like nothing else. The shoes count too, and the garter if you are wearing one.",
+      "Then bring something with nothing to do with the wedding at all. Most brides book this as a gift to open before the day, and end up keeping the album for themselves.",
+      "Book early. Wedding planning fills up fast and you want the images in your hands well before the week of the wedding.",
+    ],
+  },
+  {
+    h: "The day before, and the morning of",
+    list: [
+      ["Shave or wax two days ahead", "Not the morning of. Skin needs a day to settle."],
+      ["Loose clothes on the way here", "A dress, a jumper, anything without a waistband. Come as comfortable as you like."],
+      ["Drink water and eat something", "Two hours on your feet under lights is more work than it sounds."],
+      ["Neutral nails, hands and feet", "They end up in more frames than you would think."],
+      ["Bring your outfits on hangers", "Creases photograph. A folded set at the bottom of a bag arrives looking like it."],
+    ],
+  },
+];
+
+const photoBreak = [
+  { src: "/images/home/lace-lingerie.jpg", pos: "50% 30%", alt: "Boudoir portrait in black lace lingerie" },
+  { src: "/images/testimonials/curvy-blue-shirt-window-light.jpg", pos: "50% 25%", alt: "Boudoir portrait in an oversized blue shirt in window light" },
+  { src: "/images/gallery/hat-corset-black-white.jpg", pos: "50% 20%", alt: "Black and white boudoir portrait in a hat and corset" },
+  { src: "/images/gallery/white-lingerie-pose.jpg", pos: "50% 25%", alt: "Boudoir portrait in white lingerie" },
+];
+---
+
+<Base
+  title="What to Wear to a Boudoir Shoot | Boudoir Photography Auckland"
+  description="What to bring, what photographs well and what to leave at home for your boudoir shoot in Auckland. A full wardrobe guide from photographer Belinda Dunne."
+  image="/images/home/lace-lingerie.jpg"
+>
+  <section class="mx-auto max-w-3xl px-6 pt-16 text-center">
+    <h1 class="text-4xl text-boudoir-ink md:text-5xl">What to Wear to a Boudoir Shoot</h1>
+    <p class="mt-6 text-boudoir-muted">
+      This is the question I am asked more than any other, and it is the one that
+      keeps women awake the night before. Here is the whole answer.
+    </p>
+    <p class="mt-4 text-boudoir-muted">
+      The short version: whatever feels like you. Bring more than you think you
+      need. We will work it out together once you are here.
+    </p>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-6 py-16">
+    <div class="space-y-14">
+      {sections.map((s) => (
+        <div>
+          <h2 class="text-2xl text-boudoir-ink">{s.h}</h2>
+          {s.p && (
+            <div class="mt-4 space-y-3 text-sm leading-relaxed text-boudoir-muted">
+              {s.p.map((line) => <p>{line}</p>)}
+            </div>
+          )}
+          {s.list && (
+            <ul class="mt-5 space-y-4">
+              {s.list.map(([label, why]) => (
+                <li class="border-l-2 border-boudoir-pink pl-4">
+                  <span class="block font-semibold text-boudoir-ink">{label}</span>
+                  <span class="mt-1 block text-sm leading-relaxed text-boudoir-muted">{why}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="grid grid-cols-2 gap-1 md:grid-cols-4">
+    {photoBreak.map((p) => (
+      <img
+        src={p.src}
+        alt={p.alt}
+        loading="lazy"
+        class="h-64 w-full object-cover md:h-80"
+        style={`object-position: ${p.pos}`}
+      />
+    ))}
+  </section>
+
+  <section class="bg-boudoir-cream py-16">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <h2 class="text-3xl text-boudoir-ink">Still not sure?</h2>
+      <p class="mt-4 text-boudoir-muted">
+        You do not have to arrive with it sorted. Once you get in touch I will ask
+        whether you would like a call, and we can talk the whole thing through
+        before you buy a single piece.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a
+          href="/contact-boudoir-photography-auckland"
+          class="inline-block bg-boudoir-red px-6 py-3 text-boudoir-white hover:bg-boudoir-red-hover"
+        >
+          Talk to me about your shoot
+        </a>
+        <a
+          href="/boudoir-photoshoot-gallery-auckland"
+          class="inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-ink hover:bg-boudoir-pink"
+        >
+          See the gallery
+        </a>
+      </div>
+      <p class="mt-8 text-sm text-boudoir-muted">
+        More answers on the <a href="/faqs" class="text-boudoir-red underline">questions and answers page</a>,
+        what each session includes on <a href="/pricing" class="text-boudoir-red underline">pricing</a>,
+        and what other women said on the <a href="/testimonials" class="text-boudoir-red underline">reviews page</a>.
+      </p>
+    </div>
+  </section>
+</Base>

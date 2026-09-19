@@ -53,6 +53,7 @@ const faqs = [
   },
   {
     q: "What do I wear?",
+    more: { href: "/what-to-wear-boudoir-shoot", label: "Read the full wardrobe guide" },
     a: "Whatever feels like you. That might mean a lacy lingerie set, your favourite white shirt, a comfy oversized jumper, or nothing at all — nude is a popular option. Bring it all and we'll talk through what works best once you're here. Some clients show up a bit nervous, that's totally normal, but by the end of the session they're owning it. After you get in touch I'll ask if you'd like me to call you so we can talk it all through and get you fully prepared.",
   },
   {
@@ -123,6 +124,11 @@ const jsonLd = {
           </summary>
           <div class="mt-4 space-y-3 text-sm leading-relaxed text-boudoir-muted">
             {(Array.isArray(faq.a) ? faq.a : [faq.a]).map((para) => <p>{para}</p>)}
+            {faq.more && (
+              <p>
+                <a href={faq.more.href} class="text-boudoir-red underline">{faq.more.label}</a>
+              </p>
+            )}
           </div>
         </details>
       ))}

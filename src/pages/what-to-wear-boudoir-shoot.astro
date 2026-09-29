@@ -60,15 +60,15 @@ const sections = [
       "Then bring something with nothing to do with the wedding at all. Most brides book this as a gift to open before the day, and end up keeping the album for themselves.",
       "Book early. Wedding planning fills up fast and you want the images in your hands well before the week of the wedding.",
     ],
+    link: { href: "/bridal-boudoir-auckland", label: "Read the bridal boudoir page" },
   },
   {
     h: "The day before, and the morning of",
     list: [
-      ["Shave or wax two days ahead", "Not the morning of. Skin needs a day to settle."],
       ["Loose clothes on the way here", "A dress, a jumper, anything without a waistband. Come as comfortable as you like."],
       ["Drink water and eat something", "Two hours on your feet under lights is more work than it sounds."],
       ["Neutral nails, hands and feet", "They end up in more frames than you would think."],
-      ["Bring your outfits on hangers", "Creases photograph. A folded set at the bottom of a bag arrives looking like it."],
+      ["Go light on fake tan, or skip it", "Tan reads much stronger under studio lights than it does in your bathroom mirror. Orange is very hard to undo afterwards."],
     ],
   },
 ];
@@ -106,6 +106,9 @@ const photoBreak = [
           {s.p && (
             <div class="mt-4 space-y-3 text-sm leading-relaxed text-boudoir-muted">
               {s.p.map((line) => <p>{line}</p>)}
+              {s.link && (
+                <p><a href={s.link.href} class="text-boudoir-red underline">{s.link.label}</a></p>
+              )}
             </div>
           )}
           {s.list && (

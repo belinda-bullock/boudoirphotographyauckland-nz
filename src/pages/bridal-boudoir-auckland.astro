@@ -1,0 +1,181 @@
+---
+import Base from "../layouts/Base.astro";
+
+// PHOTOS ARE PLACEHOLDERS. Belinda does not have a bridal boudoir set yet
+// (confirmed 2026-09-30). Every image below is her own real boudoir work,
+// chosen because it is soft, white or natural light and sits alongside the
+// words without contradicting them. Nothing here is captioned or described as
+// a bride, and no alt text claims a wedding, because none of these women
+// booked a bridal session.
+// When Belinda has real bridal frames (veil, white set, the shoes, the garter),
+// swap them in here and in the hero. That is the only change needed.
+const steps = [
+  {
+    number: "1",
+    title: "TELL ME ABOUT THE WEDDING",
+    body: "Get in touch and tell me when the day is. Wedding planning fills up fast, and bridal boudoir is one of the first things to get squeezed out if it is left late. Reaching out early costs you nothing and holds your place.",
+  },
+  {
+    number: "2",
+    title: "YOUR SESSION, RUN LIKE ANY OTHER",
+    body: "Same studio, same pace, same guidance. I photograph one woman a day, so nobody is watching a clock and nothing is rushed. We talk through what you have brought, and I direct you the whole way. You do not need to know how to pose.",
+  },
+  {
+    number: "3",
+    title: "IN YOUR HANDS BEFORE THE DAY",
+    body: "You choose your favourites and I edit them. The point is to have the images well before the week of the wedding, not the night before, so there is room to breathe and time to wrap it if it is a gift.",
+  },
+];
+
+const gallery = [
+  { src: "/images/gallery/white-lingerie-pose.jpg", pos: "50% 25%", alt: "Boudoir portrait in white lingerie" },
+  { src: "/images/home/low-light-innocent.jpg", pos: "50% 25%", alt: "Soft low light boudoir portrait" },
+  { src: "/images/testimonials/window-light-kneeling.jpg", pos: "50% 50%", alt: "Boudoir photograph of a woman kneeling in window light" },
+  { src: "/images/home/bed-facing-away.jpg", pos: "50% 30%", alt: "Soft boudoir photograph of a woman facing away" },
+];
+
+const bring = [
+  ["White or ivory", "A white set, a slip, a robe. It is the closest thing to a bridal theme and it photographs beautifully."],
+  ["The veil", "Bring it if you have it. A veil moves, and moving fabric photographs like nothing else in the room."],
+  ["The shoes", "The ones you are wearing on the day, even if they never end up in frame. They change how you stand."],
+  ["The garter, if there is one", "Along with anything blue, borrowed or old that means something to you."],
+  ["Something with nothing to do with the wedding", "Most brides bring one thing that is purely theirs. It is often the set we both end up loving most."],
+];
+---
+
+<Base
+  title="Bridal Boudoir Auckland | Boudoir Photography Auckland"
+  description="Bridal boudoir photography in Auckland with Belinda Dunne. A relaxed, guided session before your wedding, whether it is a gift for your partner or entirely for you."
+  image="/images/gallery/white-lingerie-pose.jpg"
+>
+  <!-- Hero: full-bleed photo -->
+  <section class="relative">
+    <img
+      src="/images/gallery/seated-natural-light.jpg"
+      alt=""
+      style="object-position: 50% 18%;"
+      class="h-[280px] w-full object-cover opacity-50 sm:h-[300px]"
+    />
+    <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center">
+      <h1 class="text-4xl text-boudoir-ink md:text-5xl">Bridal Boudoir</h1>
+      <p class="text-2xl text-boudoir-pink">Auckland, before the big day.</p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="bg-boudoir-ink py-20 text-center text-boudoir-white">
+    <div class="mx-auto max-w-2xl px-6">
+      <h2 class="text-3xl">One of the best gifts you will ever give</h2>
+      <p class="mt-6 leading-relaxed">
+        Bridal boudoir is one of the most common reasons women book with me. Most
+        plan it as a gift for their partner to open before the wedding. A good
+        number end up keeping the album for themselves once they see it.
+      </p>
+      <p class="mt-4 leading-relaxed">
+        And plenty of brides book it for no one but themselves. That is a
+        perfectly good reason too.
+      </p>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="mx-auto max-w-5xl px-6 py-20">
+    <div class="grid gap-10 md:grid-cols-3">
+      {steps.map((s) => (
+        <div>
+          <p class="text-4xl text-boudoir-pink">{s.number}</p>
+          <h3 class="mt-3 text-sm font-semibold tracking-wide text-boudoir-ink">{s.title}</h3>
+          <p class="mt-3 text-sm leading-relaxed text-boudoir-muted">{s.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Photo strip -->
+  <section class="grid grid-cols-2 gap-1 md:grid-cols-4">
+    {gallery.map((p) => (
+      <img
+        src={p.src}
+        alt={p.alt}
+        loading="lazy"
+        class="h-64 w-full object-cover md:h-80"
+        style={`object-position: ${p.pos}`}
+      />
+    ))}
+  </section>
+
+  <!-- What to bring -->
+  <section class="mx-auto max-w-3xl px-6 py-20">
+    <h2 class="text-3xl text-boudoir-ink">What to bring</h2>
+    <ul class="mt-8 space-y-4">
+      {bring.map(([label, why]) => (
+        <li class="border-l-2 border-boudoir-pink pl-4">
+          <span class="block font-semibold text-boudoir-ink">{label}</span>
+          <span class="mt-1 block text-sm leading-relaxed text-boudoir-muted">{why}</span>
+        </li>
+      ))}
+    </ul>
+    <p class="mt-8 text-sm text-boudoir-muted">
+      There is a fuller guide on the
+      <a href="/what-to-wear-boudoir-shoot" class="text-boudoir-red underline">what to wear</a>
+      page, and it all applies here too.
+    </p>
+  </section>
+
+  <!-- When to book -->
+  <section class="bg-boudoir-cream py-20">
+    <div class="mx-auto max-w-3xl px-6">
+      <h2 class="text-3xl text-boudoir-ink">When to book it</h2>
+      <p class="mt-4 leading-relaxed text-boudoir-muted">
+        Earlier than you think. Wedding planning fills up fast and this is the
+        thing that gets pushed to the bottom of the list, then runs out of room.
+      </p>
+      <p class="mt-4 leading-relaxed text-boudoir-muted">
+        You want the images in your hands well before the day rather than the
+        week of it. That gives time for choosing, editing, and wrapping it
+        properly if it is a gift. If your date is already close, get in touch
+        anyway and I will tell you straight whether it can be done.
+      </p>
+    </div>
+  </section>
+
+  <!-- Privacy reassurance -->
+  <section class="mx-auto max-w-3xl px-6 py-20">
+    <h2 class="text-3xl text-boudoir-ink">Your session stays yours</h2>
+    <p class="mt-4 leading-relaxed text-boudoir-muted">
+      Nothing goes online unless you tell me it can. Not on the website, not on
+      Instagram, not in a private group. Your photos are yours, and a bridal
+      session is no different.
+    </p>
+    <p class="mt-4 leading-relaxed text-boudoir-muted">
+      You can bring a support person, and you can change your mind about anything
+      at any point, including halfway through. Read what other women said on the
+      <a href="/testimonials" class="text-boudoir-red underline">reviews page</a>.
+    </p>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-boudoir-ink py-20 text-center text-boudoir-white">
+    <div class="mx-auto max-w-2xl px-6">
+      <h2 class="text-3xl text-boudoir-pink">Tell me about your wedding</h2>
+      <p class="mt-6 leading-relaxed">
+        Send me the date and whatever you are imagining. There is no pressure and
+        no right answers, and I will come back to you with a proper reply.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a
+          href="/contact-boudoir-photography-auckland"
+          class="inline-block bg-boudoir-red px-6 py-3 text-boudoir-white hover:bg-boudoir-red-hover"
+        >
+          Get in touch
+        </a>
+        <a
+          href="/pricing"
+          class="inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink"
+        >
+          See pricing
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

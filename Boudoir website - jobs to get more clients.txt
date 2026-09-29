@@ -28,16 +28,22 @@ ALREADY DONE, DO NOT REDO
 DO FIRST
 
 1. Write the pages that answer what women type into Google before they book
-   This is the biggest thing left. The site has 10 pages. Each new page is
-   another way in. Best ones, in order:
-   - What to wear to a boudoir shoot   (the number one worry, and the most
-     searched of all of these)
-   - Bridal boudoir in Auckland        (women with a date and a reason to book.
-     Right now this is one answer buried in the FAQs, not a page)
+   This is the biggest thing left. The site had 10 pages. Each new page is
+   another way in.
+   BUILT 30 September, waiting to go live:
+   - What to wear to a boudoir shoot
+   - Bridal boudoir in Auckland
+   STILL TO WRITE:
    - What happens on the day, start to finish
    - Gift vouchers
    If we don't: you keep showing up in searches and not getting the click. The
    site was shown 5,880 times and clicked 236 times. The pages are the fix.
+
+   PHOTOS NEEDED: the bridal page is using ordinary boudoir photos for now.
+   None of them are described as brides, so nothing on the page is untrue, but
+   the page will be far stronger with real bridal frames. A veil, a white set,
+   the shoes, the garter. Next bridal client who says yes, shoot a few with
+   this page in mind and I will swap them straight in.
 
 2. Check the five pages Google still has not read
    Google knows the maternity, FAQs, reviews, privacy and terms pages exist but

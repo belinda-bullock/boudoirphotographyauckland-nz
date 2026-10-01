@@ -64,6 +64,65 @@ const ogImageURL = new URL(image, Astro.site);
         "@type": "Person",
         "name": "Belinda Dunne"
       },
+      // Same two profiles linked from the footer icons. Keep these in sync.
+      "sameAs": [
+        "https://www.instagram.com/boudoirphotographyauckland/",
+        "https://www.facebook.com/boudoirphotographyauckland"
+      ],
+      // Packages and prices copied from /pricing. If a price changes there,
+      // change it here too. Maternity has no published price, so none is given.
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Photography sessions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Tease",
+            "price": "750",
+            "priceCurrency": "NZD",
+            "url": "https://www.boudoirphotographyauckland.co.nz/pricing/",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Tease boudoir photoshoot",
+              "description": "A 1.5 hour boudoir photoshoot with six fully edited, high resolution images of your choice."
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Temptation",
+            "price": "950",
+            "priceCurrency": "NZD",
+            "url": "https://www.boudoirphotographyauckland.co.nz/pricing/",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Temptation boudoir photoshoot",
+              "description": "A 2.5 hour boudoir photoshoot with ten fully edited, high resolution images of your choice."
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Total Knockout",
+            "price": "1200",
+            "priceCurrency": "NZD",
+            "url": "https://www.boudoirphotographyauckland.co.nz/pricing/",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Total Knockout boudoir photoshoot",
+              "description": "An unlimited time boudoir photoshoot with twenty fully edited, high resolution images of your choice."
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Maternity photography",
+            "url": "https://www.boudoirphotographyauckland.co.nz/maternity-photography/",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Maternity photography",
+              "description": "A guided maternity photography session in Auckland, with edited and unedited images."
+            }
+          }
+        ]
+      },
       "description": "A private boudoir photography experience for women who want to feel confident and beautiful, based on Auckland's Hibiscus Coast."
     })} />
   </head>

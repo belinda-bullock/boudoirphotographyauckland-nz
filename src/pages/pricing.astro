@@ -51,8 +51,11 @@ const packages = [
   <!-- Hero: full-bleed photo -->
   <section class="relative">
     <img
-      src="/images/pricing/hero.jpg"
+      src="/images/pricing/hero.webp"
       alt=""
+      width="1600"
+      height="694"
+      fetchpriority="high"
       class="h-[380px] w-full object-cover sm:h-[420px]"
     />
     <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center">
@@ -101,7 +104,7 @@ const packages = [
       <div class="mt-14 grid gap-6 md:grid-cols-3">
         {packages.map((pkg) => (
           <div class="bg-[#201520] px-8 py-10 text-center">
-            <img src={pkg.icon} alt="" class="mx-auto h-12 w-12" />
+            <img src={pkg.icon} alt="" width="92" height="92" loading="lazy" decoding="async" class="mx-auto h-12 w-12" />
             <h3 class="mt-4 text-2xl uppercase tracking-wide text-boudoir-pink">{pkg.name}</h3>
             <p class="mt-2 text-3xl">{pkg.price}</p>
             <p class="mt-5 text-sm text-white/85">{pkg.confirms}</p>
@@ -205,8 +208,12 @@ const packages = [
   <!-- Testimonial: full-bleed photo background -->
   <section class="relative">
     <img
-      src="/images/pricing/testimonial-bg.jpg"
+      src="/images/pricing/testimonial-bg.webp"
       alt=""
+      width="1600"
+      height="580"
+      loading="lazy"
+      decoding="async"
       class="absolute inset-0 h-full w-full object-cover"
     />
     <div class="relative mx-auto max-w-3xl px-6 py-20 text-center text-boudoir-ink">
@@ -242,7 +249,7 @@ const packages = [
 
     <div class="mx-auto mt-12 grid max-w-6xl grid-cols-1 px-6 sm:grid-cols-3 md:px-12 lg:px-20">
       <div class="relative">
-        <img src="/images/pricing/reassure-1.jpg" alt="" class="h-[280px] w-full object-cover sm:h-[340px]" />
+        <img src="/images/pricing/reassure-1-800.webp" alt="" width="800" height="588" loading="lazy" decoding="async" class="h-[280px] w-full object-cover sm:h-[340px]" />
       </div>
       <div class="flex items-center justify-center bg-[#201520] px-8 py-10 text-center">
         <p class="text-lg font-semibold uppercase tracking-wide text-boudoir-pink">
@@ -250,7 +257,7 @@ const packages = [
         </p>
       </div>
       <div class="relative">
-        <img src="/images/pricing/reassure-2.jpg" alt="" class="h-[280px] w-full object-cover sm:h-[340px]" />
+        <img src="/images/pricing/reassure-2-800.webp" alt="" width="800" height="586" loading="lazy" decoding="async" class="h-[280px] w-full object-cover sm:h-[340px]" />
       </div>
 
       <div class="flex items-center justify-center bg-[#201520] px-8 py-10 text-center">
@@ -259,7 +266,7 @@ const packages = [
         </p>
       </div>
       <div class="relative">
-        <img src="/images/pricing/reassure-3.jpg" alt="" class="h-[280px] w-full object-cover sm:h-[380px]" />
+        <img src="/images/pricing/reassure-3-800.webp" alt="" width="800" height="588" loading="lazy" decoding="async" class="h-[280px] w-full object-cover sm:h-[380px]" />
       </div>
       <div class="flex items-center justify-center bg-[#201520] px-8 py-10 text-center">
         <p class="text-lg font-semibold uppercase tracking-wide text-boudoir-pink">

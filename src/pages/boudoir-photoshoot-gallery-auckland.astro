@@ -8,33 +8,36 @@ import Base from "../layouts/Base.astro";
 // height already fits, so only the first (horizontal) value matters.
 // Measured off each photo individually on 2026-09-03, don't guess new ones.
 const images = [
-  { src: "/images/gallery/seated-natural-light.jpg", pos: "46% 50%", alt: "Soft boudoir portrait of a woman seated in natural light" },
-  { src: "/images/gallery/lingerie-portrait.jpg", pos: "52% 50%", alt: "White lingerie boudoir photograph with relaxed lying pose" },
-  { src: "/images/gallery/glamour-studio.jpg", pos: "50% 15%", alt: "Glamour boudoir portrait with soft studio lighting" },
-  { src: "/images/gallery/denim-jacket.jpg", pos: "50% 18%", alt: "Confident boudoir portrait wearing a denim jacket" },
-  { src: "/images/gallery/curvy-soft-light.jpg", pos: "50% 22%", alt: "Beautiful curvy boudoir image in soft lighting" },
-  { src: "/images/gallery/white-lingerie-pose.jpg", pos: "60% 50%", alt: "Boudoir image of a woman in white lingerie" },
-  { src: "/images/gallery/silhouette-dramatic.jpg", pos: "50% 28%", alt: "Artistic boudoir silhouette with dramatic lighting" },
-  { src: "/images/gallery/moody.jpg", pos: "50% 30%", alt: "Moody boudoir image" },
-  { src: "/images/gallery/bodyscape.jpg", pos: "50% 50%", alt: "Bodyscape boudoir image" },
-  { src: "/images/gallery/studio-bw.jpg", pos: "50% 12%", alt: "Studio boudoir shot in black and white on a black background" },
-  { src: "/images/gallery/soft-colour-eye-contact.jpg", pos: "62% 50%", alt: "Soft colour boudoir portrait with relaxed eye contact" },
-  { src: "/images/gallery/legs-in-bed.jpg", pos: "50% 50%", alt: "Boudoir image of a woman's legs lying in bed" },
-  { src: "/images/gallery/hat-corset-black-white.jpg", pos: "50% 24%", alt: "Black and white boudoir portrait in a corset and wide brimmed hat" },
-  { src: "/images/gallery/shirt-lying-bw.jpg", pos: "50% 50%", alt: "Black and white boudoir photograph of a woman lying in an open shirt" },
-  { src: "/images/testimonials/back-arms-raised-bw.jpg", pos: "50% 40%", alt: "Black and white boudoir photograph from behind with arms raised" },
-  { src: "/images/testimonials/blazer-seated-bw.jpg", pos: "50% 45%", alt: "Black and white boudoir photograph of a woman seated in an open blazer" },
+  { src: "/images/gallery/seated-natural-light-800.webp", full: "/images/gallery/seated-natural-light.webp", w: 800, h: 533, pos: "46% 50%", alt: "Soft boudoir portrait of a woman seated in natural light" },
+  { src: "/images/gallery/lingerie-portrait-800.webp", full: "/images/gallery/lingerie-portrait.webp", w: 800, h: 532, pos: "52% 50%", alt: "White lingerie boudoir photograph with relaxed lying pose" },
+  { src: "/images/gallery/glamour-studio-800.webp", full: "/images/gallery/glamour-studio.webp", w: 800, h: 1194, pos: "50% 15%", alt: "Glamour boudoir portrait with soft studio lighting" },
+  { src: "/images/gallery/denim-jacket-800.webp", full: "/images/gallery/denim-jacket.webp", w: 800, h: 1214, pos: "50% 18%", alt: "Confident boudoir portrait wearing a denim jacket" },
+  { src: "/images/gallery/curvy-soft-light-800.webp", full: "/images/gallery/curvy-soft-light.webp", w: 800, h: 1219, pos: "50% 22%", alt: "Beautiful curvy boudoir image in soft lighting" },
+  { src: "/images/gallery/white-lingerie-pose-800.webp", full: "/images/gallery/white-lingerie-pose.webp", w: 800, h: 532, pos: "60% 50%", alt: "Boudoir image of a woman in white lingerie" },
+  { src: "/images/gallery/silhouette-dramatic-800.webp", full: "/images/gallery/silhouette-dramatic.webp", w: 800, h: 1209, pos: "50% 28%", alt: "Artistic boudoir silhouette with dramatic lighting" },
+  { src: "/images/gallery/moody-800.webp", full: "/images/gallery/moody.webp", w: 800, h: 1205, pos: "50% 30%", alt: "Moody boudoir image" },
+  { src: "/images/gallery/bodyscape-800.webp", full: "/images/gallery/bodyscape.webp", w: 800, h: 532, pos: "50% 50%", alt: "Bodyscape boudoir image" },
+  { src: "/images/gallery/studio-bw-800.webp", full: "/images/gallery/studio-bw.webp", w: 800, h: 1213, pos: "50% 12%", alt: "Studio boudoir shot in black and white on a black background" },
+  { src: "/images/gallery/soft-colour-eye-contact-800.webp", full: "/images/gallery/soft-colour-eye-contact.webp", w: 800, h: 532, pos: "62% 50%", alt: "Soft colour boudoir portrait with relaxed eye contact" },
+  { src: "/images/gallery/legs-in-bed-800.webp", full: "/images/gallery/legs-in-bed.webp", w: 800, h: 532, pos: "50% 50%", alt: "Boudoir image of a woman's legs lying in bed" },
+  { src: "/images/gallery/hat-corset-black-white-800.webp", full: "/images/gallery/hat-corset-black-white.webp", w: 800, h: 1200, pos: "50% 24%", alt: "Black and white boudoir portrait in a corset and wide brimmed hat" },
+  { src: "/images/gallery/shirt-lying-bw-800.webp", full: "/images/gallery/shirt-lying-bw.webp", w: 800, h: 534, pos: "50% 50%", alt: "Black and white boudoir photograph of a woman lying in an open shirt" },
+  { src: "/images/testimonials/back-arms-raised-bw-800.webp", full: "/images/testimonials/back-arms-raised-bw.webp", w: 800, h: 1200, pos: "50% 40%", alt: "Black and white boudoir photograph from behind with arms raised" },
+  { src: "/images/testimonials/blazer-seated-bw-800.webp", full: "/images/testimonials/blazer-seated-bw.webp", w: 800, h: 1201, pos: "50% 45%", alt: "Black and white boudoir photograph of a woman seated in an open blazer" },
 ];
 ---
 
 <Base
-  title="Boudoir Photoshoot Gallery Auckland | Real Women, Real Confidence"
+  title="Boudoir Photoshoot Gallery Auckland | Real Women"
   description="A gallery of real boudoir photography clients photographed on Auckland's Hibiscus Coast. Natural, confident, and respectful images."
 >
   <section class="relative">
     <img
-      src="/images/gallery/photographer.jpg"
+      src="/images/gallery/photographer.webp"
       alt=""
+      width="1600"
+      height="800"
+      fetchpriority="high"
       class="h-[380px] w-full object-cover opacity-50 sm:h-[440px]"
       style="object-position: 50% 35%"
     />
@@ -82,8 +85,12 @@ const images = [
         >
           <img
             src={img.src}
+            data-full={img.full}
             alt={img.alt}
+            width={img.w}
+            height={img.h}
             loading="lazy"
+            decoding="async"
             class="aspect-[4/3] w-full object-cover transition duration-300 group-hover:scale-[1.03] group-hover:opacity-90"
             style={`object-position: ${img.pos}`}
           />
@@ -164,7 +171,7 @@ const images = [
     const show = (i: number) => {
       current = (i + thumbs.length) % thumbs.length;
       const thumb = thumbs[current];
-      bigImg.src = thumb.src;
+      bigImg.src = thumb.dataset.full || thumb.src;
       bigImg.alt = thumb.alt;
       caption.textContent = thumb.alt;
       count.textContent = `${current + 1} of ${thumbs.length}`;

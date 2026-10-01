@@ -44,29 +44,30 @@ const packages = [
 ];
 
 const gallerySection1 = [
-  { src: "/images/home/midriff-lingerie.jpg", alt: "Boudoir photo of a woman's midriff wearing sexy lingerie" },
-  { src: "/images/home/lace-lingerie.jpg", alt: "Boudoir photo of a woman wearing lace lingerie" },
-  { src: "/images/home/on-bed.jpg", alt: "Boudoir photo of a woman on a bed" },
-  { src: "/images/home/low-light-thong.jpg", alt: "Boudoir photo of a woman in low light wearing a thong" },
+  { src: "/images/home/midriff-lingerie-800.webp", alt: "Boudoir photo of a woman's midriff wearing sexy lingerie" },
+  { src: "/images/home/lace-lingerie-800.webp", alt: "Boudoir photo of a woman wearing lace lingerie" },
+  { src: "/images/home/on-bed-800.webp", alt: "Boudoir photo of a woman on a bed" },
+  { src: "/images/home/low-light-thong-800.webp", alt: "Boudoir photo of a woman in low light wearing a thong" },
 ];
 
 const gallerySection2 = [
-  { src: "/images/home/spotlight-stool.jpg", alt: "Boudoir photo of a woman in a one piece under a spotlight, leaning on a stool" },
-  { src: "/images/home/bed-facing-away.jpg", alt: "Boudoir photo of a woman on a bed facing away from the camera in a seductive pose" },
-  { src: "/images/home/gloves.jpg", alt: "Boudoir photo of a woman looking at the camera wearing gloves" },
-  { src: "/images/home/sheepskin-rug.jpg", alt: "Boudoir photo of a woman lying on a sheepskin rug in lingerie" },
+  { src: "/images/home/spotlight-stool-800.webp", alt: "Boudoir photo of a woman in a one piece under a spotlight, leaning on a stool" },
+  { src: "/images/home/bed-facing-away-800.webp", alt: "Boudoir photo of a woman on a bed facing away from the camera in a seductive pose" },
+  { src: "/images/home/gloves-800.webp", alt: "Boudoir photo of a woman looking at the camera wearing gloves" },
+  { src: "/images/home/sheepskin-rug-800.webp", alt: "Boudoir photo of a woman lying on a sheepskin rug in lingerie" },
 ];
 ---
 
 <Base
-  title="Boudoir Photography Auckland | Elegant & Confidence-Boosting Sessions"
-  description="A private boudoir photography experience in Auckland for women who want to feel confident and beautiful. Book your session with Belinda Dunne on the Hibiscus Coast."
+  title="Boudoir Photographer Auckland | Female, One Client a Day"
+  description="Private boudoir photography in Auckland with female photographer Belinda Dunne. One session a day, every body welcome, on the Hibiscus Coast."
 >
   <!-- Full-bleed title hero -->
   <section class="relative">
     <img
-      src="/images/home/hero.jpg"
+      src="/images/home/hero.webp"
       alt="Auckland boudoir photography"
+      fetchpriority="high"
       class="h-[430px] w-full object-cover object-[78%_30%] opacity-50 sm:h-[420px] sm:object-[75.5744%_73.6184%]"
       width="1600"
       height="1065"
@@ -111,6 +112,9 @@ const gallerySection2 = [
         src={img.src}
         alt={img.alt}
         loading="lazy"
+        decoding="async"
+        width="800"
+        height="586"
         class="aspect-[4/3] w-full object-cover"
       />
     ))}
@@ -120,12 +124,14 @@ const gallerySection2 = [
   <section class="mx-auto max-w-6xl px-6 py-20">
     <div class="flex flex-col gap-8 sm:flex-row sm:items-start">
       <img
-        src="/images/home/photographer-belinda.jpg"
+        src="/images/home/photographer-belinda-540.webp"
         alt="Belinda Dunne, Auckland boudoir photographer"
         style="object-position: 46.8% 27.2%;"
         class="aspect-square w-full max-w-[270px] shrink-0 object-cover"
-        width="270"
-        height="270"
+        width="540"
+        height="540"
+        loading="lazy"
+        decoding="async"
       />
       <div>
         <h2 class="text-3xl">Meet your photographer</h2>
@@ -134,7 +140,8 @@ const gallerySection2 = [
           only take on one session a day so I'm never watching the clock. My
           Master Level accreditation from The Portrait Masters focused
           specifically on posing and lighting, the two things that make or break how a boudoir photo
-          turns out.
+          turns out. I also photograph
+          <a href="/maternity-photography" class="text-boudoir-pink underline">maternity sessions</a>.
         </p>
         <a href="/about-belinda-dunne" class="mt-2 inline-block text-boudoir-pink underline">
           More about Belinda
@@ -191,13 +198,23 @@ const gallerySection2 = [
         A personalised, confidence-boosting experience from the first message
         to the moment you see your stunning images.
       </p>
+      <p class="mx-auto mt-4 max-w-2xl text-white/80">
+        First time? Read
+        <a href="/blog/first-boudoir-shoot-what-to-expect/" class="text-boudoir-pink underline">what to expect at your first boudoir shoot</a>
+        and the guide to
+        <a href="/what-to-wear-boudoir-shoot" class="text-boudoir-pink underline">what to wear to a boudoir shoot</a>.
+      </p>
     </div>
 
     <div class="mx-auto mt-12 grid max-w-6xl grid-cols-1 px-6 sm:grid-cols-3 md:px-12 lg:px-20">
       <div class="relative">
         <img
-          src="/images/home/bw-bed.jpg"
+          src="/images/home/bw-bed-800.webp"
           alt="Black and white boudoir photo of a woman on a bed"
+          width="800"
+          height="589"
+          loading="lazy"
+          decoding="async"
           class="h-[280px] w-full object-cover sm:h-[340px]"
         />
       </div>
@@ -214,8 +231,12 @@ const gallerySection2 = [
       </div>
       <div class="relative">
         <img
-          src="/images/home/bw-portrait.jpg"
+          src="/images/home/bw-portrait-800.webp"
           alt="Black and white boudoir portrait of a young woman"
+          width="800"
+          height="589"
+          loading="lazy"
+          decoding="async"
           class="h-[280px] w-full object-cover sm:h-[340px]"
         />
       </div>
@@ -233,8 +254,12 @@ const gallerySection2 = [
       </div>
       <div class="relative">
         <img
-          src="/images/home/bw-tiled.jpg"
+          src="/images/home/bw-tiled-800.webp"
           alt="Black and white boudoir photo of a young woman lying on a tiled surface"
+          width="800"
+          height="590"
+          loading="lazy"
+          decoding="async"
           class="h-[280px] w-full object-cover sm:h-[380px]"
         />
       </div>
@@ -259,6 +284,9 @@ const gallerySection2 = [
         src={img.src}
         alt={img.alt}
         loading="lazy"
+        decoding="async"
+        width="800"
+        height="586"
         class="aspect-[4/3] w-full object-cover"
       />
     ))}
@@ -276,7 +304,7 @@ const gallerySection2 = [
       <div class="mt-14 grid gap-6 md:grid-cols-3">
         {packages.map((pkg) => (
           <div class="bg-[#201520] px-8 py-10 text-center">
-            <img src={pkg.icon} alt="" class="mx-auto h-12 w-12" />
+            <img src={pkg.icon} alt="" width="92" height="92" loading="lazy" decoding="async" class="mx-auto h-12 w-12" />
             <h3 class="mt-4 text-2xl uppercase tracking-wide text-boudoir-pink">{pkg.name}</h3>
             <div class="mt-5 space-y-3 text-sm text-white/90">
               {pkg.included.split("\n").map((line) => <p>{line}</p>)}
@@ -323,7 +351,9 @@ const gallerySection2 = [
         <p class="mt-2 text-boudoir-muted">
           One of the most common bookings I take. Usually planned as a gift
           for a partner to open before the day, and just as often kept for
-          herself once she sees the images.
+          herself once she sees the images. Here is how
+          <a href="/bridal-boudoir-auckland" class="text-boudoir-pink underline">bridal boudoir in Auckland</a>
+          works with me.
         </p>
       </div>
       <div>
@@ -374,8 +404,12 @@ const gallerySection2 = [
   <!-- Closing CTA (full-bleed photo background) -->
   <section class="relative">
     <img
-      src="/images/home/low-light-innocent.jpg"
+      src="/images/home/low-light-innocent.webp"
       alt=""
+      width="504"
+      height="1600"
+      loading="lazy"
+      decoding="async"
       class="absolute inset-0 h-full w-full object-cover"
     />
     <div class="relative mx-auto max-w-3xl px-6 py-24 text-center text-boudoir-white">
@@ -403,8 +437,12 @@ const gallerySection2 = [
   <!-- Testimonial (full-bleed photo background, naturally dark) -->
   <section class="relative">
     <img
-      src="/images/home/tiled-floor-face-down.jpg"
+      src="/images/home/tiled-floor-face-down.webp"
       alt=""
+      width="1600"
+      height="411"
+      loading="lazy"
+      decoding="async"
       class="absolute inset-0 h-full w-full object-cover"
     />
     <div class="relative mx-auto max-w-3xl px-6 py-20 text-center text-boudoir-white">

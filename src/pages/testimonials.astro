@@ -125,23 +125,25 @@ const rest = testimonials.filter((t) => !t.feature);
 // Letitia's own photograph, shown with her own words. Her face is not in the
 // frame, so pairing them does not identify her.
 const featurePhoto = {
-  src: "/images/testimonials/blazer-seated-bw.jpg",
+  src: "/images/testimonials/blazer-seated-bw.webp",
+  w: 1066,
+  h: 1600,
   pos: "50% 45%",
   alt: "Black and white boudoir photograph of a woman seated in an open blazer",
 };
 
 const photoStrip = [
-  { src: "/images/testimonials/curvy-black-lace-studio.jpg", pos: "50% 22%", alt: "Curvy boudoir portrait in black lace against a dark studio background" },
-  { src: "/images/testimonials/curvy-blue-shirt-window-light.jpg", pos: "50% 25%", alt: "Curvy boudoir portrait in an oversized blue shirt in natural window light" },
-  { src: "/images/gallery/studio-bw.jpg", pos: "50% 12%", alt: "Black and white studio boudoir portrait" },
-  { src: "/images/testimonials/window-light-kneeling.jpg", pos: "50% 50%", alt: "Boudoir photograph of a woman kneeling in window light" },
+  { src: "/images/testimonials/curvy-black-lace-studio-800.webp", w: 800, h: 1200, pos: "50% 22%", alt: "Curvy boudoir portrait in black lace against a dark studio background" },
+  { src: "/images/testimonials/curvy-blue-shirt-window-light-800.webp", w: 800, h: 1200, pos: "50% 25%", alt: "Curvy boudoir portrait in an oversized blue shirt in natural window light" },
+  { src: "/images/gallery/studio-bw-800.webp", w: 800, h: 1213, pos: "50% 12%", alt: "Black and white studio boudoir portrait" },
+  { src: "/images/testimonials/window-light-kneeling-800.webp", w: 800, h: 534, pos: "50% 50%", alt: "Boudoir photograph of a woman kneeling in window light" },
 ];
 
 const photoBreak = [
-  { src: "/images/testimonials/black-lingerie-garter-side.jpg", pos: "50% 45%", alt: "Boudoir photograph in black lingerie and a garter belt" },
-  { src: "/images/gallery/curvy-soft-light.jpg", pos: "50% 25%", alt: "Curvy boudoir portrait in soft natural light" },
-  { src: "/images/testimonials/low-key-standing-profile.jpg", pos: "55% 50%", alt: "Low key boudoir photograph of a woman standing in profile" },
-  { src: "/images/gallery/denim-jacket.jpg", pos: "50% 18%", alt: "Confident boudoir portrait wearing an oversized denim jacket" },
+  { src: "/images/testimonials/black-lingerie-garter-side-800.webp", w: 800, h: 1200, pos: "50% 45%", alt: "Boudoir photograph in black lingerie and a garter belt" },
+  { src: "/images/gallery/curvy-soft-light-800.webp", w: 800, h: 1219, pos: "50% 25%", alt: "Curvy boudoir portrait in soft natural light" },
+  { src: "/images/testimonials/low-key-standing-profile-800.webp", w: 800, h: 534, pos: "55% 50%", alt: "Low key boudoir photograph of a woman standing in profile" },
+  { src: "/images/gallery/denim-jacket-800.webp", w: 800, h: 1214, pos: "50% 18%", alt: "Confident boudoir portrait wearing an oversized denim jacket" },
 ];
 
 const googleReviewsUrl = "https://www.google.com/search?q=Boudoir+Photography+Auckland";
@@ -154,8 +156,11 @@ const googleReviewsUrl = "https://www.google.com/search?q=Boudoir+Photography+Au
   <!-- Hero over a photo, matching the other pages -->
   <section class="relative">
     <img
-      src="/images/gallery/soft-colour-eye-contact.jpg"
+      src="/images/gallery/soft-colour-eye-contact.webp"
       alt=""
+      width="1600"
+      height="1065"
+      fetchpriority="high"
       class="h-[380px] w-full object-cover opacity-50 sm:h-[440px]"
       style="object-position: 62% 40%"
     />
@@ -186,7 +191,7 @@ const googleReviewsUrl = "https://www.google.com/search?q=Boudoir+Photography+Au
   <!-- Photos up front, before any wall of text -->
   <section class="grid grid-cols-2 sm:grid-cols-4">
     {photoStrip.map((img) => (
-      <img src={img.src} alt={img.alt} loading="lazy" class="aspect-[3/4] w-full object-cover" style={`object-position: ${img.pos}`} />
+      <img src={img.src} alt={img.alt} width={img.w} height={img.h} loading="lazy" decoding="async" class="aspect-[3/4] w-full object-cover" style={`object-position: ${img.pos}`} />
     ))}
   </section>
 
@@ -197,7 +202,10 @@ const googleReviewsUrl = "https://www.google.com/search?q=Boudoir+Photography+Au
         <img
           src={featurePhoto.src}
           alt={featurePhoto.alt}
+          width={featurePhoto.w}
+          height={featurePhoto.h}
           loading="lazy"
+          decoding="async"
           class="aspect-[3/4] w-full object-cover"
           style={`object-position: ${featurePhoto.pos}`}
         />
@@ -237,7 +245,7 @@ const googleReviewsUrl = "https://www.google.com/search?q=Boudoir+Photography+Au
   {/* A breath of photography between the blocks of text */}
   <section class="grid grid-cols-2 sm:grid-cols-4">
     {photoBreak.map((img) => (
-      <img src={img.src} alt={img.alt} loading="lazy" class="aspect-[3/4] w-full object-cover" style={`object-position: ${img.pos}`} />
+      <img src={img.src} alt={img.alt} width={img.w} height={img.h} loading="lazy" decoding="async" class="aspect-[3/4] w-full object-cover" style={`object-position: ${img.pos}`} />
     ))}
   </section>
 

@@ -369,3 +369,16 @@ is now 0** (was 5), so all five pages requested on 2026-09-17 (/faqs/, /maternit
 /privacy-policy/, /terms-and-conditions/, /testimonials/) have been crawled. /testimonials/ and
 /maternity-photography are already earning impressions. Remaining not-indexed: redirects 5, stale noindex 4,
 canonical alternates 2, crawled-not-indexed 3, Google-chose-different-canonical 1 — all normal for a migrated site.
+
+**Follow-up actions, same day (2026-10-01), with Belinda's go-ahead:**
+- Deployed d56105a: every internal link and both contact-form redirects now use the trailing-slash URL
+  (was 51 non-slash links). Same fix as BBP 2026-08-15. Expect slash/non-slash duplicate pages in GSC to fold
+  together over 1–4 weeks. Verified live.
+- Deployed f7af159: added Annelie and Kathy (new Google reviews, word for word, first names only) to
+  /testimonials/, count updated to 14. Correction: the "put Google reviews on the site" item was DONE on
+  2026-09-03; this log wrongly carried it as open. Tracey's 2023 review still not added (full text not read).
+- Google review counts seen 2026-10-01: this business 14 (5.0), Studio Boudoir 9 (5.0).
+- Wedding directories checked: free self-serve listings exist on Getting Hitched (Silver, includes website
+  link), WeddingWise (free forever) and My Wedding Guide (free, link not counted for SEO). Boudoir
+  International is paid membership only and submissions closed. Bride & Groom, NZ Bride, Wedding Vendors NZ,
+  Together Journal: paid only. None are email-based; all are signup forms Belinda must complete herself.

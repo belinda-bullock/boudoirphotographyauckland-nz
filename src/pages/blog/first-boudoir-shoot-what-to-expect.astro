@@ -1,0 +1,372 @@
+---
+import Base from "../../layouts/Base.astro";
+
+// First blog article, 2026-10-01.
+// Target search: "first boudoir shoot" / "what to expect at a boudoir shoot".
+// Every fact about how a session runs is taken from Belinda's own wording
+// elsewhere on this site (FAQs, pricing, homepage steps, wardrobe guide).
+// Nothing here is invented: no client stories, no quotes, no statistics.
+// If a detail of the process changes, change it here AND on the FAQs page.
+
+const published = "2026-10-01";
+const url = "https://www.boudoirphotographyauckland.co.nz/blog/first-boudoir-shoot-what-to-expect/";
+const title = "Your First Boudoir Shoot: What to Expect | Auckland";
+const description =
+  "Nervous about your first boudoir shoot? Here is what happens, start to finish, at a private Auckland session with female photographer Belinda Dunne.";
+const heroImage = "/images/gallery/curvy-soft-light.jpg";
+
+// The FAQ block at the end of the article. These same questions and answers
+// are rendered on the page AND fed into the FAQPage schema, so the two can
+// never drift apart.
+const faqs = [
+  {
+    q: "Is it normal to be nervous before a boudoir shoot?",
+    a: "Yes. Most women arrive with some nerves, and it is expected. Nothing is rushed: we talk first, do a few practice poses, and I guide you through every step.",
+  },
+  {
+    q: "Do I need to know how to pose?",
+    a: "No. Posing is my job. I show you each pose myself and guide you through the small details, from your hands to the angle of your chin.",
+  },
+  {
+    q: "Do I have to be nude?",
+    a: "No. Plenty of women shoot in lingerie, an oversized shirt or a jacket. Nude is an option if you want it, and you can change your mind at any point.",
+  },
+  {
+    q: "Can I bring a friend?",
+    a: "Yes. You are welcome to bring a support person, as long as they are there to cheer you on.",
+  },
+  {
+    q: "Who will see my photos?",
+    a: "Only you, unless you tell me otherwise. Your images are never shared anywhere without your permission, and I delete my copies once your final images are delivered.",
+  },
+];
+
+const photos = [
+  { src: "/images/gallery/denim-jacket.jpg", pos: "50% 25%", alt: "Boudoir portrait of a woman kneeling in jeans and a denim jacket" },
+  { src: "/images/testimonials/blazer-seated-bw.jpg", pos: "50% 40%", alt: "Black and white boudoir portrait of a woman seated in a black blazer" },
+  { src: "/images/gallery/soft-colour-eye-contact.jpg", pos: "50% 30%", alt: "Boudoir portrait of a woman in a white slip looking into the camera" },
+  { src: "/images/testimonials/curvy-blue-shirt-window-light.jpg", pos: "50% 25%", alt: "Boudoir portrait in an oversized blue shirt in window light" },
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: "Your first boudoir shoot: what to expect, start to finish",
+    description,
+    image: new URL(heroImage, "https://www.boudoirphotographyauckland.co.nz").toString(),
+    datePublished: published,
+    dateModified: published,
+    inLanguage: "en-NZ",
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    author: {
+      "@type": "Person",
+      name: "Belinda Dunne",
+      url: "https://www.boudoirphotographyauckland.co.nz/about-belinda-dunne/",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Boudoir Photography Auckland",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.boudoirphotographyauckland.co.nz/images/boudoir-logo.png",
+      },
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  },
+];
+
+const link = "text-boudoir-red underline";
+---
+
+<Base title={title} description={description} image={heroImage}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <article>
+    <header class="mx-auto max-w-3xl px-6 pt-16 text-center">
+      <p class="text-sm uppercase tracking-wide text-boudoir-pink">
+        <a href="/blog" class="hover:underline">Blog</a>
+        <span aria-hidden="true"> · </span>
+        <time datetime={published}>1 October 2026</time>
+      </p>
+      <h1 class="mt-4 text-4xl text-boudoir-ink md:text-5xl">Your First Boudoir Shoot: What to Expect</h1>
+      <p class="mt-6 text-boudoir-muted">
+        If you are thinking about a boudoir shoot and your stomach flips a little
+        at the idea, you are in good company. Almost every woman who books with me
+        has never done anything like it before.
+      </p>
+      <p class="mt-4 text-boudoir-muted">
+        Most of the nerves come from not knowing what happens. So here is the
+        whole thing, start to finish, the way a session runs at my studio on
+        Auckland's Hibiscus Coast.
+      </p>
+    </header>
+
+    <div class="mx-auto mt-12 max-w-3xl px-6">
+      <img
+        src={heroImage}
+        alt="Boudoir portrait of a woman in white lace leaning against a wall in soft window light"
+        width="1050"
+        height="1600"
+        class="mx-auto h-[420px] w-full object-cover sm:h-[520px]"
+        style="object-position: 50% 20%;"
+      />
+    </div>
+
+    <div class="mx-auto max-w-3xl space-y-14 px-6 py-16">
+      <section>
+        <h2 class="text-2xl text-boudoir-ink">Is it normal to feel nervous before a boudoir shoot?</h2>
+        <div class="mt-4 space-y-3 text-sm leading-relaxed text-boudoir-muted">
+          <p>
+            Completely. Plenty of women turn up a bit nervous, and by the end of
+            the session they are owning it. Nerves are not a sign you are the
+            wrong person for this. They are a sign it matters to you.
+          </p>
+          <p>
+            What helps most is knowing there are no surprises. You will know what
+            happens before you arrive, and nothing happens on the day that you
+            have not agreed to.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl text-boudoir-ink">What happens before the day?</h2>
+        <div class="mt-4 space-y-3 text-sm leading-relaxed text-boudoir-muted">
+          <p>
+            It starts with a message. Send one through the
+            <a href="/contact-boudoir-photography-auckland" class={link}>contact page</a>,
+            as bold or as bashful as you like. Tell me a little about yourself and
+            what you are imagining. There are no right answers.
+          </p>
+          <p>
+            I will then offer you a call. We talk through the kind of photos you
+            want, what to bring, and how the day will run. If you would like
+            professional hair and makeup, I can arrange it for an extra $220 with
+            enough notice.
+          </p>
+          <p>
+            A deposit holds your date and the rest is paid before the shoot. If
+            you have a deadline in mind, like a birthday or a wedding, get in touch
+            at least four weeks ahead.
+          </p>
+          <p>
+            Outfits are the question I am asked more than any other, so there is a
+            whole <a href="/what-to-wear-boudoir-shoot" class={link}>guide to what to wear</a>.
+            The short version: bring more than you think you need, and come to the
+            studio in loose clothes so there are no elastic marks.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl text-boudoir-ink">What happens when I arrive?</h2>
+        <div class="mt-4 space-y-3 text-sm leading-relaxed text-boudoir-muted">
+          <p>
+            It is you and me. I am a female photographer, I work alone, and there
+            is no assistant or anyone else in the room. If you would feel better
+            with a friend there, bring one along for support.
+          </p>
+          <p>
+            I only photograph one woman a day, so nobody is watching a clock. Your
+            favourite music goes on. We do not start with the camera. We start by
+            talking: the photos you have in mind, any injuries or limitations I
+            should know about, and how your outfits work together.
+          </p>
+          <p>
+            Then we do a few practice poses, so you know how I guide you before the
+            camera comes out properly. By the time we start shooting, you have
+            already done the hardest part.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl text-boudoir-ink">Will I know how to pose?</h2>
+        <div class="mt-4 space-y-3 text-sm leading-relaxed text-boudoir-muted">
+          <p>
+            You do not need to know a single pose. That is my job. I show you each
+            one myself, then guide you through the small details that make a big
+            difference: where your hands go, how you hold your shoulders, the tilt
+            of your chin.
+          </p>
+          <p>
+            My Master Level accreditation from The Portrait Masters focused on
+            posing and lighting. Those are the two things that decide how a boudoir
+            photo turns out. When a boudoir photo does not work, it is almost
+            always the posing or the light, not the woman in it.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl text-boudoir-ink">What if I do not feel confident about my body?</h2>
+        <div class="mt-4 space-y-3 text-sm leading-relaxed text-boudoir-muted">
+          <p>
+            Then you are exactly who this is for. I photograph women of every size,
+            every shape and every age, and the way I light and pose you is built
+            around your body, not somebody else's.
+          </p>
+          <p>
+            You do not need to lose weight first or wait for a better version of
+            yourself to turn up. Come as you are today.
+          </p>
+          <p>
+            If you have scars, or you have had surgery, you do not have to explain
+            anything. Tell me beforehand what you would like brought forward and
+            what you would rather keep out of frame, and that is what I will do.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <section class="grid grid-cols-2 gap-1 md:grid-cols-4" aria-label="Examples of boudoir portraits">
+      {photos.map((p) => (
+        <img
+          src={p.src}
+          alt={p.alt}
+          loading="lazy"
+          class="h-64 w-full object-cover md:h-80"
+          style={`object-position: ${p.pos}`}
+        />
+      ))}
+    </section>
+
+    <div class="mx-auto max-w-3xl space-y-14 px-6 py-16">
+      <section>
+        <h2 class="text-2xl text-boudoir-ink">Do I have to take everything off?</h2>
+        <div class="mt-4 space-y-3 text-sm leading-relaxed text-boudoir-muted">
+          <p>
+            No. Lingerie is popular, and so is an oversized white shirt, a denim
+            jacket, a blazer or a chunky knit. Covered up can be the best frame on
+            the card.
+          </p>
+          <p>
+            Nude is an option if you want it. Some women decide before the day and
+            some decide halfway through. Either is fine, and you can change your
+            mind at any point. A nude frame is often less revealing than people
+            expect, because so much of it is shape, light and shadow.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl text-boudoir-ink">How long does a boudoir shoot take?</h2>
+        <div class="mt-4 space-y-3 text-sm leading-relaxed text-boudoir-muted">
+          <p>
+            My packages list 1.5 hours, 2.5 hours or unlimited time. In practice I
+            usually take close to double that, because the talking and the
+            practice poses come first and I never want you rushed.
+          </p>
+          <p>
+            Eat something beforehand and bring water. Time on your feet under
+            lights is more work than it sounds.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl text-boudoir-ink">What happens after the shoot?</h2>
+        <div class="mt-4 space-y-3 text-sm leading-relaxed text-boudoir-muted">
+          <p>
+            Next comes your photo reveal session, where you see your images and
+            choose the ones you love. I edit your favourites and deliver them as high resolution
+            digital downloads.
+          </p>
+          <p>
+            Every package also includes the same number of unedited images, as a
+            reminder that you looked this good before any editing. If you love
+            more than your package covers, extra edited images are $80 each, with
+            no pressure to buy.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl text-boudoir-ink">Who will see my photos?</h2>
+        <div class="mt-4 space-y-3 text-sm leading-relaxed text-boudoir-muted">
+          <p>
+            Only you, unless you tell me otherwise. Your images are never posted
+            or shown anywhere without your permission. Your session, your body,
+            your call.
+          </p>
+          <p>
+            Once your final images are delivered, I delete my copies. Keep a few
+            backups of your own, because I will not have them.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl text-boudoir-ink">How much does a first boudoir shoot cost in Auckland?</h2>
+        <div class="mt-4 space-y-3 text-sm leading-relaxed text-boudoir-muted">
+          <p>
+            Prices vary a lot between photographers, so always check what is
+            included, not only the headline number. Mine are laid out in full, with
+            no hidden costs:
+          </p>
+          <ul class="space-y-2">
+            <li class="border-l-2 border-boudoir-pink pl-4"><span class="font-semibold text-boudoir-ink">Tease, $750.</span> 1.5 hours and 6 edited images. A gentle first taste, and a good fit for first timers.</li>
+            <li class="border-l-2 border-boudoir-pink pl-4"><span class="font-semibold text-boudoir-ink">Temptation, $950.</span> 2.5 hours and 10 edited images.</li>
+            <li class="border-l-2 border-boudoir-pink pl-4"><span class="font-semibold text-boudoir-ink">Total Knockout, $1,200.</span> Unlimited time and 20 edited images.</li>
+          </ul>
+          <p>
+            Every package includes matching unedited images. The full detail is on
+            the <a href="/pricing" class={link}>pricing page</a>.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl text-boudoir-ink">Quick answers</h2>
+        <div class="mt-4 divide-y divide-boudoir-cream">
+          {faqs.map((f) => (
+            <details class="group py-5">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-boudoir-ink">
+                <span>{f.q}</span>
+                <span class="shrink-0 text-xl text-boudoir-pink transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <p class="mt-4 text-sm leading-relaxed text-boudoir-muted">{f.a}</p>
+            </details>
+          ))}
+        </div>
+        <p class="mt-6 text-sm text-boudoir-muted">
+          More on the <a href="/faqs" class={link}>questions and answers page</a>.
+        </p>
+      </section>
+    </div>
+  </article>
+
+  <section class="bg-boudoir-ink py-20 text-center text-boudoir-white">
+    <div class="mx-auto max-w-2xl px-6">
+      <h2 class="text-3xl text-boudoir-pink">Ready when you are</h2>
+      <p class="mt-6 leading-relaxed">
+        You do not have to have it all worked out. Send me a message, ask
+        whatever is on your mind, and we will go from there. No pressure, and no
+        right answers.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a
+          href="/contact-boudoir-photography-auckland"
+          class="inline-block bg-boudoir-red px-6 py-3 text-boudoir-white hover:opacity-90"
+        >
+          Get in touch
+        </a>
+        <a
+          href="/boudoir-photoshoot-gallery-auckland"
+          class="inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink"
+        >
+          See the gallery
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

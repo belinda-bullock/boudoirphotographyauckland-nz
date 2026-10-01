@@ -1,0 +1,248 @@
+---
+import Base from "../../layouts/Base.astro";
+
+// Second blog article, drafted 2026-10-01.
+// Target search: "best boudoir photographer nz" (26 impressions, position 8.2
+// in Search Console, Sep 2026) and "how to choose a boudoir photographer".
+// Written as fair advice that holds for any photographer. It names no other
+// business and makes no claims about what other photographers do or do not
+// do. Keep it that way (Fair Trading Act, and Belinda's no-negative rule).
+// The point about reviews coming from boudoir clients specifically is
+// Belinda's own, from chat on 2026-10-01.
+// Every fact about Belinda's own sessions is taken from elsewhere on this site.
+
+const published = "2026-10-01";
+const url = "https://www.boudoirphotographyauckland.co.nz/blog/how-to-choose-a-boudoir-photographer-nz/";
+const title = "How to Choose a Boudoir Photographer in NZ | 8 Questions to Ask";
+const description =
+  "Choosing a boudoir photographer in New Zealand? Eight questions to ask before you book, from privacy and posing to reviews and pricing.";
+const heroImage = "/images/gallery/studio-bw.jpg";
+
+const points = [
+  {
+    h: "1. Who will be in the room?",
+    p: [
+      "Ask whether the photographer is a man or a woman, and whether anyone else will be there, such as an assistant, a hair and makeup artist, or someone working in the next room.",
+      "There is no single right answer. What matters is that you know before you arrive, and that it suits you. Ask, too, whether you can bring a friend for support.",
+    ],
+  },
+  {
+    h: "2. What happens to my photos?",
+    p: [
+      "This is the most important question on the list. Ask it plainly: will my images ever be shown anywhere without my written permission? Where are they stored? Are they kept after delivery, and for how long?",
+      "A good boudoir photographer will answer this straight away, in writing, without you having to push.",
+    ],
+  },
+  {
+    h: "3. Are the reviews from boudoir clients?",
+    p: [
+      "Star ratings are a good start, but read what the reviews say. Plenty of photographers shoot families, weddings and corporate work as well as boudoir, and all of those reviews count towards the same star rating.",
+      "Look for reviews from women who did a boudoir session. They tell you what it felt like to be in that studio, which is what you are trying to find out.",
+    ],
+  },
+  {
+    h: "4. Will they show me how to pose?",
+    p: [
+      "Most women have never done a boudoir shoot before, so you should not need to know how to pose. Ask how they guide you. Do they demonstrate each pose? Do they help with the small things, like your hands and the angle of your chin?",
+      "Posing and lighting decide how a boudoir photo turns out more than anything else. If a photographer has training in those two areas, it is worth knowing.",
+    ],
+  },
+  {
+    h: "5. Does the portfolio show women like me?",
+    p: [
+      "Look past the cover image. Does the gallery show a range of sizes, shapes and ages? Does it show the style you want, whether that is soft and light, dark and moody, covered up or nude?",
+      "If you have scars, have had surgery, or have any other worry about your body, ask directly whether they have photographed that before.",
+    ],
+  },
+  {
+    h: "6. What exactly is included in the price?",
+    p: [
+      "Compare what you get, not only the headline number. How many edited images? How long is the session? Is hair and makeup included or extra? What does it cost to buy more images if you love them?",
+      "Prices should be clear before you book, with no surprises after the shoot.",
+    ],
+  },
+  {
+    h: "7. How rushed will it feel?",
+    p: [
+      "Ask how many clients they see in a day and how long a session runs in practice. Nerves settle with time. A session squeezed between other bookings is harder to relax into.",
+    ],
+  },
+  {
+    h: "8. How does the first conversation feel?",
+    p: [
+      "Before you book, you should be able to ask questions, talk through what you are imagining, and get a proper reply, without being pushed. That first conversation is a good preview of how the day will feel.",
+      "If you come away more relaxed than you went in, that is a good sign.",
+    ],
+  },
+];
+
+const myAnswers = [
+  ["Who is in the room", "Just you and me. I am a female photographer and I work alone. You are welcome to bring a friend for support."],
+  ["Your photos", "Never shared anywhere without your permission. I delete my copies once your final images are delivered."],
+  ["Reviews", "5.0 from 14 Google reviews, every one of them from a boudoir client."],
+  ["Posing", "I demonstrate every pose myself. My Master Level accreditation from The Portrait Masters focused on posing and lighting."],
+  ["Bodies", "Every size, shape, age and colour, including women with burn scars, before a mastectomy and after weight loss surgery."],
+  ["Price", "Three packages from $750, all listed in full, each with matching unedited images included."],
+  ["Pace", "One woman a day, so nothing is rushed."],
+];
+
+const faqs = [
+  {
+    q: "What should I ask a boudoir photographer before booking?",
+    a: "Ask who will be in the room, what happens to your photos, how they guide posing, what is included in the price, and how many clients they see in a day. Read reviews from boudoir clients specifically.",
+  },
+  {
+    q: "Should I choose a female boudoir photographer?",
+    a: "That is a personal choice. Many women feel more relaxed with a female photographer. Whoever you choose, ask who else will be in the room and whether you can bring a support person.",
+  },
+  {
+    q: "How do I know my boudoir photos will stay private?",
+    a: "Ask the photographer directly whether your images will ever be shared without your written permission, where they are stored, and whether they are kept after delivery. A good photographer will answer clearly before you book.",
+  },
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: "How to choose a boudoir photographer in New Zealand",
+    description,
+    image: new URL(heroImage, "https://www.boudoirphotographyauckland.co.nz").toString(),
+    datePublished: published,
+    dateModified: published,
+    inLanguage: "en-NZ",
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    author: {
+      "@type": "Person",
+      name: "Belinda Dunne",
+      url: "https://www.boudoirphotographyauckland.co.nz/about-belinda-dunne/",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Boudoir Photography Auckland",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.boudoirphotographyauckland.co.nz/images/boudoir-logo.png",
+      },
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  },
+];
+
+const link = "text-boudoir-red underline";
+---
+
+<Base title={title} description={description} image={heroImage}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <article>
+    <header class="mx-auto max-w-3xl px-6 pt-16 text-center">
+      <p class="text-sm uppercase tracking-wide text-boudoir-pink">
+        <a href="/blog/" class="hover:underline">Blog</a>
+        <span aria-hidden="true"> · </span>
+        <time datetime={published}>1 October 2026</time>
+      </p>
+      <h1 class="mt-4 text-4xl text-boudoir-ink md:text-5xl">How to Choose a Boudoir Photographer in New Zealand</h1>
+      <p class="mt-6 text-boudoir-muted">
+        A boudoir shoot asks a lot of trust. You are letting someone photograph
+        you at your most exposed, so the photographer you choose matters more
+        than the outfits, the studio or the props.
+      </p>
+      <p class="mt-4 text-boudoir-muted">
+        Here are the eight questions I would ask, if I were the one booking.
+      </p>
+    </header>
+
+    <div class="mx-auto mt-12 max-w-3xl px-6">
+      <img
+        src={heroImage}
+        alt="Black and white studio boudoir portrait"
+        class="mx-auto h-[420px] w-full object-cover sm:h-[520px]"
+        style="object-position: 50% 15%;"
+      />
+    </div>
+
+    <div class="mx-auto max-w-3xl space-y-14 px-6 py-16">
+      {points.map((s) => (
+        <section>
+          <h2 class="text-2xl text-boudoir-ink">{s.h}</h2>
+          <div class="mt-4 space-y-3 text-sm leading-relaxed text-boudoir-muted">
+            {s.p.map((para) => <p>{para}</p>)}
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <section class="bg-boudoir-cream py-16">
+      <div class="mx-auto max-w-3xl px-6">
+        <h2 class="text-2xl text-boudoir-ink">My own answers</h2>
+        <p class="mt-4 text-sm leading-relaxed text-boudoir-muted">
+          It would be unfair to write a list like this without answering it
+          myself. Here is how a session with me works.
+        </p>
+        <ul class="mt-6 space-y-4">
+          {myAnswers.map(([label, why]) => (
+            <li class="border-l-2 border-boudoir-pink pl-4">
+              <span class="block font-semibold text-boudoir-ink">{label}</span>
+              <span class="mt-1 block text-sm leading-relaxed text-boudoir-muted">{why}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="mt-6 text-sm text-boudoir-muted">
+          Read the <a href="/testimonials/" class={link}>reviews</a>, see the
+          <a href="/pricing/" class={link}>pricing</a> in full, or read
+          <a href="/blog/first-boudoir-shoot-what-to-expect/" class={link}>what to expect at your first shoot</a>.
+        </p>
+      </div>
+    </section>
+
+    <div class="mx-auto max-w-3xl px-6 py-16">
+      <section>
+        <h2 class="text-2xl text-boudoir-ink">Quick answers</h2>
+        <div class="mt-4 divide-y divide-boudoir-cream">
+          {faqs.map((f) => (
+            <details class="group py-5">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-boudoir-ink">
+                <span>{f.q}</span>
+                <span class="shrink-0 text-xl text-boudoir-pink transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <p class="mt-4 text-sm leading-relaxed text-boudoir-muted">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  </article>
+
+  <section class="bg-boudoir-ink py-20 text-center text-boudoir-white">
+    <div class="mx-auto max-w-2xl px-6">
+      <h2 class="text-3xl text-boudoir-pink">Ask me anything</h2>
+      <p class="mt-6 leading-relaxed">
+        Put any of these questions to me before you book. I would rather you
+        asked than wondered.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a
+          href="/contact-boudoir-photography-auckland/"
+          class="inline-block bg-boudoir-red px-6 py-3 text-boudoir-white hover:opacity-90"
+        >
+          Get in touch
+        </a>
+        <a
+          href="/boudoir-photoshoot-gallery-auckland/"
+          class="inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink"
+        >
+          See the gallery
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

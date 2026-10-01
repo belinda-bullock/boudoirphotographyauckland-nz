@@ -1,0 +1,208 @@
+---
+import Base from "../layouts/Base.astro";
+
+// Drafted 2026-10-01. Belinda: milestone birthdays are a common reason women
+// book, usually the 30th, 40th and 50th ("maybe not 60th"), so this page
+// names those three only. The gift voucher process, the three month expiry
+// and the four weeks' notice are all her own, copied from the FAQs page and
+// the first-shoot blog post. If any of those change, change them there too.
+// Target searches: "40th birthday boudoir", "birthday boudoir shoot auckland",
+// "boudoir gift voucher auckland", "50th birthday photoshoot".
+// No client stories or quotes. Do not invent one.
+
+const heroImage = "/images/gallery/glamour-studio.jpg";
+
+const faqs = [
+  {
+    q: "Can I have my photos before my birthday?",
+    a: "Yes, if you book early enough. Get in touch at least four weeks before the date, so there is time to shoot, choose your favourites and edit them properly.",
+  },
+  {
+    q: "Can my friends or my partner buy a boudoir shoot for my birthday?",
+    a: "Yes. They get in touch with me first, and I send them a digital gift voucher to pass on. It shows how long your session is and how many images you get, but not the price. You then call me yourself to plan the shoot.",
+  },
+  {
+    q: "How long does a boudoir gift voucher last?",
+    a: "Three months, on purpose. Left open ended, a lot of women put it off until they have lost weight or some better version of themselves turns up. You do not need to be any different to do this.",
+  },
+  {
+    q: "Am I too old for a boudoir shoot?",
+    a: "No. I have photographed women in their twenties, forties and sixties. Boudoir is not about being a certain age. It is about how you feel in your own skin, right now.",
+  },
+];
+
+const photos = [
+  { src: "/images/gallery/hat-corset-black-white.jpg", pos: "50% 25%", alt: "Black and white boudoir portrait in a corset and hat" },
+  { src: "/images/gallery/soft-colour-eye-contact.jpg", pos: "50% 30%", alt: "Boudoir portrait of a woman in a white slip looking into the camera" },
+  { src: "/images/gallery/denim-jacket.jpg", pos: "50% 25%", alt: "Boudoir portrait of a woman kneeling in jeans and a denim jacket" },
+  { src: "/images/gallery/lingerie-portrait.jpg", pos: "50% 25%", alt: "Boudoir lingerie portrait" },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
+const link = "text-boudoir-red underline";
+---
+
+<Base
+  title="Birthday Boudoir Auckland | 30th, 40th & 50th Birthday Photoshoot"
+  description="Mark your 30th, 40th or 50th birthday with a private boudoir shoot in Auckland with Belinda Dunne. Gift vouchers available for friends and partners."
+  image={heroImage}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <!-- Hero -->
+  <section class="relative">
+    <img
+      src={heroImage}
+      alt=""
+      class="h-[300px] w-full object-cover opacity-50 sm:h-[340px]"
+      style="object-position: 50% 25%;"
+    />
+    <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center">
+      <h1 class="text-4xl text-boudoir-ink md:text-5xl">Birthday Boudoir</h1>
+      <p class="text-2xl text-boudoir-pink">Thirty, forty, fifty. Mark the year.</p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="bg-boudoir-ink py-20 text-center text-boudoir-white">
+    <div class="mx-auto max-w-2xl px-6">
+      <h2 class="text-3xl">Celebrate it, don't dread it</h2>
+      <p class="mt-6 leading-relaxed">
+        A milestone birthday is one of the most common reasons women book with
+        me. The 30th, the 40th, the 50th. A year that feels like it matters,
+        and a way of marking it that is entirely about you.
+      </p>
+      <p class="mt-4 leading-relaxed text-white/85">
+        No cake required.
+        <span class="text-boudoir-pink">Just you, as you are right now.</span>
+      </p>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-3xl space-y-14 px-6 py-20">
+    <section>
+      <h2 class="text-2xl text-boudoir-ink">A 30th, 40th or 50th birthday boudoir shoot</h2>
+      <div class="mt-4 space-y-3 leading-relaxed text-boudoir-muted">
+        <p>
+          Every decade brings its own version of confidence. Women in their
+          twenties and thirties are often discovering it. Women in their forties
+          and fifties are often reclaiming it. Whatever number is on the cake,
+          the session is the same: private, unhurried, and guided the whole way.
+        </p>
+        <p>
+          You do not need to know how to pose. That is my job. I show you every
+          pose myself and talk you through the small details, so all you have to
+          do is turn up.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-2xl text-boudoir-ink">Have the photos before the big day</h2>
+      <div class="mt-4 space-y-3 leading-relaxed text-boudoir-muted">
+        <p>
+          If you want the images in your hands for the birthday itself, get in
+          touch at least four weeks ahead. That leaves time to shoot, choose your
+          favourites, and have them edited properly without a rush.
+        </p>
+        <p>
+          If the date is already close, message me anyway and I will tell you
+          straight whether it can be done.
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Photo strip -->
+  <section class="grid grid-cols-2 gap-1 md:grid-cols-4" aria-label="Examples of boudoir portraits">
+    {photos.map((p) => (
+      <img
+        src={p.src}
+        alt={p.alt}
+        loading="lazy"
+        class="h-64 w-full object-cover md:h-80"
+        style={`object-position: ${p.pos}`}
+      />
+    ))}
+  </section>
+
+  <!-- Gift -->
+  <section class="bg-boudoir-cream py-20">
+    <div class="mx-auto max-w-3xl px-6">
+      <h2 class="text-3xl text-boudoir-ink">Buying it as a birthday gift</h2>
+      <div class="mt-4 space-y-3 leading-relaxed text-boudoir-muted">
+        <p>
+          Plenty of birthday sessions start as a gift. Friends club together for
+          a friend's milestone birthday, and partners buy one for their wife.
+        </p>
+        <p>
+          Get in touch first and we will talk about who she is and what kind of
+          shoot would suit her. I then send you a digital voucher to pass on. It
+          tells her someone who loves her has given her a boudoir shoot, how long
+          her session is and how many images she gets. It does not show the
+          price, so she never sees what you spent.
+        </p>
+        <p>
+          When she is ready, she calls me herself and we plan her day together.
+          The voucher lasts three months, on purpose, so she does not keep
+          putting it off until some better version of herself turns up. She does
+          not need to be any different to do this.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="mx-auto max-w-3xl px-6 py-20">
+    <h2 class="text-3xl text-boudoir-ink">Quick answers</h2>
+    <div class="mt-6 divide-y divide-boudoir-cream">
+      {faqs.map((f) => (
+        <details class="group py-5">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-boudoir-ink">
+            <span>{f.q}</span>
+            <span class="shrink-0 text-xl text-boudoir-pink transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="mt-4 text-sm leading-relaxed text-boudoir-muted">{f.a}</p>
+        </details>
+      ))}
+    </div>
+    <p class="mt-6 text-sm text-boudoir-muted">
+      New to this? Read <a href="/blog/first-boudoir-shoot-what-to-expect/" class={link}>what to expect at your first boudoir shoot</a>,
+      and see the <a href="/what-to-wear-boudoir-shoot/" class={link}>what to wear guide</a>.
+    </p>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-boudoir-ink py-20 text-center text-boudoir-white">
+    <div class="mx-auto max-w-2xl px-6">
+      <h2 class="text-3xl text-boudoir-pink">Tell me about the birthday</h2>
+      <p class="mt-6 leading-relaxed">
+        Send me the date, whether it is for you or a gift, and whatever you are
+        imagining. No pressure and no right answers.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a
+          href="/contact-boudoir-photography-auckland/"
+          class="inline-block bg-boudoir-red px-6 py-3 text-boudoir-white hover:opacity-90"
+        >
+          Get in touch
+        </a>
+        <a
+          href="/pricing/"
+          class="inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink"
+        >
+          See pricing
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

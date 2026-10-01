@@ -263,3 +263,109 @@ site for it.
 
 **Next check should verify:** whether the 5 requested pages moved from "Discovered" into Indexed, and
 whether the homepage title has refreshed in live results.
+
+---
+
+## 2026-10-01 — Fortnightly check (web search proxy)
+
+| Phrase | Result | Real competitors ranking above | vs. 2026-09-17 |
+|---|---|---|---|
+| boudoir photography auckland | **Visible, position 1** | None | **improved** (~4 → 1). Bark.com no longer above either |
+| auckland boudoir photographer | **Not visible in top 9** | Studio Boudoir (3 listings), Studio X, Milk Intimates, Boutique Lifestyle Photography, Tania Te Ata, Natalie Pasco (Wikipedia's Rhondda Bosworth article also present) | **dropped** (~2 among real competitors → not visible) |
+
+Real dashboard data (Cloudflare Web Analytics + Google Search Console): **not provided this run** — unattended
+scheduled run, Belinda not present. Search Console is set up and verified for this domain (URL-prefix property,
+see 2026-09-03), so this is a gap for this run only, not a setup task. Most recent real figures remain the
+trailing-3-month numbers at the top of this file (2026-09-02: 236 clicks, 5.88K impressions, 4% CTR, 15.4 avg. position).
+
+**Australian competitor: still not visible.** No Australian-owned business and no ad placement in either
+phrase's results. Every name is a New Zealand studio.
+
+**New names vs prior entries (all New Zealand, not the flagged Australian entrant):**
+- Boutique Lifestyle Photography (boutiquelifestylephotography.co.nz, glamour and boudoir page) — first
+  appearance, "auckland boudoir photographer".
+- La Muse (lamusephotography.co.nz) — first appearance, "boudoir photography auckland", ranks below this site.
+- Milk Intimates — first seen 2026-09-17 below this site; this run it is in the results while this site is not.
+
+**Mixed result, one big win and one drop.** Position 1 on the main phrase is the best result this site has
+had in the log, and it is the phrase that earns most clicks in GSC (28 clicks / 219 impressions on the
+3-month view). The drop on the reworded phrase is the thing to watch. Studio Boudoir takes three of the
+nine slots for it (homepage, about page, gallery), which crowds the list. Proxy results for this phrase have
+swung before (baseline ~3, 09-17 ~2), so one run is not a trend. If it is still missing next check, look at
+GSC for the "auckland boudoir photographer" query specifically.
+
+**Homepage title in search results: still stale.** The result still shows the old Squarespace title with
+the nested-quote glitch. Live title re-checked this run and is correct
+(`Boudoir Photography Auckland | Elegant & Confidence-Boosting Sessions`). Per the 2026-09-17 addendum this
+is display lag after a confirmed 11 Sep recrawl, not a fault. It has not stopped the page taking position 1.
+Watch item only.
+
+**Still to verify with GSC access:** whether the 5 pages requested for indexing on 2026-09-17 (/faqs/,
+/maternity-photography/, /privacy-policy/, /terms-and-conditions/, /testimonials/) have moved into Indexed.
+Also carried from 2026-09-03: bridal boudoir competitor check (Natalie Pasco has a dedicated "Bridal Boudoir
+Photography in Auckland" page, which showed up in this run's results), and putting the 11 Google reviews on the site.
+
+### Addendum — real dashboard data attempt, same day (2026-10-01). Belinda asked for a recheck with Chrome open.
+
+**FLAG: Search Console has LOST verification for this site.** The property list now shows
+`https://www.boudoirphotographyauckland.co.nz/` under **"Not verified"**, and every report returns
+"Oops, you don't have access to this property". It was working on 2026-09-17 (sitemap, indexing requests
+all done through it). `sc-domain:boudoirphotographyauckland.co.nz` also returns no access (never created).
+
+Likely cause: the property was originally verified by Squarespace's built-in Search Console link, which
+works by placing a hidden tag in Squarespace's pages. That tag disappeared when the site moved to Astro on
+2026-09-02, and Google's periodic re-check has now dropped the verification. Checked this run:
+- The live Astro homepage has **no** `google-site-verification` meta tag (BBP's homepage does have one).
+- DNS **does** have a TXT record on the root:
+  `google-site-verification=KyMZ8aL4fESU-JKbzmTSy5cc4wiyzUa1viN0Wi8dg3o` — origin unknown, probably from an
+  earlier domain-verification attempt.
+
+**Recommended fix (needs Belinda's OK, it is an account action):** in Search Console, Add property →
+Domain → `boudoirphotographyauckland.co.nz`. If the TXT record above is her token, it verifies in one click
+and the Domain property also covers www and non-www together. If not, Search Console gives a new TXT value
+to add in Cloudflare DNS. Google keeps the historic data, so nothing is lost once ownership is restored.
+Not done this run.
+
+No GSC numbers this run as a result. The 5 pages requested for indexing on 2026-09-17 remain unverified.
+
+**Cloudflare Web Analytics, 30 days (first time recorded, covers almost exactly the period since the 2026-09-02 cutover):**
+400 visits, 890 page views (2.2 pages per visit), page load 546 ms. Referrers: direct 280, **google.com 120**.
+Top paths: / 370, /pricing/ 20, /privacy-policy/ 10. Countries: NZ 210, **Singapore 130**, US 30, then
+single digits (Australia 10). Desktop 250 / mobile 150. Hosts: www 290, bare domain 110.
+Note: Singapore 130 is very likely automated traffic. Real human visits probably ~250, with Google sending
+~120, more than double BBP's Google referrals in the same window despite this being the newer site.
+
+**Re-verification attempt, same day (2026-10-01).** Search Console's verify dialog for the URL-prefix property
+offers HTML file, HTML tag, Analytics, Tag Manager, or Domain name provider. Chosen: DNS TXT via "Any DNS
+provider" (avoids granting Google OAuth access to Cloudflare, and avoids a code deploy while the repo has
+unrelated uncommitted work). Google's new token for this account:
+`google-site-verification=Rs9Yy_EYWucqQd2jqCX-KoZgLKf7eayEJPRm1N9J42k` — different from the existing root TXT
+(`KyMZ8...`), which is why the property did not re-verify on its own. Adding the record in Cloudflare was
+blocked from automation; handed to Belinda to add by hand (Type TXT, Name @, Content = token above), then
+click VERIFY in Search Console. Leave the old KyMZ8 record in place. Note: HTML-file method was rejected because
+Cloudflare Pages redirects `.html` URLs to extensionless ones, which can fail Google's file check.
+
+**FIXED, same day (2026-10-01).** With Belinda's explicit go-ahead in chat, added the TXT record in Cloudflare
+DNS (Type TXT, Name @, content `google-site-verification=Rs9Yy_EYWucqQd2jqCX-KoZgLKf7eayEJPRm1N9J42k`).
+Confirmed public via 1.1.1.1 and 8.8.8.8, then clicked Verify: **"Ownership verified", method: Domain name
+provider.** Do NOT delete either google-site-verification TXT record in Cloudflare. All historic data was intact.
+
+**Search Console, 28 days (Sep 2 – Sep 29), first full post-cutover window:** 59 clicks, 1.27K impressions,
+4.6% CTR, avg. position 13.0. (Trailing 3-month baseline at 2026-09-02: 236 clicks / 5.88K / 4% / 15.4, i.e.
+~79 clicks per 28 days. CTR and position are better; clicks a bit below the 3-month average — watch, too early to call.)
+
+Top queries: "boudoir photography auckland" 10 clicks / 86 impr / **11.6% CTR / position 3.3**;
+"boudoir photography" 5 / 180 / 8.4; "boudoir" 0 / 127 / 8.8; "best boudoir photographer nz" 0 / 26 / 8.2.
+*boudoir photographer* (contains): 1 click, 40 impr, position 20.2. The exact "auckland boudoir photographer"
+wording does not appear as a query at all this window, so the proxy drop for that phrase earlier today is
+low-volume and not a concern.
+
+Top pages: / 53 clicks of 59 (1,075 impr, pos 11.4); /pricing/ 2 (139 impr); about 2. Some pages still appear
+in both slash and non-slash forms (gallery, pricing, about) — expected to fold together as Google recrawls
+after the 301 redirects; check next run.
+
+**Indexing: 10 indexed / 15 not indexed** (was 6 / 19 on 2026-09-17). **"Discovered - currently not indexed"
+is now 0** (was 5), so all five pages requested on 2026-09-17 (/faqs/, /maternity-photography/,
+/privacy-policy/, /terms-and-conditions/, /testimonials/) have been crawled. /testimonials/ and
+/maternity-photography are already earning impressions. Remaining not-indexed: redirects 5, stale noindex 4,
+canonical alternates 2, crawled-not-indexed 3, Google-chose-different-canonical 1 — all normal for a migrated site.

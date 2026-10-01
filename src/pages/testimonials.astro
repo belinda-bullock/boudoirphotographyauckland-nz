@@ -14,7 +14,25 @@ import Base from "../layouts/Base.astro";
 //
 // Source: Belinda's verified Google Business Profile, 5.0 from 11 reviews,
 // captured 2026-09-03. Kendal and Carolyn were already on the site.
+// Annelie and Kathy added 2026-10-01 (profile now 5.0 from 14). The third new
+// review that week (Chloe) is a star rating with no written text, so there is
+// nothing to quote. Tracey's (2023) is not on the page yet: its full text
+// could not be read reliably on 2026-10-01, and it must be copied word for word.
 const testimonials = [
+  {
+    name: "Annelie",
+    source: "google",
+    quote: [
+      "What an amazing experience! I was quite nervous beforehand, but Belinda was wonderful at answering all my questions and putting my mind at ease. When I arrived, her warm and friendly personality immediately made me feel comfortable. She brought out the best in me and made the whole experience so much fun. I never thought I could look so beautiful in a photo! I’m so glad I stepped outside my comfort zone. I would highly recommend Belinda to anyone thinking about doing a photoshoot.",
+    ],
+  },
+  {
+    name: "Kathy",
+    source: "google",
+    quote: [
+      "What an amazing experience - one I will treasure for a very longtime! I am very appreciative of all the effort Belinda went to in helping me make this photoshoot 'my own'. I came away with not only some amazing photos but an empowering experience that makes me smile every time I think about it.",
+    ],
+  },
   {
     name: "Corinna",
     source: "google",
@@ -174,7 +192,7 @@ const googleReviewsUrl = "https://www.google.com/search?q=Boudoir+Photography+Au
         ))}
       </div>
       <p class="mt-3 text-sm uppercase tracking-[0.2em] text-boudoir-ink">
-        5.0 from 11 Google reviews
+        5.0 from 14 Google reviews
       </p>
     </div>
   </section>

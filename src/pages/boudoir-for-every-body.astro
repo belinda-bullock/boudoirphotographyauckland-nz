@@ -5,6 +5,20 @@ import Base from "../layouts/Base.astro";
 // photographed women with burn scars, women before a mastectomy for breast
 // cancer, women after bariatric (weight loss) surgery, and women of every
 // size, colour and nationality. Ages come from the FAQs page.
+// Rewritten 2026-10-02 after Belinda's review. Her wording rules for this page:
+// - Never "there is no body type". There are body types; she has no bias and
+//   finds all of them beautiful.
+// - Never "you will never have to explain your body". She asks about injuries,
+//   the part of their body a woman loves most, and anywhere she would rather
+//   not highlight (Belinda's own is her feet).
+// - Mastectomy: "to document their body before it changes", never "something
+//   of themselves from before".
+// - Scars: never "I know how to light them". Scars or no scars, every body is
+//   beautiful; scars tell part of the story of a life.
+// - Weight loss surgery: about documenting the change and celebrating what she
+//   has been through. No "before and after", no "journey", and never imply
+//   some bodies deserve photographing more than others.
+// - Every age / colour / background goes FIRST.
 // Target searches: "plus size boudoir auckland", "boudoir before mastectomy nz",
 // "boudoir photography scars", "boudoir after weight loss surgery".
 //
@@ -20,6 +34,13 @@ const heroImage = "/images/testimonials/curvy-black-lace-studio.jpg";
 
 const sections = [
   {
+    h: "Every age, every colour, every background",
+    p: [
+      "I have photographed women in their twenties discovering their confidence, women in their forties reclaiming it, and women in their sixties celebrating it.",
+      "Women of every colour, culture and nationality have been in front of my camera. Boudoir is not about looking a certain way. It is about how you feel in your own skin, right now.",
+    ],
+  },
+  {
     h: "Plus size boudoir photography",
     p: [
       "Hell yes. I photograph women of every size and every shape, and curves are not something to hide or pose around. The way I light and pose you is built around your body, not somebody else's.",
@@ -29,29 +50,22 @@ const sections = [
   {
     h: "Boudoir before a mastectomy",
     p: [
-      "I have photographed women in the weeks before a mastectomy for breast cancer, so they have something of themselves from before.",
-      "If that is why you are here, you are in careful hands. We go at your pace, and you decide what is in the photos and what is not. If your surgery date is close, get in touch as soon as you know it and I will tell you straight whether we can fit a session in before it.",
+      "I have photographed women in the weeks before a mastectomy for breast cancer, to document their body before it changes.",
+      "If that is why you are here, we go at your pace, and you decide what is in the photos and what is not. If your surgery date is close, get in touch as soon as you know it and I will tell you straight whether we can fit a session in before it.",
     ],
   },
   {
     h: "Boudoir with burn scars and surgical scars",
     p: [
-      "I have photographed women with burn scars and with surgical scars, and I know how to light them.",
-      "Some women want their scars in the frame, because they are part of their story. Some would rather they sat in shadow. Both are fine. Tell me beforehand what you would like brought forward and what you would rather keep out of frame, and that is exactly what I will do.",
+      "I have photographed women with burn scars and with surgical scars. Scars or no scars, every body is beautiful. To me, a scar tells part of the story of your life.",
+      "Some women want their scars in the frame. Some would rather they were not the focus. Both are fine. Tell me what you would like, and that is exactly what I will do.",
     ],
   },
   {
     h: "Boudoir after weight loss surgery",
     p: [
-      "I have photographed women after bariatric surgery. A body that has changed a lot deserves to be photographed as it is now, not as it was, and not as you think it should be.",
-      "As with everything else, you are in charge of what we show. We talk it through before the camera comes out, so there are no surprises on the day.",
-    ],
-  },
-  {
-    h: "Every age, every colour, every background",
-    p: [
-      "I have photographed women in their twenties discovering their confidence, women in their forties reclaiming it, and women in their sixties celebrating it.",
-      "Women of every colour, culture and nationality have been in front of my camera. Boudoir is not about looking a certain way. It is about how you feel in your own skin, right now.",
+      "I have photographed women after bariatric surgery. Going through something like that takes a lot, and it deserves to be celebrated.",
+      "A boudoir shoot is a way of documenting your body as it is now, and marking everything you have been through to get here. As with everything else, you are in charge of what we show, and we talk it through before the camera comes out.",
     ],
   },
 ];
@@ -59,7 +73,7 @@ const sections = [
 const comfort = [
   ["Just you and me", "I am a female photographer and I work alone. There is no assistant and nobody else in the room, unless you bring a friend for support."],
   ["One woman a day", "Nobody is watching a clock. We talk first, do some practice poses, and only start when you are ready."],
-  ["Nothing to explain", "You do not owe me the story of your body. Tell me only what you want me to know, and anything that is sore or tender, so I can pose you comfortably."],
+  ["We talk about your body first", "I ask about any injuries, surgery or anything tender, so I can pose you comfortably. I also ask which part of your body you love most, so I can make the most of it, and whether there is anywhere you would rather I did not focus on. For me, it would be my feet."],
   ["Your photos stay yours", "Nothing is shared anywhere without your permission. Once your final images are delivered, I delete my copies."],
   ["You can stop or change your mind", "About an outfit, a pose, or anything else, at any point."],
 ];
@@ -71,15 +85,15 @@ const faqs = [
   },
   {
     q: "Can you keep my scars out of the photos?",
-    a: "Yes, if that is what you want. Tell me beforehand what you would like brought forward and what you would rather keep out of frame, and that is exactly what I will do. Some women choose to show their scars, and that is fine too.",
+    a: "Yes, if that is what you want. Tell me what you would like brought forward and what you would rather was not the focus, and that is exactly what I will do. Some women choose to show their scars, and that is beautiful too.",
   },
   {
     q: "How soon before a mastectomy should I book a boudoir shoot?",
     a: "As soon as you know your surgery date. Get in touch, tell me the date, and I will tell you straight whether we can fit a session in before it.",
   },
   {
-    q: "Do I have to tell you about my surgery or my body?",
-    a: "Only what you want to. It helps me to know what you would like in the photos, and anything that is sore or tender, so I can pose you comfortably. You never have to explain or justify your body.",
+    q: "Will you ask me about my body?",
+    a: "Yes, a little. I ask about any injuries, surgery or anything tender so I can pose you comfortably. I also ask which part of your body you love most so I can highlight it, and whether there is any part you would rather I did not focus on. You share as much as you are comfortable with.",
   },
 ];
 
@@ -127,15 +141,15 @@ const link = "text-boudoir-red underline";
   <!-- Intro -->
   <section class="bg-boudoir-ink py-20 text-center text-boudoir-white">
     <div class="mx-auto max-w-2xl px-6">
-      <h2 class="text-3xl">There is no boudoir body type</h2>
+      <h2 class="text-3xl">Every body type is beautiful</h2>
       <p class="mt-6 leading-relaxed">
-        I have photographed women of every size, shape, age and colour, and
-        plenty whose bodies have been through a great deal. You do not need to
-        change anything about yourself first.
+        Bodies come in every shape and size, and I do not have a favourite. I
+        have photographed women of every size, shape, age and colour, and
+        plenty whose bodies have been through a great deal.
       </p>
       <p class="mt-4 leading-relaxed text-white/85">
-        And you will never have to explain your body to me.
-        <span class="text-boudoir-pink">Nothing about it needs apologising for.</span>
+        You do not need to change anything about yourself first.
+        <span class="text-boudoir-pink">Come as you are.</span>
       </p>
     </div>
   </section>

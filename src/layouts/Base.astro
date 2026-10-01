@@ -51,6 +51,10 @@ const ogImageURL = new URL(image, Astro.site);
       "url": "https://www.boudoirphotographyauckland.co.nz",
       "telephone": "+64274326504",
       "priceRange": "$750-$1200",
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Saturday", "Sunday"], "opens": "07:00", "closes": "21:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday"], "opens": "08:00", "closes": "20:00" }
+      ],
       "areaServed": {
         "@type": "City",
         "name": "Auckland"

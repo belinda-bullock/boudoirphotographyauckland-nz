@@ -382,3 +382,19 @@ canonical alternates 2, crawled-not-indexed 3, Google-chose-different-canonical 
   link), WeddingWise (free forever) and My Wedding Guide (free, link not counted for SEO). Boudoir
   International is paid membership only and submissions closed. Bride & Groom, NZ Bride, Wedding Vendors NZ,
   Together Journal: paid only. None are email-based; all are signup forms Belinda must complete herself.
+
+---
+
+## 2026-10-02 — Three new pages published (Belinda reviewed each draft)
+
+- `/boudoir-for-every-body/`: plus size, before a mastectomy, burn and surgical scars, after weight loss surgery,
+  every age/colour/background. Targets "plus size boudoir auckland", "boudoir before mastectomy nz", "boudoir scars".
+  Rewritten once after Belinda's review (sensitive-wording rules recorded in the file header).
+- `/milestone-birthday-boudoir/`: 30th/40th/50th, four weeks' notice, gift voucher process. Targets "40th birthday
+  boudoir", "birthday boudoir shoot auckland", "boudoir gift voucher auckland".
+- `/blog/how-to-choose-a-boudoir-photographer-nz/`: eight questions + Belinda's answers. Targets "best boudoir
+  photographer nz" (26 impr, pos 8.2 in Sep).
+- Same wording fixes applied to homepage cards, FAQs (scars answer) and the first-shoot post. New pages linked from
+  homepage, FAQs, blog index and llms.txt; all in the sitemap.
+- Requested indexing for all three via URL Inspection, 2026-10-02.
+- **Check next run:** are the three pages indexed, and are they picking up impressions for their target searches?

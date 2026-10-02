@@ -1,5 +1,5 @@
 BOUDOIR WEBSITE: JOBS TO GET MORE CLIENTS
-Started 19 September 2026
+Started 19 September 2026. Last updated 2 October 2026.
 
 What this file is
 A running list of the things that will bring more women to the site and turn more
@@ -7,58 +7,53 @@ of them into bookings. Add to it whenever an idea comes up. Tick things off as
 they are done, and write the date next to them so we can see what worked.
 
 Where the site stands right now
-The site is live and fast. It sits around position 3 to 4 on Google for
-"boudoir photography Auckland". Over the last three months it got 236 clicks
-from Google out of 5,880 times it was shown. The technical side is in good shape.
-The reviews are on the site. The Google listing is being fed again.
-What is missing now is reach. The site only has 10 pages, and a woman searching
-"what do I wear to a boudoir shoot" finds a competitor's page, not yours.
+The site has gone from 10 pages to 21. That was the biggest job on this list and
+it is now largely done. Before this, a woman searching "what do I wear to a
+boudoir shoot" landed on a competitor's page. Now she lands on yours.
 
 
-ALREADY DONE, DO NOT REDO
+DONE, DO NOT REDO
 - Reviews are on the site. All 11 Google reviews are on the Reviews page, word
-  for word, first names only. One of them is on the home page as well.
-  (Add the 12th when it appears.)
-- Google Business Profile has a new profile photo and the update posts have
-  been put in. Keep it fed from here.
-- Asking clients for reviews has started. Boudoir clients will not all say yes,
-  and that is normal. Twelve is a good number for this kind of work.
+  for word, first names only. One is on the home page too. (Add the 12th when
+  it appears.)
+- Google Business Profile has a new profile photo and the update posts are in.
+  Keep it fed from here.
+- Asking clients for reviews has started. Not everyone will say yes to this kind
+  of work, and that is normal.
+- New pages, all live:
+  . What to wear to a boudoir shoot
+  . Bridal boudoir in Auckland
+  . Boudoir for every body (scars, surgery, plus size)
+  . Birthday boudoir (30th, 40th, 50th)
+  . Gift vouchers                         (live 2 October)
+  . A blog, with two posts: what to expect at your first shoot, and how to
+    choose a boudoir photographer
 
 
 DO FIRST
 
-1. Write the pages that answer what women type into Google before they book
-   This is the biggest thing left. The site had 10 pages. Each new page is
-   another way in.
-   BUILT 30 September, waiting to go live:
-   - What to wear to a boudoir shoot
-   - Bridal boudoir in Auckland
-   STILL TO WRITE:
-   - What happens on the day, start to finish
-   - Gift vouchers
-   If we don't: you keep showing up in searches and not getting the click. The
-   site was shown 5,880 times and clicked 236 times. The pages are the fix.
+1. Bridal photos
+   The bridal page is live and using ordinary boudoir photos as stand-ins. None
+   of those women is described as a bride, so nothing on the page is untrue, but
+   it is the weakest page on the site because of it.
+   Next bridal client who is happy for her photos to be used, shoot a few with
+   that page in mind. A veil, a white set, the shoes, the garter.
+   If we don't: the page still works, it just does not sell the way it could.
 
-   PHOTOS NEEDED: the bridal page is using ordinary boudoir photos for now.
-   None of them are described as brides, so nothing on the page is untrue, but
-   the page will be far stronger with real bridal frames. A veil, a white set,
-   the shoes, the garter. Next bridal client who says yes, shoot a few with
-   this page in mind and I will swap them straight in.
+2. Push the gift voucher page before Christmas
+   The page is live and it is the right time of year. It needs pointing at:
+   a post on the Google listing, something on Instagram and Facebook, and a
+   mention to past clients.
+   If we don't: Christmas is the single biggest voucher window of the year and
+   it closes in December. Missing it costs a whole season.
 
-2. Check the five pages Google still has not read
-   Google knows the maternity, FAQs, reviews, privacy and terms pages exist but
-   has never fetched them. A recrawl was requested on 17 September.
-   If we don't: maternity is a whole side of the business earning nothing from
-   search, and the reviews page cannot help you rank if Google has not read it.
+3. Check the new pages are being read by Google
+   Several pages have gone up fast. Google needs to crawl them, and the ones
+   added in September were slow to be picked up.
+   If we don't: a page Google has not read earns nothing.
 
 
 NEXT
-
-3. Gift vouchers, pushed at the right time of year
-   The voucher offer is on the pricing page. It needs its own page and its own
-   push before Christmas, Valentine's Day and Mother's Day.
-   If we don't: vouchers sell themselves at those three moments and sit still
-   the rest of the year. Missing the window costs a whole season.
 
 4. Make it easier to get in touch than filling in a form
    Some women will not type their name into a form about boudoir photos. A text
@@ -69,21 +64,24 @@ NEXT
 5. Follow up enquiries that go quiet
    Right now an enquiry that does not reply is lost. A short second message a
    week later would bring some of them back.
-   If we don't: you are spending time on enquiries and then letting half of
-   them drift.
+   If we don't: you spend time on enquiries and then let half of them drift.
+
+6. Keep the blog going
+   Two posts is a start, not a blog. One a month is plenty. Every post is
+   another way in from Google.
 
 
 LATER
 
-6. Referral offer for past clients
+7. Referral offer for past clients
    Women who have done a shoot are your best salespeople. Something small for
    the friend who comes, and something for the woman who sent her.
 
-7. Social posts pointing back to the site
+8. Social posts pointing back to the site
    Every post wants a reason to click through to the site, not just sit on
    Instagram.
 
-8. Watch the new Australian competitor
+9. Watch the new Australian competitor
    A bigger Australian company is moving into the Auckland market with more
    money to spend. The SEO check runs fortnightly and will show if they appear.
    We cannot outspend them. We can be the one with real reviews, real answers

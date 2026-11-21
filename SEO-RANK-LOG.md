@@ -528,3 +528,6 @@ GBP photos kept non-sexual (policy risk). Nothing changed on the site.
 - Also going out with this: the uncommitted 24 Oct phone-layout fixes (logo size, form stacking, gallery crop, pricing hero).
 - ChatGPT "Businesses in ChatGPT" launched 10 Nov 2026, but help page says local businesses can only claim existing US
   listings. Persona ID check uses the legal name, which could link boudoir to her real name: do not claim boudoir there.
+- **LIVE 2026-11-21** (commit 6032f92, pre-push layout check passed). Verified on the live site: gallery looks, both new
+  form fields, "No sales session" on pricing, new post in sitemap. Requested indexing for the new post (was "unknown to
+  Google") and the gallery. Check next run: is the cost post indexed and picking up "boudoir photography cost" queries?

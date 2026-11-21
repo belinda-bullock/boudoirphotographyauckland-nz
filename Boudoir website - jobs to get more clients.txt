@@ -131,3 +131,8 @@ ADDED 22 NOVEMBER 2026: ONE PAGE PER TYPE OF SHOOT (Belinda said yes)
   3. Couples boudoir: only connection and closeness, never erotic. No men-only
      shoots (her safety call).
   4. Bridal: page exists; waiting on real bridal photos.
+
+DONE 22 NOVEMBER 2026: BING WEBMASTER TOOLS
+  Added by importing from Google Search Console. No code on the website, on
+  purpose (the code is shared with the Bullock sites). Do not redo. Still to
+  do: Bing Places (Belinda Dunne name only).

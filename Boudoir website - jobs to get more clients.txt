@@ -134,5 +134,10 @@ ADDED 22 NOVEMBER 2026: ONE PAGE PER TYPE OF SHOOT (Belinda said yes)
 
 DONE 22 NOVEMBER 2026: BING WEBMASTER TOOLS
   Added by importing from Google Search Console. No code on the website, on
-  purpose (the code is shared with the Bullock sites). Do not redo. Still to
-  do: Bing Places (Belinda Dunne name only).
+  purpose (the code is shared with the Bullock sites). Do not redo.
+  Bing Places: DONE 22 Nov. Imported from the Google Business Profile
+  (signed in with Gmail), verified instantly, syncs from Google weekly, so
+  edit the GOOGLE listing and Bing follows. Shows: Boudoir Photography
+  Auckland, no street address, 0274 326 504, no Bullock name. Publishing
+  ETA 7-12 days. The same import also brought in Belinda Bullock Photography
+  and Digital Twin Imaging (as on Google).

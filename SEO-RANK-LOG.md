@@ -555,3 +555,14 @@ Verve: site:verveintimate.co.nz = 1 page indexed (home). "verve intimate aucklan
 (no canonical tags; what-to-wear 81% same text); gifting/bridal-gifting/fundraising/ambassador programmes; "money back"
 promise; LocalBusiness + FAQPage schema, legalName Verve Studios Limited. Snapshot: competitor-watch/verve-2026-11-22.json.
 Fortnightly routine updated to diff their sitemap, count indexed pages and track them on all phrases.
+
+---
+
+## 2026-11-22 — Bing Webmaster Tools: DONE (do not redo)
+
+Boudoir added to Bing Webmaster Tools by IMPORT from Google Search Console (Belinda's Google sign-in, view-only
+Search Console permission she approved). No verification code was added to the website, on purpose: the account's
+msvalidate code is shared with BBP and DTI, and putting it on this site would leave a public trace linking boudoir to
+the Bullock sites. Never add an msvalidate tag or BingSiteAuth.xml here. sitemap-index.xml imported, status
+"Processing" on 22 Nov. Still open from the 21 Nov recommendations: IndexNow, Bing Places (check name/address
+show "Belinda Dunne" side only).

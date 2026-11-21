@@ -118,7 +118,7 @@ const jsonLd = {
     <h1 class="text-4xl text-boudoir-ink md:text-5xl">FAQs</h1>
     <p class="mx-auto mt-6 max-w-2xl text-boudoir-muted">
       New to boudoir? Start with
-      <a href="/blog/first-boudoir-shoot-what-to-expect/" class="text-boudoir-red underline">what to expect at your first boudoir shoot</a>,
+      <a href="/blog/first-boudoir-shoot-what-to-expect/" class="text-boudoir-pink-deep underline font-medium">what to expect at your first boudoir shoot</a>,
       then find your question below.
     </p>
   </section>
@@ -135,7 +135,7 @@ const jsonLd = {
             {(Array.isArray(faq.a) ? faq.a : [faq.a]).map((para) => <p>{para}</p>)}
             {faq.more && (
               <p>
-                <a href={faq.more.href} class="text-boudoir-red underline">{faq.more.label}</a>
+                <a href={faq.more.href} class="text-boudoir-pink-deep underline font-medium">{faq.more.label}</a>
               </p>
             )}
           </div>
@@ -147,7 +147,7 @@ const jsonLd = {
       <p class="text-boudoir-muted">Still have a question?</p>
       <a
         href="/contact-boudoir-photography-auckland/"
-        class="mt-4 inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink"
+        class="mt-4 btn-pill"
       >
         Contact me today
       </a>

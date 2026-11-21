@@ -199,7 +199,7 @@ const googleReviewsUrl = "https://www.google.com/search?q=Boudoir+Photography+Au
 
   <section class="bg-boudoir-ink py-16 text-boudoir-white">
     <div class="mx-auto max-w-2xl px-6 text-center">
-      <p class="text-xl leading-relaxed text-white/85">
+      <p class="text-xl leading-relaxed text-white/95">
         Most women arrive nervous. Almost nobody leaves that way.
         <span class="text-boudoir-pink">These are their words, not mine.</span>
       </p>
@@ -209,7 +209,7 @@ const googleReviewsUrl = "https://www.google.com/search?q=Boudoir+Photography+Au
   <!-- Photos up front, before any wall of text -->
   <section class="grid grid-cols-2 sm:grid-cols-4">
     {photoStrip.map((img) => (
-      <img src={img.src} alt={img.alt} width={img.w} height={img.h} loading="lazy" decoding="async" class="aspect-[3/4] w-full object-cover" style={`object-position: ${img.pos}`} />
+      <img src={img.src} alt={img.alt} width={img.w} height={img.h} loading="lazy" decoding="async" class="aspect-[3/4] w-full rounded-2xl object-cover" style={`object-position: ${img.pos}`} />
     ))}
   </section>
 
@@ -224,7 +224,7 @@ const googleReviewsUrl = "https://www.google.com/search?q=Boudoir+Photography+Au
           height={featurePhoto.h}
           loading="lazy"
           decoding="async"
-          class="aspect-[3/4] w-full object-cover"
+          class="aspect-[3/4] w-full rounded-2xl object-cover"
           style={`object-position: ${featurePhoto.pos}`}
         />
         <div>
@@ -263,7 +263,7 @@ const googleReviewsUrl = "https://www.google.com/search?q=Boudoir+Photography+Au
   {/* A breath of photography between the blocks of text */}
   <section class="grid grid-cols-2 sm:grid-cols-4">
     {photoBreak.map((img) => (
-      <img src={img.src} alt={img.alt} width={img.w} height={img.h} loading="lazy" decoding="async" class="aspect-[3/4] w-full object-cover" style={`object-position: ${img.pos}`} />
+      <img src={img.src} alt={img.alt} width={img.w} height={img.h} loading="lazy" decoding="async" class="aspect-[3/4] w-full rounded-2xl object-cover" style={`object-position: ${img.pos}`} />
     ))}
   </section>
 
@@ -275,7 +275,7 @@ const googleReviewsUrl = "https://www.google.com/search?q=Boudoir+Photography+Au
         <blockquote class="-mt-6 space-y-5 text-2xl leading-relaxed sm:text-3xl">
           {features[1].quote.map((para) => <p>{para}</p>)}
         </blockquote>
-        <p class="mt-8 text-sm uppercase tracking-[0.2em] text-white/60">
+        <p class="mt-8 text-sm uppercase tracking-[0.2em] text-white/95">
           {features[1].name} &middot; Google review
         </p>
       </div>
@@ -331,7 +331,7 @@ const googleReviewsUrl = "https://www.google.com/search?q=Boudoir+Photography+Au
       </p>
       <a
         href="/contact-boudoir-photography-auckland/"
-        class="mt-10 inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-white"
+        class="mt-10 btn-pill"
       >
         Ask me a question
       </a>

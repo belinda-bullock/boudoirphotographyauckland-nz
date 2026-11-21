@@ -48,7 +48,7 @@ const schema = {
   })),
 };
 
-const link = "text-boudoir-red underline";
+const link = "text-boudoir-pink-deep underline font-medium";
 ---
 
 <Base
@@ -68,7 +68,7 @@ const link = "text-boudoir-red underline";
     />
     <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center">
       <h1 class="text-4xl text-boudoir-ink md:text-5xl">Birthday Boudoir</h1>
-      <p class="text-2xl text-boudoir-pink">Thirty, forty, fifty. Mark the year.</p>
+      <p class="text-2xl text-boudoir-pink-deep">Thirty, forty, fifty. Mark the year.</p>
     </div>
   </section>
 
@@ -81,7 +81,7 @@ const link = "text-boudoir-red underline";
         me. The 30th, the 40th, the 50th. A year that feels like it matters,
         and a way of marking it that is entirely about you.
       </p>
-      <p class="mt-4 leading-relaxed text-white/85">
+      <p class="mt-4 leading-relaxed text-white/95">
         No cake required.
         <span class="text-boudoir-pink">Just you, as you are right now.</span>
       </p>
@@ -129,7 +129,7 @@ const link = "text-boudoir-red underline";
         src={p.src}
         alt={p.alt}
         loading="lazy"
-        class="h-64 w-full object-cover md:h-80"
+        class="h-64 w-full rounded-3xl object-cover md:h-80"
         style={`object-position: ${p.pos}`}
       />
     ))}
@@ -159,7 +159,7 @@ const link = "text-boudoir-red underline";
         </p>
         <p>
           There is more detail on the
-          <a href="/boudoir-gift-voucher-auckland/" class="text-boudoir-red underline">gift voucher page</a>.
+          <a href="/boudoir-gift-voucher-auckland/" class="text-boudoir-pink-deep underline font-medium">gift voucher page</a>.
         </p>
       </div>
     </div>
@@ -196,13 +196,13 @@ const link = "text-boudoir-red underline";
       <div class="mt-8 flex flex-wrap justify-center gap-4">
         <a
           href="/contact-boudoir-photography-auckland/"
-          class="inline-block bg-boudoir-red px-6 py-3 text-boudoir-white hover:opacity-90"
+          class="btn-pill"
         >
           Get in touch
         </a>
         <a
           href="/pricing/"
-          class="inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink"
+          class="btn-pill"
         >
           See pricing
         </a>

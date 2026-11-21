@@ -29,8 +29,10 @@ const currentPath = Astro.url.pathname;
         <a
           href={link.href}
           class:list={[
-            "text-sm text-boudoir-ink hover:text-boudoir-pink",
-            currentPath === link.href ? "underline underline-offset-4" : "",
+            link.label === "Contact"
+              ? "rounded-full bg-boudoir-pink px-4 py-1.5 text-sm font-semibold text-black hover:bg-[#F09BEE]"
+              : "text-sm text-boudoir-ink hover:text-boudoir-pink-deep",
+            currentPath === link.href && link.label !== "Contact" ? "underline underline-offset-4" : "",
           ]}
         >
           {link.label}

@@ -41,7 +41,7 @@ const maternityImages = [
     />
     <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center">
       <h1 class="text-4xl text-boudoir-ink md:text-5xl">Maternity Photography</h1>
-      <p class="text-2xl text-boudoir-pink">Elegant Maternity photography in Auckland.</p>
+      <p class="text-2xl text-boudoir-pink-deep">Elegant Maternity photography in Auckland.</p>
     </div>
   </section>
 
@@ -52,7 +52,7 @@ const maternityImages = [
         Welcome to a space that{" "}
         <span class="text-boudoir-pink">celebrates your pregnancy and this time in your life.</span>
       </h2>
-      <p class="mt-4 text-white/90">
+      <p class="mt-4 text-white/95">
         Pregnancy is a magical time. Your body is doing something incredible
         and this is a moment worth capturing so you can remember it forever.
         I'll guide you through the shoot so you feel comfortable and
@@ -62,7 +62,7 @@ const maternityImages = [
       </p>
       <a
         href="/contact-boudoir-photography-auckland/"
-        class="mt-8 inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink"
+        class="mt-8 btn-pill"
       >
         Contact me today
       </a>
@@ -77,7 +77,7 @@ const maternityImages = [
           src={img.src}
           alt={img.alt}
           loading="lazy"
-          class="aspect-[3/4] w-full object-cover"
+          class="aspect-[3/4] w-full rounded-2xl object-cover"
         />
       ))}
     </div>
@@ -89,58 +89,58 @@ const maternityImages = [
       <h2 class="text-3xl">
         <span class="text-boudoir-pink">Your Maternity shoot,</span> Step by Step
       </h2>
-      <p class="mx-auto mt-6 max-w-2xl text-white/80">
+      <p class="mx-auto mt-6 max-w-2xl text-white/95">
         A personalised, supportive experience from the first message to the
         moment you see your stunning images.
       </p>
     </div>
 
-    <div class="mx-auto mt-12 grid max-w-6xl grid-cols-1 px-6 sm:grid-cols-3 md:px-12 lg:px-20">
+    <div class="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-4 px-6 sm:grid-cols-3 md:px-12 lg:px-20">
       <div class="relative">
         <img
           src="/images/maternity/photos-1.jpg"
           alt="Maternity photography session"
-          class="h-[280px] w-full object-cover sm:h-[340px]"
+          class="h-[280px] w-full rounded-2xl object-cover sm:h-[340px]"
         />
       </div>
-      <div class="flex flex-col items-center justify-center bg-[#201520] px-8 py-10 text-center">
+      <div class="flex flex-col items-center justify-center rounded-2xl bg-[#201520] px-8 py-10 text-center">
         <p class="text-boudoir-pink">
           <span class="font-semibold">{steps[0].number}</span>
           <br />
           <span class="font-semibold uppercase tracking-wide">{steps[0].title}</span>
         </p>
-        <p class="mt-4 text-sm text-white/85">{steps[0].body}</p>
+        <p class="mt-4 text-sm text-white/95">{steps[0].body}</p>
       </div>
       <div class="relative">
         <img
           src="/images/maternity/photos-2.jpg"
           alt="Maternity photography session"
-          class="h-[280px] w-full object-cover sm:h-[340px]"
+          class="h-[280px] w-full rounded-2xl object-cover sm:h-[340px]"
         />
       </div>
 
-      <div class="flex flex-col items-center justify-center bg-[#201520] px-8 py-10 text-center">
+      <div class="flex flex-col items-center justify-center rounded-2xl bg-[#201520] px-8 py-10 text-center">
         <p class="text-boudoir-pink">
           <span class="font-semibold">{steps[1].number}</span>
           <br />
           <span class="font-semibold uppercase tracking-wide">{steps[1].title}</span>
         </p>
-        <p class="mt-4 text-sm text-white/85">{steps[1].body}</p>
+        <p class="mt-4 text-sm text-white/95">{steps[1].body}</p>
       </div>
       <div class="relative">
         <img
           src="/images/maternity/studio.jpg"
           alt="Maternity shoot photographed in studio"
-          class="h-[280px] w-full object-cover sm:h-[380px]"
+          class="h-[280px] w-full rounded-2xl object-cover sm:h-[380px]"
         />
       </div>
-      <div class="flex flex-col items-center justify-center bg-[#201520] px-8 py-10 text-center">
+      <div class="flex flex-col items-center justify-center rounded-2xl bg-[#201520] px-8 py-10 text-center">
         <p class="text-boudoir-pink">
           <span class="font-semibold">{steps[2].number}</span>
           <br />
           <span class="font-semibold uppercase tracking-wide">{steps[2].title}</span>
         </p>
-        <p class="mt-4 text-sm text-white/85">{steps[2].body}</p>
+        <p class="mt-4 text-sm text-white/95">{steps[2].body}</p>
       </div>
     </div>
   </section>

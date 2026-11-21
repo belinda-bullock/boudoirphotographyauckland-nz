@@ -1,0 +1,250 @@
+---
+import Base from "../layouts/Base.astro";
+
+// Guide page, drafted 2026-11-22 at Belinda's request.
+// Target searches: "boudoir photography" (300 NZ impressions a month, position ~10),
+// "what is boudoir photography", "what is a boudoir shoot", "what is a boudoir photographer".
+// Meaning of the word checked 2026-11-22: Oxford Learner's ("a woman's small private room or
+// bedroom ... French, literally 'sulking-place', from bouder 'pout, sulk'") and Cambridge
+// ("a room used in the past by a woman for sleeping, dressing, relaxing, and entertaining").
+// The overalls story is Belinda's own, told 22 Nov 2026; no client is named or described.
+// Every fact about how a session works comes from elsewhere on this site (FAQs, pricing, home).
+
+const url = "https://www.boudoirphotographyauckland.co.nz/what-is-boudoir-photography/";
+const title = "What Is Boudoir Photography? | Boudoir Photography Auckland";
+const description =
+  "What boudoir photography is, where the word comes from, and why it looks different for every woman. A plain guide from a female boudoir photographer in Auckland.";
+const heroImage = "/images/testimonials/curvy-blue-shirt-window-light.jpg";
+
+const faqs = [
+  {
+    q: "What is boudoir photography?",
+    a: "A private photoshoot of you, in whatever makes you feel most like yourself. For most women that means lingerie, a shirt, a sheet or nothing at all, but it is different for every woman.",
+  },
+  {
+    q: "What does the word boudoir mean?",
+    a: "It is French for a woman's small private room or bedroom. It comes from bouder, to sulk, so it was the room she went to when she wanted to be left alone.",
+  },
+  {
+    q: "Is boudoir photography nude?",
+    a: "It can be. Nude is a popular choice, and so is lingerie. Plenty of women wear a favourite shirt, a jacket or a jumper for some of their photos. You choose.",
+  },
+  {
+    q: "Who is boudoir photography for?",
+    a: "Every size, every shape and every age. Women book for a birthday, before their wedding, after a divorce, after a hard year, before surgery, or because somebody gave them a voucher.",
+  },
+  {
+    q: "Do I need to know how to pose?",
+    a: "No. Posing is my job. I guide you through every pose and show you myself, so you are never left wondering what to do.",
+  },
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "What is boudoir photography?",
+    description,
+    image: new URL(heroImage, "https://www.boudoirphotographyauckland.co.nz").toString(),
+    datePublished: "2026-11-22",
+    dateModified: "2026-11-22",
+    inLanguage: "en-NZ",
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    author: {
+      "@type": "Person",
+      name: "Belinda Dunne",
+      url: "https://www.boudoirphotographyauckland.co.nz/about-belinda-dunne/",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Boudoir Photography Auckland",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.boudoirphotographyauckland.co.nz/images/boudoir-logo.png",
+      },
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  },
+];
+
+const reasons = [
+  ["A birthday that matters", "Thirty, forty, fifty, sixty.", "/milestone-birthday-boudoir/"],
+  ["Before the wedding", "Often a gift to open before the day.", "/bridal-boudoir-auckland/"],
+  ["Every body", "Plus size, scars, before or after surgery.", "/boudoir-for-every-body/"],
+  ["A gift from someone else", "A voucher that never shows the price.", "/boudoir-gift-voucher-auckland/"],
+];
+
+const link = "text-boudoir-red underline";
+---
+
+<Base title={title} description={description} image={heroImage}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <article>
+    <header class="mx-auto max-w-3xl px-6 pt-16 text-center">
+      <p class="text-sm uppercase tracking-wide text-boudoir-pink">A guide</p>
+      <h1 class="mt-4 text-4xl text-boudoir-ink md:text-5xl">What Is Boudoir Photography?</h1>
+      <p class="mt-6 text-boudoir-muted">
+        Boudoir photography is a private photoshoot of you, in whatever makes
+        you feel most like yourself. For most women that means lingerie, a
+        shirt, a sheet or nothing at all. But it is different for every woman.
+      </p>
+    </header>
+
+    <div class="mx-auto mt-12 max-w-3xl px-6">
+      <img
+        src={heroImage}
+        alt="Woman seated in an oversized blue shirt in soft window light"
+        width="1067"
+        height="1600"
+        class="mx-auto h-[420px] w-full object-cover sm:h-[520px]"
+        style="object-position: 50% 22%;"
+      />
+    </div>
+
+    <div class="mx-auto max-w-3xl space-y-14 px-6 py-16">
+      <section>
+        <h2 class="text-2xl text-boudoir-ink">Where the word comes from</h2>
+        <div class="mt-4 space-y-3 text-sm leading-relaxed text-boudoir-muted">
+          <p>
+            Boudoir is French. It means a woman's small private room or
+            bedroom, the room where she dressed, rested and got ready.
+          </p>
+          <p>
+            It comes from <em>bouder</em>, to sulk. The boudoir was the room
+            she went to when she wanted to be left alone.
+          </p>
+          <p>
+            A boudoir shoot keeps that idea. It is private, it is yours, and it
+            is one of the few hours in your life that is only about you.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl text-boudoir-ink">It is different for every woman</h2>
+        <div class="mt-4 space-y-3 text-sm leading-relaxed text-boudoir-muted">
+          <p>
+            Most women choose lingerie, or are photographed nude or semi-nude.
+            Plenty bring a favourite white shirt, a denim jacket, a jumper or a
+            pair of heels as well.
+          </p>
+          <p>
+            One woman came to me while she was pregnant. She said she felt most
+            womanly in a pair of overalls with nothing underneath. So that is
+            what we photographed.
+          </p>
+          <p>
+            There is no uniform. The point is that the photos look like you.
+            Read <a href="/what-to-wear-boudoir-shoot/" class={link}>what to wear to a boudoir shoot</a> for ideas.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl text-boudoir-ink">What the photos can look like</h2>
+        <div class="mt-4 space-y-3 text-sm leading-relaxed text-boudoir-muted">
+          <p>
+            I shoot in four looks: light and soft, dark and dramatic, black and
+            white, and glamour and character. You can stay with one or mix a
+            few.
+          </p>
+          <p>
+            See all four in the <a href="/boudoir-photoshoot-gallery-auckland/" class={link}>boudoir gallery</a>.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl text-boudoir-ink">Who it is for</h2>
+        <p class="mt-4 text-sm leading-relaxed text-boudoir-muted">
+          Every size, every shape and every age. These are some of the reasons
+          women book with me.
+        </p>
+        <ul class="mt-6 grid gap-4 sm:grid-cols-2">
+          {reasons.map(([label, why, href]) => (
+            <li class="border-l-2 border-boudoir-pink pl-4">
+              <a href={href} class="block font-semibold text-boudoir-ink hover:text-boudoir-red">{label}</a>
+              <span class="mt-1 block text-sm leading-relaxed text-boudoir-muted">{why}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-2xl text-boudoir-ink">How a shoot with me works</h2>
+        <ul class="mt-6 space-y-4">
+          <li class="border-l-2 border-boudoir-pink pl-4">
+            <span class="block font-semibold text-boudoir-ink">One client a day, just you and me</span>
+            <span class="mt-1 block text-sm leading-relaxed text-boudoir-muted">No assistant and nobody else in the room, unless you bring a friend for support.</span>
+          </li>
+          <li class="border-l-2 border-boudoir-pink pl-4">
+            <span class="block font-semibold text-boudoir-ink">You don't need to know how to pose</span>
+            <span class="mt-1 block text-sm leading-relaxed text-boudoir-muted">I guide every pose and show you myself.</span>
+          </li>
+          <li class="border-l-2 border-boudoir-pink pl-4">
+            <span class="block font-semibold text-boudoir-ink">You choose your package before the shoot</span>
+            <span class="mt-1 block text-sm leading-relaxed text-boudoir-muted">Your photos are included in the price. No sales session afterwards.</span>
+          </li>
+          <li class="border-l-2 border-boudoir-pink pl-4">
+            <span class="block font-semibold text-boudoir-ink">Your photos stay private</span>
+            <span class="mt-1 block text-sm leading-relaxed text-boudoir-muted">Never shared unless you say so, and I delete my copies once yours are delivered.</span>
+          </li>
+        </ul>
+        <p class="mt-6 text-sm text-boudoir-muted">
+          See the <a href="/pricing/" class={link}>prices</a>, or read
+          <a href="/blog/first-boudoir-shoot-what-to-expect/" class={link}>what to expect at your first shoot</a>.
+        </p>
+      </section>
+    </div>
+
+    <div class="mx-auto max-w-3xl px-6 pb-16">
+      <section>
+        <h2 class="text-2xl text-boudoir-ink">Quick answers</h2>
+        <div class="mt-4 divide-y divide-boudoir-cream">
+          {faqs.map((f) => (
+            <details class="group py-5">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-boudoir-ink">
+                <span>{f.q}</span>
+                <span class="shrink-0 text-xl text-boudoir-pink transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <p class="mt-4 text-sm leading-relaxed text-boudoir-muted">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  </article>
+
+  <section class="bg-boudoir-ink py-20 text-center text-boudoir-white">
+    <div class="mx-auto max-w-2xl px-6">
+      <h2 class="text-3xl text-boudoir-pink">Tell me what boudoir means to you</h2>
+      <p class="mt-6 leading-relaxed">
+        Lingerie, overalls or nothing at all. Tell me what you have in mind and
+        we will plan your shoot around it.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a
+          href="/contact-boudoir-photography-auckland/"
+          class="inline-block bg-boudoir-red px-6 py-3 text-boudoir-white hover:opacity-90"
+        >
+          Get in touch
+        </a>
+        <a
+          href="/boudoir-photoshoot-gallery-auckland/"
+          class="inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink"
+        >
+          See the gallery
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

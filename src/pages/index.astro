@@ -314,6 +314,7 @@ const privacy = [
 
   .hero { position:relative; padding:0; background:#F1F1F0; }
   .hero > img { width:100%; height:auto; }
+  @media (min-width:1101px) { .hero > img { height:min(88vh, 820px); object-fit:cover; object-position:70% 82%; } }
   .hero .words { position:absolute; left:0; right:0; top:6%; text-align:center; padding:0 24px; }
   .hero h1 { font-size:68px; color:var(--ink); }
   .hero .sub { max-width:620px; margin:16px auto 14px; font-size:19px; color:#111; text-wrap:balance; }

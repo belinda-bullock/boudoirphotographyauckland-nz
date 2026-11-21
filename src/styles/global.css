@@ -29,7 +29,7 @@ html {
      between Safari and Chrome on the same machine and produced a genuine,
      persistent rendering difference between them. An absolute px value
      means the same thing in every browser regardless of that setting. */
-  font-size: 21.6px;
+  font-size: 19px; /* was 21.6px; brought down 22 Nov 2026 because the new fonts (Inter, Playfair) render fuller and Belinda found sections "massive" */
 }
 
 body {

@@ -207,7 +207,7 @@ const googleReviewsUrl = "https://www.google.com/search?q=Boudoir+Photography+Au
   </section>
 
   <!-- Photos up front, before any wall of text -->
-  <section class="grid grid-cols-2 sm:grid-cols-4">
+  <section class="grid grid-cols-2 gap-3 bg-boudoir-ink p-3 sm:grid-cols-4">
     {photoStrip.map((img) => (
       <img src={img.src} alt={img.alt} width={img.w} height={img.h} loading="lazy" decoding="async" class="aspect-[3/4] w-full rounded-2xl object-cover" style={`object-position: ${img.pos}`} />
     ))}
@@ -224,7 +224,7 @@ const googleReviewsUrl = "https://www.google.com/search?q=Boudoir+Photography+Au
           height={featurePhoto.h}
           loading="lazy"
           decoding="async"
-          class="aspect-[3/4] w-full rounded-2xl object-cover"
+          class="mx-auto aspect-[3/4] w-full max-w-sm rounded-2xl object-cover"
           style={`object-position: ${featurePhoto.pos}`}
         />
         <div>
@@ -261,7 +261,7 @@ const googleReviewsUrl = "https://www.google.com/search?q=Boudoir+Photography+Au
   </section>
 
   {/* A breath of photography between the blocks of text */}
-  <section class="grid grid-cols-2 sm:grid-cols-4">
+  <section class="grid grid-cols-2 gap-3 bg-boudoir-ink p-3 sm:grid-cols-4">
     {photoBreak.map((img) => (
       <img src={img.src} alt={img.alt} width={img.w} height={img.h} loading="lazy" decoding="async" class="aspect-[3/4] w-full rounded-2xl object-cover" style={`object-position: ${img.pos}`} />
     ))}

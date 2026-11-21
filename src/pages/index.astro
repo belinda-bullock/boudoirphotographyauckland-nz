@@ -1,22 +1,34 @@
 ---
 import Base from "../layouts/Base.astro";
 
+// New look, 2026-11-22. Built from the "Boudoir new look - home page" sample Belinda
+// worked through on 2026-11-21 (rounded photos, pill buttons, plum privacy cards,
+// true black text, "So many reasons" heading). Same words and photos as before.
+// Kept from 2026-11-22: the facts line under the heading, the "What is boudoir" link,
+// and both new contact-form questions. Styles are scoped to this page only.
+
 const steps = [
   {
-    number: "STEP 1",
-    title: "REACH OUT.",
+    n: "Step 1",
+    title: "Reach out.",
+    img: "/images/home/bw-bed-800.webp",
+    alt: "Black and white boudoir photo of a woman on a bed",
     highlight: "Booking Your Auckland Boudoir Photography Session.",
     rest: "Reach out with a message that's as bold or bashful as you like. Just make the first move. Once we connect, I'll send you everything you need to know: pricing, booking details, session prep, and what to expect.",
   },
   {
-    number: "STEP 2",
-    title: "HERE TO CHEER YOU ON.",
+    n: "Step 2",
+    title: "Here to cheer you on.",
+    img: "/images/home/bw-portrait-800.webp",
+    alt: "Black and white boudoir portrait of a young woman",
     highlight: "Your Guided Boudoir Photoshoot Experience.",
     rest: "On shoot day, we kick things off with hugs and high vibes. If you'd like to be pampered, professional hair and makeup is an optional extra ($220). Then it's your favourite music playing in the background, and a space where you can completely let go. I'll pose you, guide you, and cheer you on the whole way.",
   },
   {
-    number: "STEP 3",
+    n: "Step 3",
     title: "Your jaw-dropping moment.",
+    img: "/images/home/bw-tiled-800.webp",
+    alt: "Black and white boudoir photo of a young woman lying on a tiled surface",
     highlight: "Choosing Your Boudoir Photos.",
     rest: "After the session, you'll see your images, and yourself, like never before. You choose the ones you love for me to edit, from the number your package covers. No sales session, nothing extra to buy. These aren't just photos. They're proof of how powerful and beautiful you truly are.",
   },
@@ -26,35 +38,56 @@ const packages = [
   {
     name: "Tease",
     icon: "/images/icons/lips.png",
-    included: "A 1.5-hour boudoir shoot\n6 fully edited digital images of your choice – the magazine-worthy kind every woman deserves\nPlus 6 unedited images – because, it's a powerful reminder you are stunning without the polish",
+    featured: false,
+    included: [
+      "A 1.5-hour boudoir shoot",
+      "6 fully edited digital images of your choice – the magazine-worthy kind every woman deserves",
+      "Plus 6 unedited images – because, it's a powerful reminder you are stunning without the polish",
+    ],
     blurb: "Just enough to leave you breathless. Perfect for first-timers or anyone wanting a taste of the boudoir experience without going all in. A beautiful introduction to your sultry side.",
   },
   {
     name: "Temptation",
     icon: "/images/icons/fire.png",
-    included: "A 2.5-hour boudoir shoot\n10 fully edited digital images – your most breathtaking shots, with all the polish and glow you deserve\nPlus 10 unedited images – a powerful reminder that your beauty doesn't rely on edits",
+    featured: true,
+    included: [
+      "A 2.5-hour boudoir shoot",
+      "10 fully edited digital images – your most breathtaking shots, with all the polish and glow you deserve",
+      "Plus 10 unedited images – a powerful reminder that your beauty doesn't rely on edits",
+    ],
     blurb: "Let yourself go a little deeper. This experience is all about celebrating your power, beauty, and sensuality. More looks, more images, and more time to shine.",
   },
   {
     name: "Total Knockout",
     icon: "/images/icons/lingerie.png",
-    included: "An unlimited-time boudoir experience\n20 fully edited digital images – stunning, detailed, and crafted to celebrate you at your best\nPlus as many unedited images as you would like – a beautiful reminder that you looked this incredible before the edits even began",
+    featured: false,
+    included: [
+      "An unlimited-time boudoir experience",
+      "20 fully edited digital images – stunning, detailed, and crafted to celebrate you at your best",
+      "Plus as many unedited images as you would like – a beautiful reminder that you looked this incredible before the edits even began",
+    ],
     blurb: "All eyes on you. This is the package for anyone who refuses to leave behind a single favourite look. With enough gorgeous images to create a personalised keepsake book or unforgettable gift, you'll have a collection that celebrates every side of you, now and forever.",
   },
 ];
 
-const gallerySection1 = [
+const strip1 = [
   { src: "/images/home/midriff-lingerie-800.webp", alt: "Boudoir photo of a woman's midriff wearing sexy lingerie" },
   { src: "/images/home/lace-lingerie-800.webp", alt: "Boudoir photo of a woman wearing lace lingerie" },
   { src: "/images/home/on-bed-800.webp", alt: "Boudoir photo of a woman on a bed" },
   { src: "/images/home/low-light-thong-800.webp", alt: "Boudoir photo of a woman in low light wearing a thong" },
 ];
 
-const gallerySection2 = [
+const strip2 = [
   { src: "/images/home/spotlight-stool-800.webp", alt: "Boudoir photo of a woman in a one piece under a spotlight, leaning on a stool" },
-  { src: "/images/home/bed-facing-away-800.webp", alt: "Boudoir photo of a woman on a bed facing away from the camera in a seductive pose" },
+  { src: "/images/home/bed-facing-away-800.webp", alt: "Boudoir photo of a woman on a bed facing away from the camera" },
   { src: "/images/home/gloves-800.webp", alt: "Boudoir photo of a woman looking at the camera wearing gloves" },
   { src: "/images/home/sheepskin-rug-800.webp", alt: "Boudoir photo of a woman lying on a sheepskin rug in lingerie" },
+];
+
+const privacy = [
+  ["Just you and me", "Every session is the two of us. No assistant, no one else in the room. I shoot everything myself."],
+  ["Only shared if you say so", "Your images are never posted or shown anywhere unless you tell me it is okay. Your session, your body, your call."],
+  ["I delete my copies", "Once your final images are delivered, I delete mine. Keep a few backups of your own, because I will not have them."],
 ];
 ---
 
@@ -62,459 +95,176 @@ const gallerySection2 = [
   title="Boudoir Photographer Auckland | Female, One Client a Day"
   description="Private boudoir photography in Auckland with female photographer Belinda Dunne. One session a day, every body welcome, on the Hibiscus Coast."
 >
-  <!-- Full-bleed title hero -->
-  <section class="relative">
-    <img
-      src="/images/home/hero.webp"
-      alt="Auckland boudoir photography"
-      fetchpriority="high"
-      class="h-[430px] w-full object-cover object-[78%_30%] opacity-50 sm:h-[420px] sm:object-[75.5744%_73.6184%]"
-      width="1600"
-      height="1065"
-    />
-    <div class="absolute inset-0 flex flex-col items-center justify-center px-6">
-      <h1 class="max-w-3xl text-center text-4xl text-boudoir-ink sm:text-6xl">Boudoir Photography Auckland</h1>
-      <!-- The facts that set her apart, on the first screen (agreed 2026-11-22). -->
-      <ul class="mt-6 flex max-w-3xl flex-wrap justify-center gap-x-6 gap-y-2 bg-white/75 px-5 py-3 text-center text-base font-semibold text-boudoir-ink sm:text-lg">
+<div class="nl">
+
+  <!-- HERO: the photo at full strength, words in the white space above her -->
+  <section class="hero">
+    <div class="words">
+      <h1>Boudoir Photography Auckland</h1>
+      <p class="sub">A private boudoir photography experience for women who want to feel confident and beautiful.</p>
+      <ul class="facts">
         <li>Female photographer</li>
         <li>One client a day</li>
         <li>Just you and me</li>
         <li>No sales session</li>
       </ul>
+      <div class="ctas"><a class="pill" href="/contact-boudoir-photography-auckland/">Book your Auckland boudoir session</a></div>
+    </div>
+    <img src="/images/home/hero.webp" alt="Auckland boudoir photography" width="1600" height="1065" fetchpriority="high" />
+  </section>
+
+  <!-- WELCOME -->
+  <section class="dark welcome center">
+    <div class="wrap">
+      <h2>Welcome to a space that <em>celebrates your body.</em></h2>
+      <p>Where you'll be guided through a confidence boosting boudoir experience from start to finish, so you feel relaxed, supported, and walk away with images that make you say, <em class="q">damn&hellip; is that really me?</em></p>
+      <p>Every size, every shape, every age. There is no body this is not for, and the way I light and pose you is built around yours, not somebody else's.</p>
     </div>
   </section>
 
-  <!-- Black CTA band -->
-  <section class="bg-boudoir-ink py-10 text-center text-boudoir-white sm:py-16">
-    <div class="mx-auto max-w-2xl px-6">
-      <p class="text-lg uppercase tracking-wide sm:text-2xl">
-        A private boudoir photography experience for women who want to feel confident and beautiful
-      </p>
-      <h2 class="mt-4 text-3xl">
-        Welcome to a space that <span class="text-boudoir-pink">celebrates your body.</span>
-      </h2>
-      <p class="mt-6 text-white/80">
-        Where you'll be guided through a confidence boosting boudoir experience
-        from start to finish, so you feel relaxed, supported, and walk away
-        with images that make you say, <em>damn&hellip; is that really me?</em>
-      </p>
-      <p class="mt-6 text-white/80">
-        Every size, every shape, every age. There is no body this is not for,
-        and the way I light and pose you is built around yours, not somebody
-        else's.
-      </p>
-      <a
-        href="/contact-boudoir-photography-auckland/"
-        class="mt-8 inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink"
-      >
-        Book your Auckland boudoir session
-      </a>
-    </div>
-  </section>
+  <div class="strip dark-strip">
+    {strip1.map((i) => <img src={i.src} alt={i.alt} width="800" height="586" loading="lazy" decoding="async" />)}
+  </div>
 
-  <!-- Gallery strip 1 -->
-  <section class="grid grid-cols-2 sm:grid-cols-4">
-    {gallerySection1.map((img) => (
-      <img
-        src={img.src}
-        alt={img.alt}
-        loading="lazy"
-        decoding="async"
-        width="800"
-        height="586"
-        class="aspect-[4/3] w-full object-cover"
-      />
-    ))}
-  </section>
-
-  <!-- Meet your photographer -->
-  <section class="mx-auto max-w-6xl px-6 py-20">
-    <div class="flex flex-col gap-8 sm:flex-row sm:items-start">
-      <img
-        src="/images/home/photographer-belinda-540.webp"
-        alt="Belinda Dunne, Auckland boudoir photographer"
-        style="object-position: 46.8% 27.2%;"
-        class="aspect-square w-full max-w-[270px] shrink-0 object-cover"
-        width="540"
-        height="540"
-        loading="lazy"
-        decoding="async"
-      />
+  <!-- MEET -->
+  <section>
+    <div class="wrap meet">
+      <img src="/images/home/photographer-belinda-540.webp" alt="Belinda Dunne, Auckland boudoir photographer" width="540" height="540" loading="lazy" decoding="async" />
       <div>
-        <h2 class="text-3xl">Meet your photographer</h2>
-        <p class="mt-5 text-boudoir-muted">
-          Hi, I'm Belinda, a female boudoir photographer based in Auckland. I
-          only take on one session a day so I'm never watching the clock. My
-          Master Level accreditation from The Portrait Masters focused
-          specifically on posing and lighting, the two things that make or break how a boudoir photo
-          turns out. I also photograph
-          <a href="/maternity-photography/" class="text-boudoir-pink underline">maternity sessions</a>.
-        </p>
-        <a href="/about-belinda-dunne/" class="mt-2 inline-block text-boudoir-pink underline">
-          More about Belinda
-        </a>
+        <h2>Meet your photographer</h2>
+        <p>Hi, I'm Belinda, a female boudoir photographer based in Auckland. I only take on one session a day so I'm never watching the clock. My Master Level accreditation from The Portrait Masters focused specifically on posing and lighting, the two things that make or break how a boudoir photo turns out. I also photograph <a class="link" href="/maternity-photography/">maternity sessions</a>.</p>
+        <a class="pill ghost" href="/about-belinda-dunne/">More about Belinda</a>
       </div>
     </div>
   </section>
 
-  <!-- Privacy and comfort. Wording lifted from Belinda's own FAQ answers, not
-       invented: the same three promises, surfaced where the decision is made
-       instead of only on /faqs where most visitors never go. -->
-  <section class="bg-boudoir-cream py-20">
-    <div class="mx-auto max-w-5xl px-6 text-center">
-      <h2 class="text-3xl text-boudoir-ink">Your session stays yours</h2>
-      <p class="mx-auto mt-5 max-w-2xl text-boudoir-muted">
-        The things most women want to ask before they get in touch, answered plainly.
-      </p>
-      <div class="mt-12 grid gap-10 text-left sm:grid-cols-3">
-        <div>
-          <h3 class="text-xl text-boudoir-pink">Just you and me</h3>
-          <p class="mt-3 text-boudoir-muted">
-            Every session is the two of us. No assistant, no one else in the
-            room. I shoot everything myself.
-          </p>
-        </div>
-        <div>
-          <h3 class="text-xl text-boudoir-pink">Only shared if you say so</h3>
-          <p class="mt-3 text-boudoir-muted">
-            Your images are never posted or shown anywhere unless you tell me
-            it is okay. Your session, your body, your call.
-          </p>
-        </div>
-        <div>
-          <h3 class="text-xl text-boudoir-pink">I delete my copies</h3>
-          <p class="mt-3 text-boudoir-muted">
-            Once your final images are delivered, I delete mine. Keep a few
-            backups of your own, because I will not have them.
-          </p>
-        </div>
+  <!-- PRIVACY: dark plum cards on the pale section (Belinda's choice, 21 Nov) -->
+  <section class="blush center privacy">
+    <div class="wrap">
+      <h2>Your session <em>stays yours</em></h2>
+      <p class="lede">The things most women want to ask before they get in touch, answered plainly.</p>
+      <div class="cards three">
+        {privacy.map(([h, p], i) => (
+          <div class="card"><div class="mark">{i + 1}</div><h3>{h}</h3><p>{p}</p></div>
+        ))}
       </div>
-      <a href="/faqs/" class="mt-10 inline-block text-boudoir-pink underline">
-        Read all the questions and answers
-      </a>
+      <p class="after"><a class="link" href="/faqs/">Read all the questions and answers</a></p>
     </div>
   </section>
 
-  <!-- Steps -->
-  <section class="bg-boudoir-ink py-20 text-boudoir-white">
-    <div class="mx-auto max-w-6xl px-6 text-center">
-      <h2 class="text-3xl">
-        <span class="text-boudoir-pink">Your Boudoir Experience,</span> Step by Step
-      </h2>
-      <p class="mx-auto mt-6 max-w-2xl text-white/80">
-        A personalised, confidence-boosting experience from the first message
-        to the moment you see your stunning images.
-      </p>
-      <p class="mx-auto mt-4 max-w-2xl text-white/80">
-        First time? Start with
-        <a href="/what-is-boudoir-photography/" class="text-boudoir-pink underline">what boudoir photography is</a>,
-        then read
-        <a href="/blog/first-boudoir-shoot-what-to-expect/" class="text-boudoir-pink underline">what to expect at your first boudoir shoot</a>
-        and the guide to
-        <a href="/what-to-wear-boudoir-shoot/" class="text-boudoir-pink underline">what to wear to a boudoir shoot</a>.
-      </p>
-    </div>
-
-    <div class="mx-auto mt-12 grid max-w-6xl grid-cols-1 px-6 sm:grid-cols-3 md:px-12 lg:px-20">
-      <div class="relative">
-        <img
-          src="/images/home/bw-bed-800.webp"
-          alt="Black and white boudoir photo of a woman on a bed"
-          width="800"
-          height="589"
-          loading="lazy"
-          decoding="async"
-          class="h-[280px] w-full object-cover sm:h-[340px]"
-        />
-      </div>
-      <div class="flex flex-col items-center justify-center bg-[#201520] px-8 py-10 text-center">
-        <p class="text-boudoir-pink">
-          <span class="font-semibold uppercase tracking-wide">{steps[0].number}</span>
-          <br />
-          <span class="font-semibold uppercase tracking-wide">{steps[0].title}</span>
-        </p>
-        <p class="mt-4 text-sm">
-          <span class="text-boudoir-pink">{steps[0].highlight}</span>{" "}
-          <span class="text-white/85">{steps[0].rest}</span>
-        </p>
-      </div>
-      <div class="relative">
-        <img
-          src="/images/home/bw-portrait-800.webp"
-          alt="Black and white boudoir portrait of a young woman"
-          width="800"
-          height="589"
-          loading="lazy"
-          decoding="async"
-          class="h-[280px] w-full object-cover sm:h-[340px]"
-        />
-      </div>
-
-      <div class="flex flex-col items-center justify-center bg-[#201520] px-8 py-10 text-center">
-        <p class="text-boudoir-pink">
-          <span class="font-semibold uppercase tracking-wide">{steps[1].number}</span>
-          <br />
-          <span class="font-semibold uppercase tracking-wide">{steps[1].title}</span>
-        </p>
-        <p class="mt-4 text-sm">
-          <span class="text-boudoir-pink">{steps[1].highlight}</span>{" "}
-          <span class="text-white/85">{steps[1].rest}</span>
-        </p>
-      </div>
-      <div class="relative">
-        <img
-          src="/images/home/bw-tiled-800.webp"
-          alt="Black and white boudoir photo of a young woman lying on a tiled surface"
-          width="800"
-          height="590"
-          loading="lazy"
-          decoding="async"
-          class="h-[280px] w-full object-cover sm:h-[380px]"
-        />
-      </div>
-      <div class="flex flex-col items-center justify-center bg-[#201520] px-8 py-10 text-center">
-        <p class="text-boudoir-pink">
-          <span class="font-semibold uppercase tracking-wide">{steps[2].number}</span>
-          <br />
-          <span class="font-semibold">{steps[2].title}</span>
-        </p>
-        <p class="mt-4 text-sm">
-          <span class="text-boudoir-pink">{steps[2].highlight}</span>{" "}
-          <span class="text-white/85">{steps[2].rest}</span>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery strip 2 -->
-  <section class="grid grid-cols-2 sm:grid-cols-4">
-    {gallerySection2.map((img) => (
-      <img
-        src={img.src}
-        alt={img.alt}
-        loading="lazy"
-        decoding="async"
-        width="800"
-        height="586"
-        class="aspect-[4/3] w-full object-cover"
-      />
-    ))}
-  </section>
-
-  <!-- Pricing teaser -->
-  <section class="bg-boudoir-ink py-20 text-boudoir-white">
-    <div class="mx-auto max-w-6xl px-6 md:px-12 lg:px-20">
-      <div class="max-w-2xl text-center md:mx-auto">
-        <h2 class="text-3xl text-boudoir-pink">Invest in Yourself</h2>
-        <p class="mt-3 text-white/85">This is more than a photoshoot. This is a celebration of you.</p>
-        <a href="/pricing/" class="mt-2 inline-block text-white/85 underline">View our packages</a>
-      </div>
-
-      <div class="mt-14 grid gap-6 md:grid-cols-3">
-        {packages.map((pkg) => (
-          <div class="bg-[#201520] px-8 py-10 text-center">
-            <img src={pkg.icon} alt="" width="92" height="92" loading="lazy" decoding="async" class="mx-auto h-12 w-12" />
-            <h3 class="mt-4 text-2xl uppercase tracking-wide text-boudoir-pink">{pkg.name}</h3>
-            <div class="mt-5 space-y-3 text-sm text-white/90">
-              {pkg.included.split("\n").map((line) => <p>{line}</p>)}
+  <!-- STEPS -->
+  <section class="dark center">
+    <div class="wrap">
+      <h2><em>Your boudoir experience,</em> step by step</h2>
+      <p class="lede">A personalised, confidence-boosting experience from the first message to the moment you see your stunning images.</p>
+      <p class="lede small-gap">First time? Start with <a class="link" href="/what-is-boudoir-photography/">what boudoir photography is</a>, then read <a class="link" href="/blog/first-boudoir-shoot-what-to-expect/">what to expect at your first boudoir shoot</a> and the guide to <a class="link" href="/what-to-wear-boudoir-shoot/">what to wear to a boudoir shoot</a>.</p>
+      <div class="steps">
+        {steps.map((s) => (
+          <div class="step">
+            <img src={s.img} alt={s.alt} width="800" height="589" loading="lazy" decoding="async" />
+            <div class="body">
+              <div class="n">{s.n}</div>
+              <h3>{s.title}</h3>
+              <div class="hl">{s.highlight}</div>
+              <p>{s.rest}</p>
             </div>
-            <hr class="mx-auto mt-6 w-16 border-white/30" />
-            <p class="mt-6 text-sm text-white/80">{pkg.blurb}</p>
           </div>
         ))}
       </div>
-
-      <div class="mt-14 text-center">
-        <a
-          href="/pricing/"
-          class="inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink"
-        >
-          View Pricing
-        </a>
-      </div>
     </div>
   </section>
 
-  <!-- Why women book. Straight from Belinda, 2026-09-03: the real reasons
-       clients have come to her. Left deliberately plain and specific, because
-       a woman scanning this is looking for her own situation in the list. -->
-  <section class="bg-boudoir-cream py-20">
-    <div class="mx-auto max-w-5xl px-6">
-    <div class="text-center">
-      <h2 class="text-3xl text-boudoir-ink">There is no wrong reason</h2>
-      <p class="mx-auto mt-5 max-w-2xl text-boudoir-muted">
-        Women book a boudoir shoot for all sorts of reasons. Some of the ones
-        that have brought clients to my studio:
-      </p>
-    </div>
+  <div class="strip dark-strip">
+    {strip2.map((i) => <img src={i.src} alt={i.alt} width="800" height="586" loading="lazy" decoding="async" />)}
+  </div>
 
-    <div class="mt-12 grid gap-x-12 gap-y-8 sm:grid-cols-2">
-      <div>
-        <h3 class="text-lg text-boudoir-pink">A birthday that felt like it mattered</h3>
-        <p class="mt-2 text-boudoir-muted">
-          Thirty, forty, fifty, sixty. Marking the year rather than dreading it.
-          More on <a href="/milestone-birthday-boudoir/" class="text-boudoir-pink underline">birthday boudoir</a>.
-        </p>
+  <!-- PACKAGES -->
+  <section class="dark center">
+    <div class="wrap">
+      <h2><em>Invest in yourself</em></h2>
+      <p class="lede">This is more than a photoshoot. This is a celebration of you.</p>
+      <div class="pkgs">
+        {packages.map((p) => (
+          <div class={p.featured ? "pkg featured" : "pkg"}>
+            <img src={p.icon} alt="" width="92" height="92" loading="lazy" decoding="async" />
+            <h3>{p.name}</h3>
+            <ul>{p.included.map((li) => <li>{li}</li>)}</ul>
+            <p class="blurb">{p.blurb}</p>
+          </div>
+        ))}
       </div>
-      <div>
-        <h3 class="text-lg text-boudoir-pink">Bridal boudoir, before the wedding</h3>
-        <p class="mt-2 text-boudoir-muted">
-          One of the most common bookings I take. Usually planned as a gift
-          for a partner to open before the day, and just as often kept for
-          herself once she sees the images. Here is how
-          <a href="/bridal-boudoir-auckland/" class="text-boudoir-pink underline">bridal boudoir in Auckland</a>
-          works with me.
-        </p>
-      </div>
-      <div>
-        <h3 class="text-lg text-boudoir-pink">After a divorce</h3>
-        <p class="mt-2 text-boudoir-muted">
-          The end of one thing and the start of whatever comes next.
-        </p>
-      </div>
-      <div>
-        <h3 class="text-lg text-boudoir-pink">Coming out the other side of a hard year</h3>
-        <p class="mt-2 text-boudoir-muted">
-          Grief, illness, money worries. Plenty of women book once they have
-          got through something and want to feel like themselves again.
-        </p>
-      </div>
-      <div>
-        <h3 class="text-lg text-boudoir-pink">Before surgery</h3>
-        <p class="mt-2 text-boudoir-muted">
-          I have photographed women in the weeks before a mastectomy, to
-          document their body before it changes. If that is why you are
-          here, you are in careful hands.
-        </p>
-      </div>
-      <div>
-        <h3 class="text-lg text-boudoir-pink">Because somebody bought it for her</h3>
-        <p class="mt-2 text-boudoir-muted">
-          I do gift certificates, and plenty of sessions start that way.
-          Friends buying for a friend's milestone birthday, and husbands
-          buying for their wives at a birthday or Valentine's.
-        </p>
-      </div>
-      <div>
-        <h3 class="text-lg text-boudoir-pink">Scars, burns and bodies that have been through things</h3>
-        <p class="mt-2 text-boudoir-muted">
-          I have photographed all of it. Scars or no scars, every body is
-          beautiful, and to me a scar tells part of the story of your life.
-          Read about
-          <a href="/boudoir-for-every-body/" class="text-boudoir-pink underline">boudoir for every body</a>.
-        </p>
-      </div>
-    </div>
-
-    <p class="mx-auto mt-12 max-w-2xl text-center text-boudoir-muted">
-      And plenty of women book for no particular reason at all, beyond wanting
-      to see themselves properly for once. That is reason enough.
-    </p>
+      <div class="after"><a class="pill" href="/pricing/">View Pricing</a></div>
     </div>
   </section>
 
-  <!-- Closing CTA (full-bleed photo background) -->
-  <section class="relative">
-    <img
-      src="/images/home/low-light-innocent.webp"
-      alt=""
-      width="504"
-      height="1600"
-      loading="lazy"
-      decoding="async"
-      class="absolute inset-0 h-full w-full object-cover"
-    />
-    <div class="relative mx-auto max-w-3xl px-6 py-24 text-center text-boudoir-white">
-      <h2 class="text-3xl">
-        Ready <span class="text-boudoir-pink">to fall in love with yourself?</span>
-      </h2>
-      <p class="mt-6 text-white/90">
-        If you would like a FREE no obligation consultation, I'd love you to contact me:
-      </p>
-      <a
-        href="/contact-boudoir-photography-auckland/"
-        class="mt-8 inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink"
-      >
-        Contact me today
-      </a>
-
-      <hr class="mx-auto mt-16 w-16 border-white/30" />
-
-      <h2 class="mt-10 text-3xl text-boudoir-pink">
-        You Are Bold.<br />Beautiful.<br />Unforgettable.
-      </h2>
-    </div>
-  </section>
-
-  <!-- Testimonial (full-bleed photo background, naturally dark) -->
-  <section class="relative">
-    <img
-      src="/images/home/tiled-floor-face-down.webp"
-      alt=""
-      width="1600"
-      height="411"
-      loading="lazy"
-      decoding="async"
-      class="absolute inset-0 h-full w-full object-cover"
-    />
-    <div class="relative mx-auto max-w-3xl px-6 py-20 text-center text-boudoir-white">
-      <blockquote>
-        &ldquo;For those of you who don't know Belinda, she is not just an
-        incredible and talented photographer she is one of the kindest people
-        I know. What you can expect is to be guided in a very relaxed
-        environment to get images that are beyond what you thought was
-        possible. I can not recommend her enough.&rdquo;
-      </blockquote>
-      <p class="mt-6">Kendal</p>
-      <a href="/testimonials/" class="mt-6 inline-block text-boudoir-pink underline">
-        Read what other women said
-      </a>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="bg-[#201520] py-20 text-boudoir-white">
-    <div class="mx-auto grid max-w-5xl gap-10 px-6 md:grid-cols-2">
-      <div>
-        <h2 class="text-5xl">Contact me</h2>
-        <p class="mt-8">
-          Call Belinda on
-          <br />
-          <a href="tel:+64274326504" class="underline">0274326504</a>
-        </p>
+  <!-- REASONS (heading changed at Belinda's request, 21 Nov) -->
+  <section class="blush">
+    <div class="wrap">
+      <div class="center">
+        <h2><em>So many reasons</em> to book a boudoir shoot</h2>
+        <p class="lede">Women book a boudoir shoot for all sorts of reasons. Some of the ones that have brought clients to my studio:</p>
       </div>
-      <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+      <div class="cards two">
+        <div class="card"><h3>A birthday that felt like it mattered</h3><p>Thirty, forty, fifty, sixty. Marking the year rather than dreading it. More on <a class="link" href="/milestone-birthday-boudoir/">birthday boudoir</a>.</p></div>
+        <div class="card"><h3>Bridal boudoir, before the wedding</h3><p>One of the most common bookings I take. Usually planned as a gift for a partner to open before the day, and just as often kept for herself once she sees the images. Here is how <a class="link" href="/bridal-boudoir-auckland/">bridal boudoir in Auckland</a> works with me.</p></div>
+        <div class="card"><h3>After a divorce</h3><p>The end of one thing and the start of whatever comes next.</p></div>
+        <div class="card"><h3>Coming out the other side of a hard year</h3><p>Grief, illness, money worries. Plenty of women book once they have got through something and want to feel like themselves again.</p></div>
+        <div class="card"><h3>Before surgery</h3><p>I have photographed women in the weeks before a mastectomy, to document their body before it changes. If that is why you are here, you are in careful hands.</p></div>
+        <div class="card"><h3>Because somebody bought it for her</h3><p>I do gift certificates, and plenty of sessions start that way. Friends buying for a friend's milestone birthday, and husbands buying for their wives at a birthday or Valentine's.</p></div>
+        <div class="card wide"><h3>Scars, burns and bodies that have been through things</h3><p>I have photographed all of it. Scars or no scars, every body is beautiful, and to me a scar tells part of the story of your life. Read about <a class="link" href="/boudoir-for-every-body/">boudoir for every body</a>.</p></div>
+      </div>
+      <p class="lede center after">And plenty of women book for no particular reason at all, beyond wanting to see themselves properly for once. That is reason enough.</p>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="photo-band center">
+    <img src="/images/home/low-light-innocent.webp" alt="" width="504" height="1600" loading="lazy" decoding="async" />
+    <div class="wrap">
+      <h2>Ready <em>to fall in love with yourself?</em></h2>
+      <p class="lede on-photo">If you would like a FREE no obligation consultation, I'd love you to contact me:</p>
+      <div class="after"><a class="pill" href="/contact-boudoir-photography-auckland/">Contact me today</a></div>
+      <p class="bold-line">You Are Bold.<br />Beautiful.<br />Unforgettable.</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="photo-band center">
+    <img src="/images/home/tiled-floor-face-down.webp" alt="" width="1600" height="411" loading="lazy" decoding="async" />
+    <div class="wrap">
+      <blockquote>&ldquo;For those of you who don't know Belinda, she is not just an incredible and talented photographer she is one of the kindest people I know. What you can expect is to be guided in a very relaxed environment to get images that are beyond what you thought was possible. I can not recommend her enough.&rdquo;</blockquote>
+      <p class="who">Kendal</p>
+      <p class="after"><a class="link" href="/testimonials/">Read what other women said</a></p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="plum" id="contact">
+    <div class="wrap contact">
+      <div>
+        <h2>Contact me</h2>
+        <p class="call">Call Belinda on<br /><a href="tel:+64274326504">0274326504</a></p>
+      </div>
+      <form action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="ff781121-c927-40fe-89a9-f7798a2a0838" />
         <input type="hidden" name="redirect" value="https://www.boudoirphotographyauckland.co.nz/contact-thanks/" />
         <input type="hidden" name="subject" value="New inquiry from Boudoir Photography Auckland website" />
         <input type="hidden" name="from_name" value="Boudoir Photography Auckland Contact Form" />
-        <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
+        <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" />
         <div>
-          <p class="text-sm">Name</p>
-          <div class="mt-1 grid gap-2 sm:grid-cols-2">
-            <input required type="text" name="firstName" placeholder="First Name (required)" class="bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink" />
-            <input required type="text" name="lastName" placeholder="Last Name (required)" class="bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink" />
+          <label for="h-first">Name</label>
+          <div class="row">
+            <input id="h-first" required type="text" name="firstName" placeholder="First Name (required)" />
+            <input required type="text" name="lastName" placeholder="Last Name (required)" aria-label="Last Name" />
           </div>
         </div>
+        <div><label for="h-phone">Phone number (required)</label><input id="h-phone" required type="tel" name="phone" pattern="(.*[0-9]){7,}.*" title="Please enter a phone number with at least 7 digits" /></div>
+        <div><label for="h-date">What date would you like for your shoot?</label><input id="h-date" type="text" name="shoot_date" placeholder="e.g. a date, month, or 'flexible'" /></div>
+        <div><label for="h-email">Email (required)</label><input id="h-email" required type="email" name="email" /></div>
+        <div><label for="h-heard">How did you hear about us?</label><textarea id="h-heard" name="heardFrom" rows="2"></textarea></div>
         <div>
-          <p class="text-sm">Phone number (required)</p>
-          <input required type="tel" name="phone" pattern="(.*[0-9]){7,}.*" title="Please enter a phone number with at least 7 digits" class="mt-1 w-full bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink" />
-        </div>
-        <div>
-          <p class="text-sm">What date would you like for your shoot?</p>
-          <input type="text" name="shoot_date" placeholder="e.g. a date, month, or 'flexible'" class="mt-1 w-full bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink" />
-        </div>
-        <div>
-          <p class="text-sm">Email (required)</p>
-          <input required type="email" name="email" class="mt-1 w-full bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink" />
-        </div>
-        <div>
-          <p class="text-sm">How did you hear about us?</p>
-          <textarea name="heardFrom" rows="2" class="mt-1 w-full bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink"></textarea>
-        </div>
-        <div>
-          <label for="h-look" class="text-sm">Which look are you drawn to? (<a href="/boudoir-photoshoot-gallery-auckland/" class="text-boudoir-pink underline">see the four looks</a>)</label>
-          <select id="h-look" name="look" data-look-select class="mt-1 w-full bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink">
+          <label for="h-look">Which look are you drawn to? (<a class="link" href="/boudoir-photoshoot-gallery-auckland/">see the four looks</a>)</label>
+          <select id="h-look" name="look" data-look-select>
             <option value="">Choose one, or leave it for now</option>
             <option value="light-and-soft">Light and soft</option>
             <option value="dark-and-dramatic">Dark and dramatic</option>
@@ -524,18 +274,147 @@ const gallerySection2 = [
             <option value="not-sure">Not sure yet, help me choose</option>
           </select>
         </div>
-        <div>
-          <label for="h-not-on-site" class="text-sm">Looking for something you can't see on this site? Not everything I photograph can go on a public website. Tell me what you have in mind and I will let you know, privately.</label>
-          <textarea id="h-not-on-site" name="not_on_site" rows="2" class="mt-1 w-full bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink"></textarea>
-        </div>
-        <div>
-          <p class="text-sm">Please tell me as much as you can about the sort of images you would like and when you would like to shoot</p>
-          <textarea name="message" rows="4" class="mt-1 w-full bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink"></textarea>
-        </div>
-        <button type="submit" class="border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink">
-          Send
-        </button>
+        <div><label for="h-not-on-site">Looking for something you can't see on this site? Not everything I photograph can go on a public website. Tell me what you have in mind and I will let you know, privately.</label><textarea id="h-not-on-site" name="not_on_site" rows="2"></textarea></div>
+        <div><label for="h-msg">Please tell me as much as you can about the sort of images you would like and when you would like to shoot</label><textarea id="h-msg" name="message" rows="4"></textarea></div>
+        <button class="pill" type="submit">Send</button>
       </form>
     </div>
   </section>
+</div>
 </Base>
+
+<style>
+  .nl {
+    --pink:#E67DE3; --pink-deep:#B23FAF; --ink:#0B0B0B; --plum:#201520; --plum-line:#3A2A39;
+    --blush:#FAF6F5; --text:#111; --on-dark:#FFFFFF; --on-dark-muted:#F2ECF1;
+    font-family:'Inter',-apple-system,sans-serif; color:var(--text); font-size:17px; line-height:1.65;
+  }
+  .nl img { display:block; max-width:100%; }
+  h1, h2, .card h3, .step h3, .pkg h3, .bold-line, blockquote { font-family:'Playfair Display',Georgia,serif; font-weight:500; }
+  h1, h2 { letter-spacing:-.5px; line-height:1.12; text-wrap:balance; }
+  h2 { font-size:44px; }
+  h2 em { font-style:italic; color:var(--pink-deep); }
+  .dark h2 em, .photo-band h2 em { color:var(--pink); }
+  .wrap { max-width:1160px; margin:0 auto; padding:0 40px; }
+  section { padding:100px 0; }
+  .center { text-align:center; }
+  .lede { max-width:640px; margin:18px auto 0; color:var(--text); font-size:18px; text-wrap:balance; }
+  .small-gap { margin-top:10px; }
+  .after { margin-top:40px; }
+  .dark { background:var(--ink); color:var(--on-dark); }
+  .dark .lede { color:var(--on-dark-muted); }
+  .plum { background:var(--plum); color:var(--on-dark); }
+  .blush { background:var(--blush); }
+  .link { color:var(--pink-deep); font-weight:500; text-decoration:underline; text-underline-offset:3px; }
+  .dark .link, .plum .link, .photo-band .link { color:var(--pink); }
+
+  .pill { display:inline-block; background:var(--pink); color:#000; font-weight:600; font-size:15px; padding:15px 30px; border-radius:999px; text-decoration:none; transition:background .2s; border:0; cursor:pointer; }
+  .pill:hover { background:#F09BEE; }
+  .pill.ghost { background:transparent; color:var(--ink); border:1.5px solid #CFC6CD; }
+
+  .hero { position:relative; padding:0; background:#F1F1F0; }
+  .hero > img { width:100%; height:auto; }
+  .hero .words { position:absolute; left:0; right:0; top:6%; text-align:center; padding:0 24px; }
+  .hero h1 { font-size:68px; color:var(--ink); }
+  .hero .sub { max-width:620px; margin:16px auto 14px; font-size:19px; color:#111; text-wrap:balance; }
+  .facts { list-style:none; display:flex; flex-wrap:wrap; justify-content:center; gap:8px 10px; margin:0 auto 22px; padding:0; max-width:760px; }
+  .facts li { background:rgba(255,255,255,.85); border:1px solid #E6C9E5; border-radius:999px; padding:6px 14px; font-size:15px; font-weight:600; color:#111; }
+  .hero .ctas { display:flex; justify-content:center; }
+
+  .welcome p { max-width:640px; margin:18px auto 0; color:var(--on-dark-muted); font-size:18px; }
+  .welcome em.q { color:var(--on-dark); }
+
+  .strip { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; padding:14px; }
+  .strip img { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:16px; }
+  .dark-strip { background:var(--ink); }
+
+  .meet { display:grid; grid-template-columns:340px 1fr; gap:64px; align-items:center; }
+  .meet img { width:100%; aspect-ratio:1/1; object-fit:cover; object-position:46.8% 27.2%; border-radius:24px; }
+  .meet p { color:var(--text); margin:18px 0 26px; font-size:19px; line-height:1.7; max-width:34em; }
+
+  .cards { display:grid; gap:20px; margin-top:48px; text-align:left; }
+  .cards.three { grid-template-columns:repeat(3,1fr); }
+  .cards.two { grid-template-columns:repeat(2,1fr); }
+  .card { background:#fff; border:1px solid #EEE3EB; border-radius:20px; padding:30px; }
+  .card.wide { grid-column:1/-1; }
+  .card h3 { font-size:23px; color:var(--ink); margin-bottom:10px; line-height:1.25; }
+  .card p { color:var(--text); font-size:17px; }
+  .card .mark { width:34px; height:34px; border-radius:50%; display:grid; place-items:center; margin-bottom:16px; font-weight:600; font-size:15px; }
+  .privacy .card { background:var(--plum); border:0; box-shadow:0 16px 36px rgba(32,21,32,.22); }
+  .privacy .card h3 { color:var(--pink); }
+  .privacy .card p { color:#F2ECF1; }
+  .privacy .card .mark { background:var(--pink); color:#000; }
+
+  .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:52px; text-align:left; }
+  .step { background:#171117; border:1px solid var(--plum-line); border-radius:22px; overflow:hidden; }
+  .step img { width:100%; aspect-ratio:4/3; object-fit:cover; }
+  .step .body { padding:26px 26px 30px; }
+  .step .n { font-family:'Playfair Display',serif; font-style:italic; color:var(--pink); font-size:24px; }
+  .step h3 { font-size:24px; color:#fff; margin:4px 0; }
+  .step .hl { color:var(--pink); font-size:15px; font-weight:500; margin-bottom:10px; }
+  .step p { font-size:16.5px; color:var(--on-dark-muted); }
+
+  .pkgs { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:52px; }
+  .pkg { background:var(--plum); border:1px solid var(--plum-line); border-radius:22px; padding:36px 30px; text-align:center; display:flex; flex-direction:column; }
+  .pkg.featured { border-color:var(--pink); box-shadow:0 0 0 1px var(--pink) inset; }
+  .pkg img { width:48px; height:48px; margin:0 auto 14px; }
+  .pkg h3 { font-size:30px; color:var(--pink); }
+  .pkg ul { list-style:none; margin:20px 0 0; padding:0; text-align:left; }
+  .pkg li { font-size:16px; color:#fff; padding:10px 0 10px 26px; border-top:1px solid var(--plum-line); position:relative; }
+  .pkg li::before { content:""; position:absolute; left:4px; top:18px; width:8px; height:8px; border-radius:50%; background:var(--pink); }
+  .pkg .blurb { margin-top:18px; font-size:16px; color:var(--on-dark-muted); text-align:left; }
+
+  .photo-band { position:relative; overflow:hidden; color:#fff; }
+  .photo-band > img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .photo-band::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.6)); }
+  .photo-band .wrap { position:relative; z-index:1; }
+  .photo-band h2 { color:#fff; }
+  .on-photo { color:#eee; }
+  .bold-line { font-style:italic; font-size:40px; color:var(--pink); line-height:1.2; margin-top:56px; }
+  blockquote { font-size:26px; line-height:1.5; max-width:820px; margin:0 auto; }
+  .who { margin-top:18px; font-size:15px; letter-spacing:.3px; color:#eee; }
+
+  .contact { display:grid; grid-template-columns:1fr 1.2fr; gap:56px; }
+  .contact h2 { font-size:52px; color:#fff; }
+  .call { margin-top:22px; font-size:18px; color:var(--on-dark-muted); }
+  .call a { color:#fff; font-size:24px; font-weight:500; text-decoration:none; }
+  form { background:#171117; border:1px solid var(--plum-line); border-radius:22px; padding:30px; display:grid; gap:16px; }
+  form .row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  label { font-size:15px; color:#fff; display:block; margin-bottom:6px; }
+  input, textarea, select { width:100%; font:inherit; font-size:15px; color:#111; background:#FAFAFA; border:1px solid transparent; border-radius:12px; padding:12px 14px; }
+  .botcheck { display:none; }
+  form .pill { justify-self:start; }
+
+  @media (max-width:1100px) {
+    .hero .words { position:static; padding:48px 24px 28px; background:#F1F1F0; }
+    .hero h1 { font-size:52px; }
+    .hero .sub { font-size:17px; margin:12px auto 12px; }
+    .steps, .pkgs { grid-template-columns:1fr; max-width:640px; margin-left:auto; margin-right:auto; }
+    .step { display:grid; grid-template-columns:240px 1fr; }
+    .step img { height:100%; aspect-ratio:auto; }
+    .meet { grid-template-columns:280px 1fr; gap:40px; }
+  }
+  @media (max-width:760px) {
+    .nl { font-size:16px; }
+    .wrap { padding:0 20px; }
+    section { padding:68px 0; }
+    h2 { font-size:34px; }
+    .hero .words { position:static; padding:40px 20px 24px; background:#F1F1F0; }
+    .hero h1 { font-size:42px; }
+    .hero .sub { font-size:16.5px; }
+    .strip { grid-template-columns:1fr 1fr; gap:8px; padding:8px; }
+    .strip img { border-radius:12px; }
+    .meet { grid-template-columns:1fr; gap:30px; }
+    .meet img { max-width:300px; margin:0 auto; }
+    .cards.three, .cards.two, .steps, .pkgs { grid-template-columns:1fr; }
+    .step { grid-template-columns:1fr; }
+    .step img { aspect-ratio:4/3; height:auto; }
+    .contact { grid-template-columns:1fr; gap:30px; }
+    .contact h2 { font-size:40px; }
+    form { padding:22px; }
+    form .row { grid-template-columns:1fr; }
+    .bold-line { font-size:32px; }
+    blockquote { font-size:21px; }
+    .lede, .welcome p, .meet p { font-size:16.5px; }
+  }
+</style>

@@ -1,0 +1,302 @@
+---
+import Base from "../../layouts/Base.astro";
+
+// Third blog article, drafted 2026-11-21 at Belinda's request.
+// Target searches: "how much is boudoir photography" (already position 1, Nov 2026),
+// "boudoir photography cost" (position 44), "boudoir shoot cost", "boudoir photography price".
+// Why: a large studio opening in Auckland in Dec 2026 advertises a low session fee with
+// images sold afterwards. Belinda wanted a post that helps women compare the full cost.
+// RULES FOR THIS PAGE (Fair Trading Act comparative advertising + defamation):
+// - Names no business. The worked example uses round, made-up numbers on purpose; never
+//   swap in any real studio's prices.
+// - Describes both pricing models fairly. Never calls the session-fee model a scam or bait.
+//   The only "bait" wording is a quote from a government regulator, attributed.
+// - Belinda, 21 Nov 2026: she NEVER holds a sales session. After the shoot the client picks
+//   which images get edited, from what the package covers. She wants clients to choose the
+//   right package at the start; unedited images are a free gift. An $80 extra edit exists only
+//   for "one more photo you can't live without" - nobody has ever bought one and she discourages it.
+// Sources checked 2026-11-21: WA Consumer Protection release (11 Jun 2024), NZ Commerce
+// Commission pricing fact sheet.
+
+const published = "2026-11-21";
+const url = "https://www.boudoirphotographyauckland.co.nz/blog/boudoir-photography-cost-auckland/";
+const title = "How Much Does Boudoir Photography Cost in Auckland? | Full Price Guide";
+const description =
+  "What a boudoir shoot in Auckland costs once your photos are paid for. Session fee or all-inclusive, a worked example, and six questions to ask before you book.";
+const heroImage = "/images/gallery/soft-colour-eye-contact.jpg";
+
+const faqs = [
+  {
+    q: "How much does boudoir photography cost in Auckland?",
+    a: "It depends on how the studio charges. All-inclusive packages in Auckland range from a few hundred dollars to over a thousand, with images included. Studios that charge a session fee first and sell images afterwards can advertise a much lower starting price, but the final spend depends on how many images you buy. Always ask for the full price list before you book.",
+  },
+  {
+    q: "Do I have to buy my boudoir photos after the shoot?",
+    a: "With a session fee studio, usually yes: the fee covers the shoot, and the photos are bought separately. With an all-inclusive package, a set number of images is already paid for. Ask which one you are booking.",
+  },
+  {
+    q: "What is a reveal or viewing session?",
+    a: "It is the appointment where you see your photos and choose your favourites. Some studios use it to choose the images you have already paid for. Others use it to sell images and wall art. Both are common, so ask which it is.",
+  },
+  {
+    q: "What does a boudoir shoot with you cost?",
+    a: "From $750 for a 1.5 hour shoot with six edited and six unedited images, up to $1,200 for unlimited time with twenty edited images and as many unedited images as you would like. You choose the package at the start, your images are included, and there is no sales session. Hair and makeup is $220 if you want it.",
+  },
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: "How much does boudoir photography cost in Auckland?",
+    description,
+    image: new URL(heroImage, "https://www.boudoirphotographyauckland.co.nz").toString(),
+    datePublished: published,
+    dateModified: published,
+    inLanguage: "en-NZ",
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    author: {
+      "@type": "Person",
+      name: "Belinda Dunne",
+      url: "https://www.boudoirphotographyauckland.co.nz/about-belinda-dunne/",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Boudoir Photography Auckland",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.boudoirphotographyauckland.co.nz/images/boudoir-logo.png",
+      },
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  },
+];
+
+const questions = [
+  ["Can I see the full price list before I book?", "Including what images, albums and prints cost. You should not have to wait until the viewing to find out."],
+  ["How many images does the first price include?", "If the answer is none, the first price is for the shoot only."],
+  ["Do I have to decide on the day?", "Some studios ask you to order everything at the viewing. Others let you take time to think."],
+  ["Is there a minimum spend?", "Some packages or collections start well above the session fee."],
+  ["What is the 'valued at' price based on?", "In New Zealand, a 'was' or 'usual' price must be one that is really charged. It is fair to ask."],
+  ["What happens if I only want a few photos?", "A good answer here tells you a lot about how the viewing will feel."],
+];
+
+const myAnswers = [
+  ["You choose your package at the start", "Pick the number of edited images you want before the shoot: six for $750, ten for $950, twenty for $1,200. That is your price."],
+  ["Unedited images are included too", "Six unedited with the $750 package, ten with the $950 package, and as many as you would like with the $1,200 package."],
+  ["There is no sales session", "After the shoot you look through your photos and choose which ones I edit. That is the whole appointment. I don't sell you anything at it."],
+  ["Nothing is added afterwards", "If there is one more photo you cannot live without, I can edit it for $80. Almost nobody does, and I would rather you chose the right package at the start."],
+];
+
+const link = "text-boudoir-red underline";
+---
+
+<Base title={title} description={description} image={heroImage}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <article>
+    <header class="mx-auto max-w-3xl px-6 pt-16 text-center">
+      <p class="text-sm uppercase tracking-wide text-boudoir-pink">
+        <a href="/blog/" class="hover:underline">Blog</a>
+        <span aria-hidden="true"> · </span>
+        <time datetime={published}>21 November 2026</time>
+      </p>
+      <h1 class="mt-4 text-4xl text-boudoir-ink md:text-5xl">How Much Does Boudoir Photography Cost in Auckland?</h1>
+      <p class="mt-6 text-boudoir-muted">
+        Two boudoir prices can look hundreds of dollars apart and end up
+        costing about the same. Or the cheaper one can end up costing more.
+        It depends on whether your photos are included.
+      </p>
+      <p class="mt-4 text-boudoir-muted">
+        Here is how the two ways of pricing work, a worked example, and the
+        questions to ask so you know the full cost before you book.
+      </p>
+    </header>
+
+    <div class="mx-auto mt-12 max-w-3xl px-6">
+      <img
+        src={heroImage}
+        alt="Soft colour boudoir portrait of a woman in white lingerie"
+        class="mx-auto h-[420px] w-full object-cover sm:h-[520px]"
+        style="object-position: 62% 30%;"
+      />
+    </div>
+
+    <div class="mx-auto max-w-3xl space-y-14 px-6 py-16">
+      <section>
+        <h2 class="text-2xl text-boudoir-ink">The two ways boudoir photographers charge</h2>
+        <div class="mt-4 space-y-3 text-sm leading-relaxed text-boudoir-muted">
+          <p>
+            <strong class="text-boudoir-ink">Session fee, then buy your images.</strong>
+            You pay a fee for the shoot. Afterwards you come back to see your
+            photos, and buy the ones you want, one by one or as a collection.
+            Albums and wall art are sold at the same appointment.
+          </p>
+          <p>
+            <strong class="text-boudoir-ink">All-inclusive package.</strong>
+            You pay one price, and it already covers a set number of finished
+            images. You still see your photos and choose your favourites. You
+            can buy more if you want to, but you don't have to.
+          </p>
+          <p>
+            Both are common in Auckland. Both can give you beautiful photos.
+            The difference is when you find out what it costs.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl text-boudoir-ink">A worked example</h2>
+        <div class="mt-4 space-y-3 text-sm leading-relaxed text-boudoir-muted">
+          <p>These numbers are made up to keep the maths simple. They are not any studio's prices.</p>
+          <p>
+            Say a session fee is <strong class="text-boudoir-ink">$250</strong>,
+            and images are then <strong class="text-boudoir-ink">$100 each</strong>.
+          </p>
+        </div>
+        <div class="mt-6 overflow-x-auto">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="border-b-2 border-boudoir-pink text-boudoir-ink">
+                <th class="py-2 pr-4 font-semibold">You buy</th>
+                <th class="py-2 font-semibold">You pay</th>
+              </tr>
+            </thead>
+            <tbody class="text-boudoir-muted">
+              <tr class="border-b border-boudoir-cream"><td class="py-2 pr-4">The shoot and 1 image</td><td class="py-2">$350</td></tr>
+              <tr class="border-b border-boudoir-cream"><td class="py-2 pr-4">The shoot and 5 images</td><td class="py-2">$750</td></tr>
+              <tr class="border-b border-boudoir-cream"><td class="py-2 pr-4">The shoot and 10 images</td><td class="py-2">$1,250</td></tr>
+              <tr class="border-b border-boudoir-cream"><td class="py-2 pr-4">The shoot, 10 images and a framed print</td><td class="py-2">$1,250 plus the print</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-6 space-y-3 text-sm leading-relaxed text-boudoir-muted">
+          <p>
+            Most women love more than one photo of themselves. That is the
+            point of the shoot. So the number to compare is not the session
+            fee. It is the price of the number of images you would really
+            want to take home.
+          </p>
+          <p>
+            Ask each studio the same question: what will ten finished images
+            cost me, all in? Then compare the answers.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl text-boudoir-ink">Why the viewing can feel hard</h2>
+        <div class="mt-4 space-y-3 text-sm leading-relaxed text-boudoir-muted">
+          <p>
+            In a session fee studio, the viewing is where the sale happens. It
+            is usually held soon after the shoot, while you are still on a
+            high from it, and you see your photos on a big screen before you
+            choose. Photography sales courses teach it this way because it
+            works.
+          </p>
+          <p>
+            Plenty of women enjoy it. Others find it hard to say no to a photo
+            of themselves that they love, with the photographer in the room,
+            and spend more than they planned.
+          </p>
+          <p>
+            Regulators have noticed the extreme end of this. In 2024, Western
+            Australia's Consumer Protection warned about cheap studio photo
+            vouchers followed by pressure at the sale. Its Commissioner said,
+            "These vouchers are not gifts, they are bait." That warning was
+            about family portrait studios in Australia, not boudoir in
+            Auckland. But the advice that came with it holds for any shoot:
+            see the prices and terms before you book.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl text-boudoir-ink">Six questions to ask before you book</h2>
+        <ol class="mt-6 space-y-4">
+          {questions.map(([q, why], i) => (
+            <li class="border-l-2 border-boudoir-pink pl-4">
+              <span class="block font-semibold text-boudoir-ink">{i + 1}. {q}</span>
+              <span class="mt-1 block text-sm leading-relaxed text-boudoir-muted">{why}</span>
+            </li>
+          ))}
+        </ol>
+        <p class="mt-6 text-sm leading-relaxed text-boudoir-muted">
+          For the questions that go beyond price, read
+          <a href="/blog/how-to-choose-a-boudoir-photographer-nz/" class={link}>how to choose a boudoir photographer in New Zealand</a>.
+        </p>
+      </section>
+    </div>
+
+    <section id="my-answers" class="scroll-mt-24 bg-boudoir-cream py-16">
+      <div class="mx-auto max-w-3xl px-6">
+        <h2 class="text-2xl text-boudoir-ink">How my pricing works</h2>
+        <p class="mt-4 text-sm leading-relaxed text-boudoir-muted">
+          I chose all-inclusive because I want you to know what you are
+          spending before you walk in.
+        </p>
+        <ul class="mt-6 space-y-4">
+          {myAnswers.map(([label, why]) => (
+            <li class="border-l-2 border-boudoir-pink pl-4">
+              <span class="block font-semibold text-boudoir-ink">{label}</span>
+              <span class="mt-1 block text-sm leading-relaxed text-boudoir-muted">{why}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="mt-6 text-sm text-boudoir-muted">
+          See every package on the <a href="/pricing/" class={link}>pricing page</a>,
+          or the <a href="/boudoir-photoshoot-gallery-auckland/" class={link}>four looks in the gallery</a>.
+        </p>
+      </div>
+    </section>
+
+    <div class="mx-auto max-w-3xl px-6 py-16">
+      <section>
+        <h2 class="text-2xl text-boudoir-ink">Quick answers</h2>
+        <div class="mt-4 divide-y divide-boudoir-cream">
+          {faqs.map((f) => (
+            <details class="group py-5">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-semibold text-boudoir-ink">
+                <span>{f.q}</span>
+                <span class="shrink-0 text-xl text-boudoir-pink transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <p class="mt-4 text-sm leading-relaxed text-boudoir-muted">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  </article>
+
+  <section class="bg-boudoir-ink py-20 text-center text-boudoir-white">
+    <div class="mx-auto max-w-2xl px-6">
+      <h2 class="text-3xl text-boudoir-pink">Ask me what it will cost you</h2>
+      <p class="mt-6 leading-relaxed">
+        Tell me what you have in mind and I will tell you the full price,
+        before you book anything.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a
+          href="/contact-boudoir-photography-auckland/"
+          class="inline-block bg-boudoir-red px-6 py-3 text-boudoir-white hover:opacity-90"
+        >
+          Get in touch
+        </a>
+        <a
+          href="/pricing/"
+          class="inline-block border-2 border-boudoir-pink px-6 py-3 text-boudoir-pink hover:bg-boudoir-pink hover:text-boudoir-ink"
+        >
+          See my prices
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

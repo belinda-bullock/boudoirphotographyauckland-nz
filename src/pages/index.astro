@@ -16,9 +16,9 @@ const steps = [
   },
   {
     number: "STEP 3",
-    title: "Your jaw-dropping reveal.",
-    highlight: "Viewing Your Boudoir Photos.",
-    rest: "After the session, you'll get to see your images, and yourself, like never before. Choose what you love, whether it's a luxe album, framed art, or something special just for you. These aren't just photos. They're proof of how powerful and beautiful you truly are.",
+    title: "Your jaw-dropping moment.",
+    highlight: "Choosing Your Boudoir Photos.",
+    rest: "After the session, you'll see your images, and yourself, like never before. You choose the ones you love for me to edit, from the number your package covers. No sales session, nothing extra to buy. These aren't just photos. They're proof of how powerful and beautiful you truly are.",
   },
 ];
 
@@ -38,7 +38,7 @@ const packages = [
   {
     name: "Total Knockout",
     icon: "/images/icons/lingerie.png",
-    included: "An unlimited-time boudoir experience\n20 fully edited digital images – stunning, detailed, and crafted to celebrate you at your best\nPlus 20 unedited images – a beautiful reminder that you looked this incredible before the edits even began",
+    included: "An unlimited-time boudoir experience\n20 fully edited digital images – stunning, detailed, and crafted to celebrate you at your best\nPlus as many unedited images as you would like – a beautiful reminder that you looked this incredible before the edits even began",
     blurb: "All eyes on you. This is the package for anyone who refuses to leave behind a single favourite look. With enough gorgeous images to create a personalised keepsake book or unforgettable gift, you'll have a collection that celebrates every side of you, now and forever.",
   },
 ];
@@ -73,7 +73,7 @@ const gallerySection2 = [
       height="1065"
     />
     <div class="absolute inset-0 flex items-center justify-center px-6">
-      <h1 class="max-w-3xl text-center text-5xl text-boudoir-ink sm:text-6xl">Boudoir Photography Auckland</h1>
+      <h1 class="max-w-3xl text-center text-4xl text-boudoir-ink sm:text-6xl">Boudoir Photography Auckland</h1>
     </div>
   </section>
 
@@ -482,7 +482,7 @@ const gallerySection2 = [
         <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
         <div>
           <p class="text-sm">Name</p>
-          <div class="mt-1 grid grid-cols-2 gap-2">
+          <div class="mt-1 grid gap-2 sm:grid-cols-2">
             <input required type="text" name="firstName" placeholder="First Name (required)" class="bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink" />
             <input required type="text" name="lastName" placeholder="Last Name (required)" class="bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink" />
           </div>
@@ -502,6 +502,22 @@ const gallerySection2 = [
         <div>
           <p class="text-sm">How did you hear about us?</p>
           <textarea name="heardFrom" rows="2" class="mt-1 w-full bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink"></textarea>
+        </div>
+        <div>
+          <label for="h-look" class="text-sm">Which look are you drawn to? (<a href="/boudoir-photoshoot-gallery-auckland/" class="text-boudoir-pink underline">see the four looks</a>)</label>
+          <select id="h-look" name="look" data-look-select class="mt-1 w-full bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink">
+            <option value="">Choose one, or leave it for now</option>
+            <option value="light-and-soft">Light and soft</option>
+            <option value="dark-and-dramatic">Dark and dramatic</option>
+            <option value="black-and-white">Black and white</option>
+            <option value="glamour-and-character">Glamour and character</option>
+            <option value="a-mix">A mix of looks</option>
+            <option value="not-sure">Not sure yet, help me choose</option>
+          </select>
+        </div>
+        <div>
+          <label for="h-not-on-site" class="text-sm">Looking for something you can't see on this site? Not everything I photograph can go on a public website. Tell me what you have in mind and I will let you know, privately.</label>
+          <textarea id="h-not-on-site" name="not_on_site" rows="2" class="mt-1 w-full bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink"></textarea>
         </div>
         <div>
           <p class="text-sm">Please tell me as much as you can about the sort of images you would like and when you would like to shoot</p>

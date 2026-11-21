@@ -7,29 +7,73 @@ import Base from "../layouts/Base.astro";
 // the face in frame instead of slicing through it. For a landscape photo the
 // height already fits, so only the first (horizontal) value matters.
 // Measured off each photo individually on 2026-09-03, don't guess new ones.
-const images = [
-  { src: "/images/gallery/seated-natural-light-800.webp", full: "/images/gallery/seated-natural-light.webp", w: 800, h: 533, pos: "46% 50%", alt: "Soft boudoir portrait of a woman seated in natural light" },
-  { src: "/images/gallery/lingerie-portrait-800.webp", full: "/images/gallery/lingerie-portrait.webp", w: 800, h: 532, pos: "52% 50%", alt: "White lingerie boudoir photograph with relaxed lying pose" },
-  { src: "/images/gallery/glamour-studio-800.webp", full: "/images/gallery/glamour-studio.webp", w: 800, h: 1194, pos: "50% 15%", alt: "Glamour boudoir portrait with soft studio lighting" },
-  { src: "/images/gallery/denim-jacket-800.webp", full: "/images/gallery/denim-jacket.webp", w: 800, h: 1214, pos: "50% 18%", alt: "Confident boudoir portrait wearing a denim jacket" },
-  { src: "/images/gallery/curvy-soft-light-800.webp", full: "/images/gallery/curvy-soft-light.webp", w: 800, h: 1219, pos: "50% 22%", alt: "Beautiful curvy boudoir image in soft lighting" },
-  { src: "/images/gallery/white-lingerie-pose-800.webp", full: "/images/gallery/white-lingerie-pose.webp", w: 800, h: 532, pos: "60% 50%", alt: "Boudoir image of a woman in white lingerie" },
-  { src: "/images/gallery/silhouette-dramatic-800.webp", full: "/images/gallery/silhouette-dramatic.webp", w: 800, h: 1209, pos: "50% 28%", alt: "Artistic boudoir silhouette with dramatic lighting" },
-  { src: "/images/gallery/moody-800.webp", full: "/images/gallery/moody.webp", w: 800, h: 1205, pos: "50% 30%", alt: "Moody boudoir image" },
-  { src: "/images/gallery/bodyscape-800.webp", full: "/images/gallery/bodyscape.webp", w: 800, h: 532, pos: "50% 50%", alt: "Bodyscape boudoir image" },
-  { src: "/images/gallery/studio-bw-800.webp", full: "/images/gallery/studio-bw.webp", w: 800, h: 1213, pos: "50% 12%", alt: "Studio boudoir shot in black and white on a black background" },
-  { src: "/images/gallery/soft-colour-eye-contact-800.webp", full: "/images/gallery/soft-colour-eye-contact.webp", w: 800, h: 532, pos: "62% 50%", alt: "Soft colour boudoir portrait with relaxed eye contact" },
-  { src: "/images/gallery/legs-in-bed-800.webp", full: "/images/gallery/legs-in-bed.webp", w: 800, h: 532, pos: "50% 50%", alt: "Boudoir image of a woman's legs lying in bed" },
-  { src: "/images/gallery/hat-corset-black-white-800.webp", full: "/images/gallery/hat-corset-black-white.webp", w: 800, h: 1200, pos: "50% 24%", alt: "Black and white boudoir portrait in a corset and wide brimmed hat" },
-  { src: "/images/gallery/shirt-lying-bw-800.webp", full: "/images/gallery/shirt-lying-bw.webp", w: 800, h: 534, pos: "50% 50%", alt: "Black and white boudoir photograph of a woman lying in an open shirt" },
-  { src: "/images/testimonials/back-arms-raised-bw-800.webp", full: "/images/testimonials/back-arms-raised-bw.webp", w: 800, h: 1200, pos: "50% 40%", alt: "Black and white boudoir photograph from behind with arms raised" },
-  { src: "/images/testimonials/blazer-seated-bw-800.webp", full: "/images/testimonials/blazer-seated-bw.webp", w: 800, h: 1201, pos: "50% 45%", alt: "Black and white boudoir photograph of a woman seated in an open blazer" },
+// The gallery is grouped into four named looks (21 Nov 2026), so a woman can see
+// which style she is drawn to and say so on the contact form. The `id` of each look
+// matches the `look` value the contact form preselects from ?look=...
+const looks = [
+  {
+    id: "light-and-soft",
+    name: "Light and soft",
+    line: "Daylight from the windows, white sheets, pale lace. Gentle, warm and romantic.",
+    images: [
+      { src: "/images/gallery/curvy-soft-light-800.webp", full: "/images/gallery/curvy-soft-light.webp", w: 800, h: 1219, pos: "50% 22%", alt: "Curvy boudoir portrait in white lace against a sunlit window" },
+      { src: "/images/home/bed-facing-away-800.webp", full: "/images/home/bed-facing-away.jpg", w: 800, h: 586, pos: "50% 50%", alt: "Woman lying on white sheets in window light, legs raised" },
+      { src: "/images/gallery/soft-colour-eye-contact-800.webp", full: "/images/gallery/soft-colour-eye-contact.webp", w: 800, h: 532, pos: "62% 50%", alt: "Soft colour boudoir portrait with relaxed eye contact" },
+      { src: "/images/gallery/lingerie-portrait-800.webp", full: "/images/gallery/lingerie-portrait.webp", w: 800, h: 532, pos: "52% 50%", alt: "White lace boudoir photograph with a relaxed lying pose" },
+      { src: "/images/testimonials/window-light-kneeling-800.webp", full: "/images/testimonials/window-light-kneeling.jpg", w: 800, h: 534, pos: "50% 50%", alt: "Woman kneeling in white lingerie in front of sheer curtains" },
+      { src: "/images/home/sheepskin-rug-800.webp", full: "/images/home/sheepskin-rug.jpg", w: 800, h: 586, pos: "50% 50%", alt: "Smiling woman in blue lace lying on a sheepskin rug" },
+      { src: "/images/gallery/white-lingerie-pose-800.webp", full: "/images/gallery/white-lingerie-pose.webp", w: 800, h: 532, pos: "60% 50%", alt: "Boudoir image of a woman in white lingerie lying on a pale floor" },
+      { src: "/images/gallery/legs-in-bed-800.webp", full: "/images/gallery/legs-in-bed.webp", w: 800, h: 532, pos: "50% 50%", alt: "Boudoir image of a woman's legs lying in bed" },
+    ],
+  },
+  {
+    id: "dark-and-dramatic",
+    name: "Dark and dramatic",
+    line: "A black backdrop and a single light. Shape, shadow and curves, with a bit of mystery.",
+    images: [
+      { src: "/images/gallery/silhouette-dramatic-800.webp", full: "/images/gallery/silhouette-dramatic.webp", w: 800, h: 1209, pos: "50% 28%", alt: "Boudoir silhouette in black lingerie with dramatic side lighting" },
+      { src: "/images/gallery/moody-800.webp", full: "/images/gallery/moody.webp", w: 800, h: 1205, pos: "50% 30%", alt: "Low light boudoir portrait in black lace" },
+      { src: "/images/testimonials/curvy-black-lace-studio-800.webp", full: "/images/testimonials/curvy-black-lace-studio.jpg", w: 800, h: 1200, pos: "50% 20%", alt: "Curvy woman in black lace against a dark studio backdrop" },
+      { src: "/images/testimonials/low-key-standing-profile-800.webp", full: "/images/testimonials/low-key-standing-profile.jpg", w: 800, h: 534, pos: "50% 50%", alt: "Standing profile in low light on a black background" },
+    ],
+  },
+  {
+    id: "black-and-white",
+    name: "Black and white",
+    line: "Timeless and classic. Without colour, it is all about light, shape and expression.",
+    images: [
+      { src: "/images/gallery/studio-bw-800.webp", full: "/images/gallery/studio-bw.webp", w: 800, h: 1213, pos: "50% 12%", alt: "Studio boudoir portrait in black and white on a black background" },
+      { src: "/images/home/bw-bed-800.webp", full: "/images/home/bw-bed.jpg", w: 800, h: 589, pos: "50% 50%", alt: "Black and white bodyscape of a woman lying on sheets" },
+      { src: "/images/testimonials/blazer-seated-bw-800.webp", full: "/images/testimonials/blazer-seated-bw.webp", w: 800, h: 1201, pos: "50% 45%", alt: "Black and white boudoir photograph of a woman seated in an open blazer" },
+      { src: "/images/gallery/shirt-lying-bw-800.webp", full: "/images/gallery/shirt-lying-bw.webp", w: 800, h: 534, pos: "50% 50%", alt: "Black and white boudoir photograph of a woman lying in an open shirt" },
+      { src: "/images/gallery/glamour-studio-800.webp", full: "/images/gallery/glamour-studio.webp", w: 800, h: 1194, pos: "50% 15%", alt: "Black and white boudoir portrait in soft studio light" },
+      { src: "/images/home/bw-tiled-800.webp", full: "/images/home/bw-tiled.jpg", w: 800, h: 590, pos: "50% 50%", alt: "Black and white image of a woman in heels lying on a tiled floor" },
+      { src: "/images/testimonials/back-arms-raised-bw-800.webp", full: "/images/testimonials/back-arms-raised-bw.webp", w: 800, h: 1200, pos: "50% 40%", alt: "Black and white boudoir photograph from behind with arms raised" },
+      { src: "/images/gallery/seated-natural-light-800.webp", full: "/images/gallery/seated-natural-light.webp", w: 800, h: 533, pos: "46% 50%", alt: "Black and white portrait of a woman seated on the floor in natural light" },
+    ],
+  },
+  {
+    id: "glamour-and-character",
+    name: "Glamour and character",
+    line: "Red lips, long gloves, a hat, a spotlight, your favourite denim jacket. Shoots with attitude and a bit of fun.",
+    images: [
+      { src: "/images/home/gloves-800.webp", full: "/images/home/gloves.jpg", w: 800, h: 586, pos: "50% 30%", alt: "Old Hollywood glamour portrait with red lips and long black gloves" },
+      { src: "/images/home/spotlight-stool-800.webp", full: "/images/home/spotlight-stool.jpg", w: 800, h: 586, pos: "50% 50%", alt: "Woman posing on a stool in front of a spotlight circle" },
+      { src: "/images/gallery/hat-corset-black-white-800.webp", full: "/images/gallery/hat-corset-black-white.webp", w: 800, h: 1200, pos: "50% 24%", alt: "Black and white boudoir portrait in a corset and wide brimmed hat" },
+      { src: "/images/home/lace-lingerie-800.webp", full: "/images/home/lace-lingerie.jpg", w: 800, h: 586, pos: "50% 30%", alt: "Confident standing portrait in a black lace bodysuit" },
+      { src: "/images/gallery/denim-jacket-800.webp", full: "/images/gallery/denim-jacket.webp", w: 800, h: 1214, pos: "50% 18%", alt: "Confident boudoir portrait wearing a denim jacket" },
+      { src: "/images/testimonials/curvy-blue-shirt-window-light-800.webp", full: "/images/testimonials/curvy-blue-shirt-window-light.jpg", w: 800, h: 1200, pos: "50% 25%", alt: "Curvy woman seated in an oversized blue shirt in window light" },
+    ],
+  },
 ];
+// Every photo gets one running number so the full-size viewer can step through all of them.
+let n = 0;
+const groups = looks.map((look) => ({ ...look, images: look.images.map((img) => ({ ...img, i: n++ })) }));
 ---
 
 <Base
-  title="Boudoir Photoshoot Gallery Auckland | Real Women"
-  description="A gallery of real boudoir photography clients photographed on Auckland's Hibiscus Coast. Natural, confident, and respectful images."
+  title="Boudoir Photoshoot Gallery Auckland | Four Looks, Real Women"
+  description="Real boudoir clients photographed on Auckland's Hibiscus Coast, in four looks: light and soft, dark and dramatic, black and white, and glamour. See which one is you."
 >
   <section class="relative">
     <img
@@ -63,11 +107,21 @@ const images = [
         <a href="/" class="text-boudoir-pink underline">boudoir photography sessions</a>{" "}
         you can expect during a shoot with me.
       </p>
+      <p class="mt-4 text-white/85">
+        I shoot in four main looks, shown below. You can stay with one or mix
+        a few in the same session. Tell me which one you are drawn to when you
+        get in touch, and we will plan your shoot around it.
+      </p>
     </div>
   </section>
 
   <section class="mx-auto max-w-6xl px-6 py-16">
-    <p class="mb-10 flex items-center justify-center gap-2 text-center text-xs uppercase tracking-[0.2em] text-boudoir-muted">
+    <nav aria-label="Jump to a look" class="mb-10 flex flex-wrap justify-center gap-3">
+      {groups.map((look) => (
+        <a href={`#${look.id}`} class="border border-boudoir-red px-4 py-2 text-sm text-boudoir-red hover:bg-boudoir-red hover:text-boudoir-white">{look.name}</a>
+      ))}
+    </nav>
+    <p class="mb-12 flex items-center justify-center gap-2 text-center text-xs uppercase tracking-[0.2em] text-boudoir-muted">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="h-3.5 w-3.5 shrink-0" aria-hidden="true">
         <circle cx="11" cy="11" r="7" />
         <path d="M20 20l-3.5-3.5M11 8v6M8 11h6" stroke-linecap="round" />
@@ -75,26 +129,39 @@ const images = [
       Click any photo to see it full size
     </p>
 
-    <div id="gallery-grid" class="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
-      {images.map((img, i) => (
-        <button
-          type="button"
-          class="group block w-full cursor-zoom-in overflow-hidden bg-boudoir-cream"
-          data-index={i}
-          aria-label={`View full size: ${img.alt}`}
-        >
-          <img
-            src={img.src}
-            data-full={img.full}
-            alt={img.alt}
-            width={img.w}
-            height={img.h}
-            loading="lazy"
-            decoding="async"
-            class="aspect-[4/3] w-full object-cover transition duration-300 group-hover:scale-[1.03] group-hover:opacity-90"
-            style={`object-position: ${img.pos}`}
-          />
-        </button>
+    <div id="gallery-grid" class="space-y-20">
+      {groups.map((look) => (
+        <div id={look.id} class="scroll-mt-24">
+          <div class="mx-auto mb-6 max-w-2xl text-center">
+            <h2 class="text-3xl text-boudoir-red">{look.name}</h2>
+            <p class="mt-3 text-boudoir-muted">{look.line}</p>
+          </div>
+          <div class={`grid gap-4 sm:grid-cols-2 ${look.images.length % 4 === 0 ? "md:grid-cols-4" : "md:grid-cols-3"}`}>
+            {look.images.map((img) => (
+              <button
+                type="button"
+                class="group block w-full cursor-zoom-in overflow-hidden bg-boudoir-cream"
+                data-index={img.i}
+                aria-label={`View full size: ${img.alt}`}
+              >
+                <img
+                  src={img.src}
+                  data-full={img.full}
+                  alt={img.alt}
+                  width={img.w}
+                  height={img.h}
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full object-cover sm:aspect-[4/3] transition duration-300 group-hover:scale-[1.03] group-hover:opacity-90"
+                  style={`object-position: ${img.pos}`}
+                />
+              </button>
+            ))}
+          </div>
+          <p class="mt-6 text-center">
+            <a href={`/contact-boudoir-photography-auckland/?look=${look.id}`} class="text-boudoir-red underline">Drawn to this look? Tell me</a>
+          </p>
+        </div>
       ))}
     </div>
   </section>
@@ -165,7 +232,7 @@ const images = [
   const grid = document.getElementById("gallery-grid");
 
   if (box && bigImg && caption && count && grid) {
-    const thumbs = Array.from(grid.querySelectorAll<HTMLImageElement>("img"));
+    const thumbs = Array.from(grid.querySelectorAll<HTMLImageElement>("button[data-index] img"));
     let current = 0;
 
     const show = (i: number) => {

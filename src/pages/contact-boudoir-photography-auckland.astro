@@ -42,7 +42,7 @@ const WEB3FORMS_KEY = "ff781121-c927-40fe-89a9-f7798a2a0838";
         <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
         <div>
           <p class="text-sm">Name</p>
-          <div class="mt-1 grid grid-cols-2 gap-2">
+          <div class="mt-1 grid gap-2 sm:grid-cols-2">
             <input required type="text" name="firstName" placeholder="First Name (required)" class="bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink" />
             <input required type="text" name="lastName" placeholder="Last Name (required)" class="bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink" />
           </div>
@@ -64,6 +64,22 @@ const WEB3FORMS_KEY = "ff781121-c927-40fe-89a9-f7798a2a0838";
           <textarea name="heardFrom" rows="2" class="mt-1 w-full bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink"></textarea>
         </div>
         <div>
+          <label for="c-look" class="text-sm">Which look are you drawn to? (<a href="/boudoir-photoshoot-gallery-auckland/" class="text-boudoir-pink underline">see the four looks</a>)</label>
+          <select id="c-look" name="look" data-look-select class="mt-1 w-full bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink">
+            <option value="">Choose one, or leave it for now</option>
+            <option value="light-and-soft">Light and soft</option>
+            <option value="dark-and-dramatic">Dark and dramatic</option>
+            <option value="black-and-white">Black and white</option>
+            <option value="glamour-and-character">Glamour and character</option>
+            <option value="a-mix">A mix of looks</option>
+            <option value="not-sure">Not sure yet, help me choose</option>
+          </select>
+        </div>
+        <div>
+          <label for="c-not-on-site" class="text-sm">Looking for something you can't see on this site? Not everything I photograph can go on a public website. Tell me what you have in mind and I will let you know, privately.</label>
+          <textarea id="c-not-on-site" name="not_on_site" rows="2" class="mt-1 w-full bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink"></textarea>
+        </div>
+        <div>
           <p class="text-sm">Please tell me as much as you can about the sort of images you would like and when you would like to shoot</p>
           <textarea name="message" rows="4" class="mt-1 w-full bg-[#FAFAFA] px-3 py-2 text-sm text-boudoir-ink"></textarea>
         </div>
@@ -74,3 +90,13 @@ const WEB3FORMS_KEY = "ff781121-c927-40fe-89a9-f7798a2a0838";
     </div>
   </section>
 </Base>
+
+<script>
+  // Preselect the look when someone arrives from the gallery ("Drawn to this look? Tell me").
+  const look = new URLSearchParams(window.location.search).get("look");
+  if (look) {
+    document.querySelectorAll<HTMLSelectElement>("select[data-look-select]").forEach((sel) => {
+      if ([...sel.options].some((o) => o.value === look)) sel.value = look;
+    });
+  }
+</script>

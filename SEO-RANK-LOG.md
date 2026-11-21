@@ -398,3 +398,133 @@ canonical alternates 2, crawled-not-indexed 3, Google-chose-different-canonical 
   homepage, FAQs, blog index and llms.txt; all in the sitemap.
 - Requested indexing for all three via URL Inspection, 2026-10-02.
 - **Check next run:** are the three pages indexed, and are they picking up impressions for their target searches?
+
+---
+
+## 2026-10-15 — Fortnightly check (web search proxy)
+
+### FLAG: the Australian competitor is confirmed entering Auckland — Verve Intimate
+
+Not yet visible in search results, but now identified. Job listings on Employment Hero (surfaced this run in the
+search results for both boudoir phrases) are recruiting for a **brand-new Verve Intimate studio in Auckland 1010
+(Auckland CBD)**:
+- Employer: H McErvale Pty Ltd t/as Verve Intimate (also listed as "Verve Portraits Group"). Australian company.
+- Listing text says it launched three luxury boudoir studios in Sydney, Melbourne and Brisbane in under a year and
+  that Auckland is its first New Zealand studio.
+- Roles: a full-time founding Studio Manager who shoots sessions and "guides clients through to their completed sale"
+  (an in-person sales model), plus contract boudoir photographers.
+- Website verveintimate.com.au, Instagram verve_intimate. No NZ website, no Auckland address and no opening date found.
+- Not ranking for either target phrase yet, and no NZ landing page found. Paid ads cannot be seen by this search method.
+
+Very likely the Australian entrant Belinda flagged at baseline, though she has not named the company in this log, so
+that is an inference, not confirmed. Next checks should search "Verve Intimate Auckland" directly as well as the two
+target phrases, to catch the day their NZ site goes live.
+
+### Phrase results
+
+**Method note:** the "standard" search mode returned only directories and job listings this run and did not return
+this site even for a direct domain search, so it was useless as a rank proxy. Results below are from the "extended"
+search mode, which returned real studio sites. Use extended mode going forward.
+
+| Phrase | Result | Real competitors in results | vs. 2026-10-01 |
+|---|---|---|---|
+| boudoir photography auckland | **Not visible in top 9** | Studio Boudoir (2 listings), Boudoir Pix, Studio X, La Muse, Natalie Pasco (2 listings incl. bridal boudoir page), Tania Te Ata, **Boudoir Christchurch (new)** | **dropped** (position 1 → not visible) |
+| auckland boudoir photographer | **Not visible in top 9** | Studio Boudoir, Milk Intimates (2 listings), Boutique Lifestyle Photography, Tania Te Ata, Natalie Pasco (2 listings), Casey van Liefde (Wikipedia's Rhondda Bosworth article also present) | no change (not visible on 10-01 either) |
+
+**New name:** Boudoir Christchurch (boudoirchristchurch.com), a Christchurch studio running pop-up "Marathon Weekend"
+shoots in Auckland (next dates listed 7–9 November). New Zealand, not the Australian entrant.
+
+**Reading the drop on the main phrase.** Losing position 1 to not visible in one fortnight is a big swing, but this
+proxy has swung by this much before (09-17 ~4, 10-01 #1), and this run also coincided with the search tool's
+standard mode not indexing the site at all, so part of this may be the tool and not Google. Real GSC data on 10-01
+had this query at **position 3.3, 11.6% CTR**, which is far stronger than "not in the top 9". Do not treat this as a
+real loss until GSC confirms it. If GSC shows the average position for "boudoir photography auckland" has slipped
+well past 3.3, that is the real flag. Studio Boudoir and Natalie Pasco each taking two slots crowds the list.
+
+Real dashboard data (Cloudflare Web Analytics + Google Search Console): **not provided this run** — unattended
+scheduled run, Belinda not present. GSC is verified and working (re-verified by DNS TXT on 2026-10-01), so this is a
+gap for this run only. Most recent real numbers remain the 2026-10-01 addendum (GSC Sep 2 – Sep 29: 59 clicks,
+1.27K impressions, 4.6% CTR, avg. position 13.0; Cloudflare 30 days: 400 visits, ~250 likely human, ~120 from Google).
+
+**Comparison vs previous check:** worse on the proxy (main phrase lost its #1 spot), unknown on the real data. The
+competitor picture changed more than the ranking did: the Australian entrant is now confirmed and hiring.
+
+**Still to verify with GSC access:** average position for "boudoir photography auckland" since 10-01; whether the three
+pages published 2026-10-02 (/boudoir-for-every-body/, /milestone-birthday-boudoir/, the how-to-choose blog post) are
+indexed and earning impressions; whether the slash/non-slash duplicate pages folded together after the d56105a
+internal-link fix.
+
+---
+
+## 2026-10-16 — Fortnightly check (web search proxy, extended mode)
+
+**Timing note:** fired one day after the 2026-10-15 entry, so this is a next-day recheck, not a new fortnight.
+
+### Verve Intimate (the Australian entrant): still hiring, still not ranking
+
+Searched "Verve Intimate Auckland boudoir" directly, as the 10-15 entry recommended. Findings:
+- Still no NZ website, no Auckland address, and not visible for either target phrase.
+- Hiring has widened: the same Auckland CBD roles (founding Studio Manager, contract boudoir photographers) are now also
+  posted on a second job board (dreamworkhq.com), plus a third Employment Hero listing under "Verve Portraits Group".
+- Listing details: contract photographers paid per session, up to $800/day, higher weekend rates. Studio Manager is
+  full-time, rostered weekends and some evenings. The search summary suggested an opening around **November**; no
+  primary source seen this run states a date, so treat that as unconfirmed.
+- Their Australian offer (verveintimate.com.au "Starter Package"): 90-minute shoot, a fine-art print, and hair and makeup
+  included. Worth knowing as the likely shape of their Auckland launch offer.
+
+### Phrase results
+
+| Phrase | Result | Real competitors in results | vs. 2026-10-15 |
+|---|---|---|---|
+| boudoir photography auckland | **Not visible in top 9** | Studio Boudoir, **Milk Intimates (2 listings)**, Boudoir Pix, Studio X, Tania Te Ata, Natalie Pasco (2 listings incl. bridal boudoir) | no change (not visible). Milk Intimates newly holds two slots on this phrase |
+| auckland boudoir photographer | **Not visible in top 9** | Studio Boudoir, **Milk Intimates (4 listings)**, Tania Te Ata, Natalie Pasco (Wikipedia's Rhondda Bosworth article and an inactive Instagram account, tease.me.boudoir, also present) | no change (not visible) |
+
+Real dashboard data (Cloudflare Web Analytics + Google Search Console): **not provided this run** — unattended scheduled
+run, Belinda not present. GSC is verified and working (re-verified 2026-10-01). Most recent real numbers remain the
+2026-10-01 addendum (GSC Sep 2 – Sep 29: 59 clicks, 1.27K impressions, 4.6% CTR, avg. position 13.0; "boudoir photography
+auckland" position 3.3, 11.6% CTR).
+
+**Comparison vs previous check:** same as yesterday, site missing from the proxy on both phrases. Two runs in a row now,
+so this is worth checking properly in GSC rather than waving off, but the proxy has disagreed with GSC by a wide margin
+before (10-15 proxy "not visible" vs 10-01 GSC position 3.3). **The competitor to watch right now is Milk Intimates**,
+not Verve: it went from one listing below this site (09-17) to two slots on the main phrase and four on the secondary one.
+
+**Still to verify with GSC access (priority order):** (1) real average position for "boudoir photography auckland" since
+10-01, to settle whether the proxy drop is real; (2) whether the three pages published 2026-10-02 are indexed and earning
+impressions; (3) whether slash/non-slash duplicate pages folded together after the d56105a internal-link fix.
+
+---
+
+## 2026-11-21 — Competitor + style review, real GSC data (Belinda asked; a client chose another studio for "style")
+
+**GSC, 28 days (Oct 23 – Nov 19):** 90 clicks, 1.55K impr, 5.8% CTR, avg pos 13.6 (Sep: 59 / 1.27K / 4.6% / 13.0).
+"boudoir photography auckland" 12 clicks / 92 impr / 13% / **pos 2.5**. "boudoir photography" 5 / 300 / 1.7% / pos 10.2.
+90-day: main phrase 36 clicks / 252 / 14.3% / pos 3.3. Gallery page weakest (pos 27.6 slash, 35.9 non-slash).
+This confirms the Oct 15/16 proxy "not visible" drops were the search tool, not Google.
+
+**GSC Generative AI report (new, beta):** 182 impressions in 28 days, rising ~5/day to ~15/day. Pages: / 111,
+/pricing/ 18, /boudoir-for-every-body/ 14, /what-to-wear-boudoir-shoot/ 12, first-shoot blog 11, gallery 7.
+
+**Verve Intimate confirmed opening 12 Dec 2026** (verified on verveintimate.co.nz 21 Nov): Unit 501, L5 Achilles House,
+8 Commerce St. "$195 valued at $695" if bought by 12 Dec; in-person reveal sales, artwork from $395, digitals $75–199/image.
+"High end fashion editorial style". H&MU included. Shoots couples and men too. Milk Intimates: $200 session (normally $400)
++ $300 credit, collections from $1,395 (verified 21 Nov).
+
+**Robots.txt checked:** wildcard Allow, so OAI-SearchBot, Claude-SearchBot, Bingbot all 200. No change needed.
+
+**Recommendations given (PDF on Desktop in this folder):** name the four gallery looks + "which look?" on the form;
+honest session-fee-vs-all-inclusive cost guide; consider H&MU in top package; facts (one client a day, no sales session)
+in first screen; Christmas voucher push before 12 Dec; Bing Webmaster Tools + Bing Places; Apple Business Connect;
+GBP photos kept non-sexual (policy risk). Nothing changed on the site.
+
+### Same day (2026-11-21) — changes built locally, NOT yet live (waiting for Belinda's yes)
+- Gallery split into four named looks (light and soft / dark and dramatic / black and white / glamour and character),
+  jump links, "Drawn to this look? Tell me" links that preselect the look on the contact form. New title/description.
+- Both contact forms: "Which look are you drawn to?" dropdown + "Looking for something you can't see on this site?" box
+  (fields `look`, `not_on_site` in Web3Forms).
+- New post /blog/boudoir-photography-cost-auckland/ targeting "how much is boudoir photography" / "boudoir photography cost".
+  Names no business; worked example uses made-up $250 + $100/image. Added to blog index + llms.txt.
+- Wording fixed (Belinda: there is NO sales session; she discourages extra edits): pricing lines, home step 3, first-shoot post.
+- Also going out with this: the uncommitted 24 Oct phone-layout fixes (logo size, form stacking, gallery crop, pricing hero).
+- ChatGPT "Businesses in ChatGPT" launched 10 Nov 2026, but help page says local businesses can only claim existing US
+  listings. Persona ID check uses the legal name, which could link boudoir to her real name: do not claim boudoir there.

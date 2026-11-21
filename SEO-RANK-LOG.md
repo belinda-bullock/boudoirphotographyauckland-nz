@@ -531,3 +531,27 @@ GBP photos kept non-sexual (policy risk). Nothing changed on the site.
 - **LIVE 2026-11-21** (commit 6032f92, pre-push layout check passed). Verified on the live site: gallery looks, both new
   form fields, "No sales session" on pricing, new post in sitemap. Requested indexing for the new post (was "unknown to
   Google") and the gallery. Check next run: is the cost post indexed and picking up "boudoir photography cost" queries?
+
+---
+
+## 2026-11-22 — Verve Intimate teardown + real-browser rank check (Belinda asked)
+
+Method change: ranks read in Belinda's own Chrome (google.co.nz, gl=nz; bing.com cc=NZ), navigating one phrase at a time.
+The in-page fetch() loop on Bing returns junk; don't use it.
+
+| Phrase | Google (her Chrome) | Bing | Verve |
+|---|---|---|---|
+| boudoir photography auckland | 1 | 1 | not in top 20 |
+| boudoir photography | 3 (Milk, Studio Boudoir above) | 1 | not in top 20 |
+| auckland boudoir photographer | 1 | — | not in top 20 |
+| bridal boudoir auckland | 2 (Studio Boudoir /bridal-boudoir first) | — | not in top 20 |
+| couples boudoir auckland | not shown (no page) | — | not in top 20 |
+
+GSC "boudoir photography" exact, 28 days: NZ 304 of 308 impressions, pos 10.6, 6 clicks. So the low average is NZ-wide,
+not overseas traffic; likely searchers outside Auckland seeing local studios (inference, GSC has no city).
+
+Verve: site:verveintimate.co.nz = 1 page indexed (home). "verve intimate auckland" returns verveintimate.com.au first.
+58 sitemap URLs; service pages for female/bridal/maternity/couples/male; ~20 client story posts copied from .com.au
+(no canonical tags; what-to-wear 81% same text); gifting/bridal-gifting/fundraising/ambassador programmes; "money back"
+promise; LocalBusiness + FAQPage schema, legalName Verve Studios Limited. Snapshot: competitor-watch/verve-2026-11-22.json.
+Fortnightly routine updated to diff their sitemap, count indexed pages and track them on all phrases.
